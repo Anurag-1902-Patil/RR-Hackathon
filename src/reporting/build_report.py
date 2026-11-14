@@ -17,7 +17,7 @@ MO, FIG = REPORTS_DIR / "model_outputs", REPORTS_DIR / "figures"
 BROWSERS = [Path(r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"),
             Path(r"C:\Program Files\Google\Chrome\Application\chrome.exe")]
 COMP = [("pressure_perf", "Pressure perf."), ("consistency", "Consistency"), ("impact", "Impact"), ("delta", "Vs baseline"), ("usual", "Usual")]
-E = html.escape
+E = lambda x: html.escape("" if x is None or (isinstance(x, float) and x != x) else str(x))
 
 
 def img(path: Path, caption: str, width: str = "100%") -> str:
@@ -94,13 +94,14 @@ def profile(side: str, r: pd.Series, D: dict) -> str:
         why.append(f"<li>vs <b>{E(x.alternative)}</b> (rank {x.alternative_rank}, {E(x.role_alternative)}): ahead most on {lead.lower()} "
                    f"({diffs[lead] * 100:+.0f} pts){f', behind on {trail.lower()} ({diffs[trail] * 100:+.0f} pts)' if diffs[trail] < 0 else ''}. "
                    f"Ranks higher in <b>{x.p_selected_ranks_higher_bootstrap:.0%}</b> of bootstrap resamples, so the advantage is <i>{verdict(x.p_selected_ranks_higher_bootstrap)}</i>.</li>")
-    flag_cls = "flag warn" if (g.availability_class != "DEPENDS ON RETENTIONS" or "INJURY" in str(g.notes)) else "flag"
+    ipl_share = r.get("pct_balls_IPL", float("nan"))
+    flag_cls = "flag warn" if (ipl_share < 1 or g.age_at_auction_calc >= 38 or "INJURY" in str(g.notes)) else "flag"
     return f"""
 <section class="profile">
   <div class="ph"><div class="rk">{int(r['rank'])}</div><div><h3>{E(g.full_name)}</h3>
   <div class="meta">{E(g.country)} · {E(g.bat)} / {E(g.bowl)} · age at auction {g.age_at_auction_calc} (calculated from verified DOB) · IPL 2026: {E(g.ipl_2026_team)} · data role: {E(r.role)}</div></div>
   <div class="score">{r.score:.0f}<span>/100</span></div></div>
-  <div class="{flag_cls}"><b>IPL 2027:</b> {E(g.ipl_2027_status)} · {E(g.notes)} <span class="src">[{E(g.sources)}]</span></div>
+  <div class="{flag_cls}"><b>IPL 2027:</b> {E(g.ipl_2027_status)} · IPL share of this player's balls in the data: <b>{ipl_share:.0f}%</b> · {E(g.notes)} <span class="src">[{E(g.sources)}]</span></div>
   <div class="kpis"><div><b>{int(r[hb])}</b>HIGH-pressure balls</div><div><b>{int(r.pressure_innings)}</b>pressure {'innings' if side == 'batting' else 'spells'}</div>
   <div><b>{r.value_per100_high:+.1f}</b>value per 100 on HIGH</div><div><b>{r.p_top10:.0%}</b>P(top 10)</div>
   <div><b>{int(r.boot_rank_p05)}–{int(r.boot_rank_p95)}</b>90% rank interval</div><div><b>{int(r.rank_min_across_defs)}–{int(r.rank_max_across_defs)}</b>rank across definitions</div></div>
@@ -184,17 +185,23 @@ for the quality of the opponents each player actually faced. This also calibrate
 <li><b>"Clutch" is only partly real.</b> After removing sampling noise, about {cv.at['batting', 'reliability_of_raw_delta']:.0%} of a batter's raw pressure-vs-normal difference is signal,
 and only about {cv.at['bowling', 'reliability_of_raw_delta']:.0%} for bowlers. Pressure-only form does not predict later pressure form. Our score therefore blends performance delivered under pressure
 with consistency, match impact, the shrunk own-baseline delta and underlying ability.</li>
-<li><b>The top of each list is robust, but the middle is not.</b> Across 7 weightings and 4 alternative pressure definitions, the leaders hold.
-Ranks 6–15 are statistically close, and we say so player by player.</li>
+<li><b>The lists contain only players RR can actually sign.</b> All of the unrestricted performance top 10s (Section 7) were under contract at other franchises.
+We therefore rank only <b>RR-acquirable</b> players: not on any IPL 2026 squad, not Pakistani (no Pakistan player in the IPL since 2009), not Bangladeshi
+(availability not reliable after the BCCI-directed release of Mustafizur Rahman), and not retired or banned. That leaves {int(bat.rr_acquirable.sum())} eligible batters and
+{int(bowl.rr_acquirable.sum())} eligible bowlers.</li>
 <li><b>RR's clearest needs are a finisher and a death bowler who hold up under pressure.</b> RR's death-overs batting ranked 7th–10th of 10 on run rate, boundary %, context value and wickets lost in both 2025 and 2026,
 and in 2025 its death bowling conceded runs faster than any other team's. Opening batting is a strength (#1 in both seasons).</li></ul>
 <div class="grid2"><div><h2>Top 10 batters</h2>{table(pd.DataFrame({'#': bt['rank'], 'Player': bt.player, 'Score': bt.score.round(0).astype(int), 'P(top10)': bt.p_top10.map('{:.0%}'.format)}))}</div>
 <div><h2>Top 10 bowlers</h2>{table(pd.DataFrame({'#': bw['rank'], 'Player': bw.player, 'Score': bw.score.round(0).astype(int), 'P(top10)': bw.p_top10.map('{:.0%}'.format)}))}</div></div>
 <p class="small">Score = 0–100 reliability composite (percentile among eligible players). P(top10) = share of 100 match-level bootstrap resamples in which the player stays in the top 10.
-This measures uncertainty in the 2022–26 evidence and is not a forecast. Andre Russell (data rank #5) is excluded because he formally retired from the IPL on 30 Nov 2025.</p>
+This is the share of resamples in which the player stays top 10 within the acquirable pool, a measure of uncertainty in the 2022–26 evidence and not a forecast.
+The pool is small, so high values partly reflect limited competition.</p>
 <h2>What RR gains</h2><ul>
-<li><b>Primary targets for RR's top need (finishing):</b> {', '.join(D['rec'].query("side=='batting' and recommendation_tier=='Primary target'").player)}.</li>
-<li><b>Primary targets for RR's bowling needs:</b> {', '.join(D['rec'].query("side=='bowling' and recommendation_tier=='Primary target'").player)} (Kuldeep is now contracted to LSG). Availability depends on retentions due 17 Nov 2026; it is reported, never scored.</li></ul>""")
+<li><b>Sikandar Raza</b> is the standout: #1 acquirable bowler and #5 batter, 97th percentile in death-overs batting, so one overseas slot covers two RR needs.</li>
+<li><b>Death bowling:</b> Maheesh Theekshana (85th percentile at the death, the most IPL experience of the pool) and Adam Zampa (74th).
+<b>Middle overs:</b> Daryl Mitchell and Mark Chapman (92nd percentile) with the bat.</li>
+<li><b>Honest limits:</b> the acquirable pool is clearly weaker than the contracted elite, several players have little or no IPL record, and every one is overseas.
+Releases on 17 Nov 2026 will add names; the pipeline re-runs in one command.</li></ul>""")
     # ---------------- contents
     H.append("""<h1>Contents</h1><ol class="toc">
 <li>Competition context and research questions</li><li>Data, provenance and preparation</li><li>Defining pressure</li><li>Measuring performance fairly</li>
@@ -210,6 +217,8 @@ how ratings were built, how comparisons were made fair, the evidence for the top
 <ul><li><b>Two separate lists:</b> batting and bowling are evaluated by independent but symmetric pipelines.</li>
 <li><b>Eligibility (decision):</b> IPL and T20I players are both eligible, with competition and opposition strength adjusted. A player must have ≥120 HIGH-pressure balls faced and ≥10 pressure innings (batting),
 or ≥150 HIGH legal balls and ≥10 pressure spells (bowling). The player must also appear in the data in 2025–26 and must not have formally retired from the IPL.</li>
+<li><b>Acquirability (decision):</b> the submitted lists contain only players RR can sign at the IPL 2027 auction. That means no IPL 2026 squad member
+(including RR's own), no Pakistani players, no Bangladeshi players, and no retired or banned players. Ranks, P(top 10) and uncertainty are recomputed within that pool.</li>
 <li><b>Two layers:</b> layer 1 is the pressure-reliability ranking that answers the competition. Layer 2 is RR squad fit. It is kept separate and never reorders the lists.</li></ul>
 {img(FIG / 'report' / 'pipeline.png', 'Figure 1. Analytical pipeline. Purple: measurement and ranking (layer 1). Pink: verification and RR squad fit (layer 2).')}""")
     # ---------------- 2 data
@@ -287,7 +296,12 @@ anchored by underlying ability.</p>""")
 {img(FIG / 'rank_uncertainty_top20.png', 'Figure 7. Top 20 per side. Dot = final rank; thick bar = bootstrap 90% rank interval (100 match-level resamples of the full pipeline); thin bar = range across pressure definitions.')}""")
     # ---------------- 7/8 tops + profiles
     for n, side, title, data in ((7, "batting", "Top 10 batters", bat), (8, "bowling", "Top 10 bowlers", bowl)):
-        H.append(f"""<h1>{n}. {title}: rankings and scouting profiles</h1>{top_table(data, side)}
+        un = data.sort_values("overall_rank").head(10)
+        ctx = table(pd.DataFrame({"Overall #": un.overall_rank.astype(int), "Player": un.player, "Score": un.score.round(0).astype(int),
+                                  "Why not in the RR list": un.not_acquirable_reason.fillna("Acquirable: in the list")}), "dense")
+        H.append(f"""<h1>{n}. {title} RR can sign: rankings and scouting profiles</h1>{top_table(data, side)}
+<p class="small"># = rank within the RR-acquirable pool. The score is unchanged: a percentile among <i>all</i> eligible players, so it compares directly with the unrestricted ranking below.</p>
+<h2>Context: the unrestricted top 10 (not signable by RR today)</h2>{ctx}
 <p class="small">Value/100 HIGH = runs above context expectation per 100 HIGH-pressure balls (wicket-cost adjusted, before opponent adjustment). Raw SR/economy are descriptive.
 HIGH-pressure balls cluster late in innings, so a lower raw rate can still be above what the situation demanded.</p>
 {img(FIG / 'report' / f'components_{side}.png', f'Figure {n}a. Component percentiles for the top 10 {side}.', '78%')}
@@ -297,7 +311,8 @@ difference is meaningful (clear ≥ 80%, moderate 65–80%, slight 55–65%, oth
     # ---------------- 9 near misses
     nm = D["near"]
     H.append(f"""<h1>9. Players who narrowly missed</h1>
-<p>These players were considered seriously. Most beat our #10 in 30–50% of resamples. They remain credible alternatives, especially for the RR needs noted.</p>
+<p>The next acquirable players, with the component that separated them from #10. Bowling has only two (the acquirable bowling pool is 12 players).
+Where P(beats #10) is near 50%, the choice is statistically a coin-flip and is labelled as such in the profiles.</p>
 {table(nm.rename(columns={'side': 'Side', 'rank': 'Rank', 'player': 'Player', 'role': 'Role', 'score': 'Score', 'gap_to_rank10': 'Gap to #10', 'p_top10': 'P(top10)',
                          'p_beats_rank10_bootstrap': 'P(beats #10)', 'main_shortfall_vs_rank10': 'Main shortfall vs #10', 'rank_range_across_defs': 'Rank range (defs)'}), 'dense')}
 <p><b>Excluded despite statistical eligibility:</b> {', '.join(D['excl'].drop_duplicates('player').apply(lambda x: f"{x.player} ({x.reason})", axis=1))}.</p>""")
@@ -324,30 +339,30 @@ In 2026 Jadeja (SR 140.5), Jurel (150.0) and Dubey (146.3) were well below the l
         "side": "Side", "reliability_rank": "Rank", "player": "Player", "indian_or_overseas": "Ind/Ovs", "rr_need_addressed": "RR need", "squad_fit_score": "Fit",
         "top_alternative": "Top alternative", "p_beats_top_alternative": "P(beats alt.)", "uplift_runs_per_season_MODEL_ESTIMATE": "Uplift* (runs)", "recommendation_tier": "Tier"})
     rt["Fit"] = rt["Fit"].round(0).astype(int)
-    H.append(f"""<h1>11. How these 20 players could strengthen Rajasthan Royals</h1>
+    H.append(f"""<h1>11. How these players could strengthen Rajasthan Royals</h1>
 <p>Squad fit is a separate layer, scored as follows:</p>
 <ul><li>50%: RR's priority for the player's best-fit need.</li>
 <li>35%: the player's phase evidence.</li>
 <li>15%: roster slot (Indian 1.0, overseas 0.5). An overseas signing must displace an overseas regular in a maximum-4 XI. This is an assumption, so scores are also reported without it.</li></ul>
 <h2>Squad-building implications</h2><ul>
-<li><b>Batting:</b> RR's top order is strong (Jaiswal, Sooryavanshi). On phase evidence, seven of the ten batters best fit RR's top need, <b>death-overs finishing</b>:
-Shreyas, Tilak, Dhir, Miller, Tim David, Suryakumar and Phillips. They would take death balls from players who were below par in 2026. Klaasen, Patidar and Kishan best fit <b>middle-overs batting</b>.
-The Indian finishing options (Suryakumar, Tilak, Shreyas, Dhir) avoid the overseas-slot squeeze.</li>
-<li><b>Bowling:</b> on phase evidence, Bumrah, Kuldeep (now LSG), Narine, Rashid and Pathirana best fit <b>death-overs bowling</b>. Varun (99th percentile in the middle overs) and Raza fit
-<b>middle-overs control</b> alongside Jadeja. Bhuvneshwar, Axar and Ferguson fit <b>powerplay bowling</b>. Overseas bowlers (Narine, Rashid, Pathirana, Ferguson, Raza) would compete with Archer and Burger for slots.</li>
-<li><b>Indian/overseas balance:</b> 9 overseas players were listed in 2026, but Curran, Maphaka and Pretorius played 0–2 games. Overseas recruitment depends on who is released on 17 Nov.</li>
-<li><b>Realism:</b> most of these players are core retentions at their franchises. Treat the list as a ranked shortlist for each need. The near-misses in Section 9 provide depth if targets are retained.</li></ul>{img(FIG / 'report' / 'fit_vs_reliability.png', 'Figure 11. Reliability rank (layer 1) vs RR squad fit (layer 2). Primary targets sit right of the dotted line.')}
+<li><b>Sikandar Raza is the one primary target</b> (squad fit 82): 97th percentile in death-overs batting, plus RR's #1 acquirable bowler for the middle overs. One overseas slot covers two needs.</li>
+<li><b>Finishing batting (RR's top need):</b> after Raza, Ibrahim Zadran (58th percentile at the death) and Ryan Burl (53rd) are the realistic options. The pool is thin here.</li>
+<li><b>Middle-overs batting:</b> Mark Chapman (92nd percentile, squad fit 70) and Daryl Mitchell (66th, the most IPL experience among the batters).</li>
+<li><b>Death bowling:</b> Maheesh Theekshana (85th percentile, with 39% of balls bowled in the IPL, including RR in 2025) and Adam Zampa (74th).</li>
+<li><b>All acquirable players are overseas.</b> RR can hold at most 8, and the XI takes 4. Realistically one to three of these can be signed, so prioritise multi-need value (Raza) and the top need (death overs).</li>
+<li><b>Indian players cannot be assessed.</b> The data pack holds no Indian domestic cricket, so uncapped Indian auction entrants are outside this analysis.</li></ul>{img(FIG / 'report' / 'fit_vs_reliability.png', 'Figure 11. Reliability rank (layer 1) vs RR squad fit (layer 2). Primary targets sit right of the dotted line.')}
 {table(rt, 'dense')}
 <p class="small">*Hypothetical model estimate, not a forecast: the player's phase value minus that of RR's weakest 2026 regular in the phase, times that regular's 2026 balls. It ignores role interactions and opposition.</p>
 """)
     # ---------------- 12 risks
     H.append("""<h1>12. Risks, limitations and auction feasibility</h1><h2>Player-specific risks (verified)</h2><ul>
-<li><b>Matheesha Pathirana:</b> ruled out of IPL 2026 with a hamstring injury after one match (IPL announcement, 24 May 2026); calf injury at the Feb 2026 T20 World Cup. Fitness for 2027 is unverified.</li>
-<li><b>Kuldeep Yadav:</b> traded from DC to LSG (IPL announcement, 23 Jun 2026), so he is under contract unless released.</li>
-<li><b>Sikandar Raza:</b> no IPL contract since 2024, so a potential auction entrant (registration not verifiable until ~3 Dec). Age 40 at auction.</li>
-<li><b>Lockie Ferguson, Glenn Phillips:</b> few recent IPL appearances, so their ratings lean on T20Is.</li>
-<li><b>Suryakumar Yadav:</b> lost the India T20I captaincy in 2026, and a poor IPL 2026 is reported. His P(top 10) is only 28%.</li>
-<li><b>Age context</b> (not scored): Narine 38, Miller 37, Bhuvneshwar 36, Suryakumar 36 at auction.</li></ul>
+<li><b>Limited IPL evidence:</b> six of the ten batters (Campher, Chapman, Dockrell, Ibrahim Zadran, Tector, Burl) and Chase, Ngarava and Adair have no IPL balls in the data.
+Their ratings rest on T20Is against full-member and associate sides, opponent-adjusted.</li>
+<li><b>Age at auction</b> (not scored): Raza 40, Adil Rashid 38, Neesham 36.</li>
+<li><b>Recency:</b> Obed McCoy's last T20I was in September 2025.</li>
+<li><b>Close calls:</b> bowlers #9 and #10 (Alzarri Joseph, Mark Adair) are statistically indistinguishable from Ish Sodhi and Fazalhaq Farooqi.</li>
+<li><b>Registration:</b> a player must register for the auction. The final list is expected around 3 Dec 2026.</li>
+<li><b>Exclusion choices:</b> Bangladeshi players are excluded as unreliable to acquire. This is a judgement, since no formal rule was published (S12). Brook is excluded because his ban's coverage of 2027 is unclear (S14).</li></ul>
 <h2>Method limitations</h2><ul>
 <li>Pressure is unobserved; the definition is a reasoned choice, stress-tested in Section 6.</li>
 <li>The data covers 2022–26, IPL plus bilateral T20I plus A-team. There are no domestic leagues, no fielding attribution and no venue names.</li>
@@ -355,15 +370,16 @@ The Indian finishing options (Suryakumar, Tilak, Shreyas, Dhir) avoid the overse
 <li>Bootstrap intervals describe measurement uncertainty in past performance, not future probabilities. Uplift estimates are hypothetical.</li>
 <li>The 2026 win-probability calibration is weaker than 2025, but WP is used to measure stakes, not to predict results.</li></ul>
 <h2>Auction feasibility</h2><p>IPL 2027 rules as reported (SportsTak, citing a BCCI communique of 2 Nov 2026): mini-auction, no retention cap, no Right-to-Match, maximum 25 players and 8 overseas.
-The IPL 2027 purse is not verified, so <b>no financial claims are made</b>. Every recommendation is conditional on the 17 Nov retentions.</p>""")
+The IPL 2027 purse is not verified, so <b>no financial claims are made</b>. The lists are built from players not under contract today; players released on 17 Nov 2026 will join the pool, and the pipeline re-runs to include them.</p>""")
     # ---------------- 13 final
     H.append(f"""<h1>13. Final recommendations</h1>
 <div class="grid2"><div><h2>Submitted top 10 batters</h2>{table(pd.DataFrame({'#': bt['rank'], 'Player': bt.player, 'Score': bt.score.round(0).astype(int)}))}</div>
 <div><h2>Submitted top 10 bowlers</h2>{table(pd.DataFrame({'#': bw['rank'], 'Player': bw.player, 'Score': bw.score.round(0).astype(int)}))}</div></div>
-<div class="callout"><b>For Rajasthan Royals.</b> Prioritise a <b>finisher</b> (Suryakumar, Tilak, Shreyas, Tim David, Phillips) and a <b>death bowler</b> (Bumrah; then Narine, Rashid and Pathirana subject to overseas slots and fitness; Kuldeep only if LSG release him).
-Add middle-overs spin control (Varun) if available. Keep the opening pair; it is RR's clearest strength. Re-run the needs analysis as soon as the official 2027 retentions are published.</div>
+<div class="callout"><b>For Rajasthan Royals.</b> First target <b>Sikandar Raza</b> (finishing bat plus middle-overs bowling in one overseas slot). For death bowling, target
+<b>Maheesh Theekshana</b>, then Adam Zampa. For middle-overs batting depth, Mark Chapman or Daryl Mitchell. Keep the opening pair, RR's clearest strength.
+Re-run the selection when the 17 Nov releases are published, because better-rated players may enter the pool.</div>
 <h2>Conclusion</h2><p>Reliable pressure performance is real but noisy. The defensible way to find it is to define pressure from the match situation, judge players against context and opponents, shrink small samples,
-and report how sure we are. On that basis the lists above are the most reliable performers under pressure in the 2022–26 data. Their value to RR is clearest where RR has been weakest: finishing innings and defending at the death.</p>""")
+and report how sure we are. On that basis the lists above are the most reliable performers under pressure in the 2022–26 data <i>among players RR can actually sign</i>. Their value to RR is clearest where RR has been weakest: finishing innings and defending at the death.</p>""")
     # ---------------- references
     H.append(f"""<h1>14. References and source register</h1><div class="small">{md_table(RESEARCH_DIR / 'RESEARCH_SOURCE_REGISTER.md')}</div>
 <h2>Methodological references</h2><ul class="small">
