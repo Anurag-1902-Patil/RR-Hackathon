@@ -263,6 +263,10 @@ For every match with two innings and a "Won by N runs/wickets" result, the score
 
 ---
 
-## 9. Open questions for the user (do not block Phase 2)
-1. **Eligibility.** Should the final top-10 lists be restricted to players in the Unstop dropdown? We have no copy of that list. If it is IPL-only, T20I-only players would be ineligible.
-2. **Scope balance.** The official brief evaluates *pressure performance vs baseline*. The master instruction adds RR squad-fit. Plan: rank strictly on pressure reliability (layer 1) and present squad-fit (layer 2) as supplementary, without letting it reorder the competition top 10. Please confirm.
+## 9. Decisions log
+| Date | Decision | Decided by |
+|---|---|---|
+| 2026-11-14 | **Eligibility: IPL + T20I players are both eligible for the top 10, with adjustment.** T20I-only players may appear. All performance is adjusted for competition and opposition strength so that runs or wickets against weaker sides (associates, A-teams) are not treated as equal to IPL or full-member T20I output. | User |
+| 2026-11-14 | Ranking layer = pressure reliability only. RR squad-fit is a separate supplementary layer and does not reorder the competition top 10. | Proposed (default), open to user override |
+
+Open item: the Unstop dropdown player list has not been seen. Final picks will be checked against it before submission.
