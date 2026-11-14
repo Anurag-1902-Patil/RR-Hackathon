@@ -184,14 +184,18 @@ OUTCOMES = {"dot": (0, 0, 1), "one": (1, 0, 1), "two": (2, 0, 1), "three": (3, 0
             "four": (4, 0, 1), "six": (6, 0, 1), "wicket": (0, 1, 1), "wide": (1, 0, 0)}
 
 
-def outcome_probs(d: pd.DataFrame) -> pd.DataFrame:
-    """Empirical next-ball outcome probabilities by tier x phase (descriptive, all years)."""
+def outcome_probs(d: pd.DataFrame, window: int = 3) -> pd.DataFrame:
+    """Empirical next-ball outcome probabilities by tier x over, smoothed with a centred
+    `window`-over moving average (count-weighted) so leverage has no step at phase boundaries."""
     o = np.select(
         [d["is_wicket"], d["is_wide"] | d["is_noball"], d["total_runs"] >= 6, d["total_runs"].between(4, 5),
          d["total_runs"] == 3, d["total_runs"] == 2, d["total_runs"] == 1],
         ["wicket", "wide", "six", "four", "three", "two", "one"], default="dot")
-    return (pd.crosstab([d["tier"], d["phase"]], o, normalize="index")
-              .reindex(columns=list(OUTCOMES), fill_value=0.0))
+    counts = (pd.crosstab([d["tier"], d["overid"]], o)
+                .reindex(columns=list(OUTCOMES), fill_value=0).astype(float))
+    smooth = counts.groupby(level="tier", group_keys=False).apply(
+        lambda c: c.rolling(window, center=True, min_periods=1).sum())
+    return smooth.div(smooth.sum(axis=1), axis=0)
 
 
 def leverage_index(d: pd.DataFrame, wp_before: pd.Series, models: dict) -> pd.Series:
@@ -200,7 +204,7 @@ def leverage_index(d: pd.DataFrame, wp_before: pd.Series, models: dict) -> pd.Se
     base = d[["innings", "year", "tier", "score_before", "wkts_left", "balls_left", "max_balls",
               "target", "runs_needed", "par"]].copy()
     exp_swing = np.zeros(len(d))
-    key = pd.MultiIndex.from_arrays([d["tier"], d["phase"]])
+    key = pd.MultiIndex.from_arrays([d["tier"], d["overid"]])
     for name, (r, w, legal) in OUTCOMES.items():
         st = base.copy()
         st["score_before"] = st["score_before"] + r
