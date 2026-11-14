@@ -1,0 +1,585 @@
+<!doctype html><html><head><meta charset="utf-8"><title>SupeRR Intelligence: Final Report</title><style>
+@page { size: A4; margin: 16mm 14mm 18mm 14mm;
+  @bottom-left { content: "SupeRR Intelligence · independent analysis · not affiliated with Rajasthan Royals"; font: 7.5pt 'Segoe UI', sans-serif; color: #6B6F8A; }
+  @bottom-right { content: "Page " counter(page) " of " counter(pages); font: 7.5pt 'Segoe UI', sans-serif; color: #6B6F8A; } }
+@page :first { margin: 0; @bottom-left { content: none } @bottom-right { content: none } }
+* { box-sizing: border-box; }
+body { font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; font-size: 9.6pt; color: #1B1F3B; line-height: 1.45; margin: 0; }
+h1 { font-family: Georgia, serif; font-size: 21pt; color: #1B1F3B; margin: 0 0 6px 0; border-bottom: 3px solid #C2185B; padding-bottom: 4px; page-break-before: always; }
+h2 { font-size: 13pt; color: #4B2A99; margin: 16px 0 6px 0; } h3 { margin: 0; font-size: 13pt; } h4 { color: #4B2A99; margin: 10px 0 4px 0; font-size: 10.5pt; }
+p { margin: 4px 0 8px 0; } ul { margin: 2px 0 8px 18px; padding: 0; } li { margin-bottom: 3px; }
+figure { margin: 8px 0 12px 0; page-break-inside: avoid; } figure img { display: block; margin: 0 auto; }
+figcaption { font-size: 8pt; color: #6B6F8A; margin-top: 4px; }
+table { border-collapse: collapse; width: 100%; margin: 6px 0 10px 0; font-size: 8.4pt; page-break-inside: avoid; }
+th { background: #1B1F3B; color: white; text-align: left; padding: 4px 6px; font-weight: 600; }
+td { padding: 3px 6px; border-bottom: 1px solid #E6E6EF; } tr:nth-child(even) td { background: #F7F6FB; }
+table.dense { font-size: 8pt; } table.mini { font-size: 7.8pt; }
+.small { font-size: 8pt; color: #6B6F8A; }
+.cover { height: 297mm; background: linear-gradient(150deg, #1B1F3B 0%, #2B1A66 55%, #4B2A99 80%, #C2185B 130%); color: white; padding: 34mm 22mm; position: relative; }
+.cover .kicker { color: #C9A227; letter-spacing: .18em; font-size: 9pt; text-transform: uppercase; }
+.cover h1 { color: white; border: 0; font-size: 40pt; page-break-before: avoid; margin-top: 10mm; line-height: 1.05; }
+.cover .sub { font-size: 14pt; color: #E3DAFF; margin-top: 6mm; max-width: 150mm; }
+.cover .box { position: absolute; bottom: 30mm; left: 22mm; right: 22mm; border-top: 1px solid rgba(255,255,255,.35); padding-top: 6mm; font-size: 9pt; color: #E3DAFF; }
+.cover .gold { color: #C9A227; font-weight: 600; }
+.callout { background: #F4F0FB; border-left: 4px solid #4B2A99; padding: 8px 12px; border-radius: 4px; margin: 8px 0 12px 0; page-break-inside: avoid; }
+.callout.pink { border-left-color: #C2185B; background: #FCEFF4; }
+.flag { background: #F4F0FB; border-left: 4px solid #4B2A99; padding: 5px 9px; border-radius: 4px; font-size: 8.4pt; margin: 6px 0; }
+.flag.warn { background: #FFF4E5; border-left-color: #C9A227; } .src { color: #6B6F8A; }
+.profile { page-break-inside: avoid; border: 1px solid #E6E6EF; border-radius: 8px; padding: 10px 12px; margin: 10px 0 14px 0; }
+.ph { display: flex; align-items: center; gap: 12px; } .ph .rk { background: #C2185B; color: white; font-weight: 700; font-size: 16pt; width: 34px; height: 34px; border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+.ph .meta { font-size: 8pt; color: #6B6F8A; } .ph .score { margin-left: auto; font-size: 22pt; font-weight: 700; color: #4B2A99; } .ph .score span { font-size: 9pt; color: #6B6F8A; }
+.kpis { display: flex; gap: 6px; margin: 6px 0; } .kpis div { flex: 1; background: #F7F6FB; border-radius: 6px; padding: 4px 6px; font-size: 7.4pt; color: #6B6F8A; }
+.kpis b { display: block; font-size: 11.5pt; color: #1B1F3B; }
+.two { display: flex; gap: 12px; align-items: flex-start; } .two > div { flex: 1; }
+.grid2 { display: flex; gap: 14px; } .grid2 > div { flex: 1; }
+.toc li { margin: 2px 0; } .pb { page-break-before: always; }
+</style></head><body><div class="cover"><div class="kicker">SupeRR Selector Season 2 · IPL 2027 Auction Analytics</div>
+<h1>SupeRR Intelligence</h1><div class="sub">Who delivers when it matters? A pressure-based reliability and scouting study of IPL and T20I players, 2022–2026,
+with a squad-intelligence view of how the most reliable players could strengthen Rajasthan Royals.</div>
+<div class="box"><span class="gold">Methodology · Top 10 batters · Top 10 bowlers · RR squad fit</span><br/>
+Data: official RR data pack (200,961 deliveries, 867 matches, 2022-01-22 to 2026-11-01) plus verified public sources.<br/>
+Information cut-off: 14 November 2026 (before the IPL 2027 retention deadline of 17 November 2026).<br/>
+Independent analytical submission. Not affiliated with or endorsed by Rajasthan Royals. No official logos are used.</div></div><h1>Executive summary</h1>
+<div class="callout"><b>The brief:</b> identify the batters and bowlers who perform most reliably in high-pressure situations <i>compared with their usual level</i>,
+explain the method, and show how each player could strengthen Rajasthan Royals for the IPL 2027 auction.</div>
+<h2>Our answer in five points</h2><ul>
+<li><b>Pressure is defined before the ball is bowled</b> as 50% <i>stakes</i> (how much the next ball can swing the win probability) and 50% <i>difficulty</i>
+(scoreboard gap to era par, wickets lost, recent collapse, dot-ball squeeze, innings progress, closeness). The top 20% of balls, 40,193 in total, are HIGH pressure.</li>
+<li><b>Players are judged against context, not raw averages.</b> Every ball is compared with what an average player would produce in the same situation. A ridge (Gaussian-prior) model then adjusts
+for the quality of the opponents each player actually faced. This also calibrates IPL, full-member and associate cricket.</li>
+<li><b>"Clutch" is only partly real.</b> After removing sampling noise, about 21% of a batter's raw pressure-vs-normal difference is signal,
+and only about 4% for bowlers. Pressure-only form does not predict later pressure form. Our score therefore blends performance delivered under pressure
+with consistency, match impact, the shrunk own-baseline delta and underlying ability.</li>
+<li><b>The top of each list is robust, but the middle is not.</b> Across 7 weightings and 4 alternative pressure definitions, the leaders hold.
+Ranks 6–15 are statistically close, and we say so player by player.</li>
+<li><b>RR's clearest needs are a finisher and a death bowler who hold up under pressure.</b> RR's death-overs batting ranked 7th–10th of 10 on every measure in 2025–26,
+and its 2025 death bowling was the league's worst. Opening batting is a strength (#1 in both seasons).</li></ul>
+<div class="grid2"><div><h2>Top 10 batters</h2><table class=""><thead><tr><th>#</th><th>Player</th><th>Score</th><th>P(top10)</th></tr></thead><tbody><tr><td>1</td><td>Shreyas Iyer</td><td>97</td><td>76%</td></tr><tr><td>2</td><td>Heinrich Klaasen</td><td>95</td><td>92%</td></tr><tr><td>3</td><td>Rajat Patidar</td><td>93</td><td>54%</td></tr><tr><td>4</td><td>Namboori Tilak Varma</td><td>91</td><td>63%</td></tr><tr><td>5</td><td>Ishan Kishan</td><td>85</td><td>50%</td></tr><tr><td>6</td><td>Naman Dhir</td><td>83</td><td>44%</td></tr><tr><td>7</td><td>David Miller</td><td>82</td><td>37%</td></tr><tr><td>8</td><td>Tim David</td><td>82</td><td>45%</td></tr><tr><td>9</td><td>Suryakumar Yadav</td><td>81</td><td>28%</td></tr><tr><td>10</td><td>Glenn Phillips</td><td>81</td><td>34%</td></tr></tbody></table></div>
+<div><h2>Top 10 bowlers</h2><table class=""><thead><tr><th>#</th><th>Player</th><th>Score</th><th>P(top10)</th></tr></thead><tbody><tr><td>1</td><td>Varun Chakravarthy</td><td>96</td><td>84%</td></tr><tr><td>2</td><td>Sunil Narine</td><td>93</td><td>68%</td></tr><tr><td>3</td><td>Jasprit Bumrah</td><td>91</td><td>60%</td></tr><tr><td>4</td><td>Lockie Ferguson</td><td>90</td><td>68%</td></tr><tr><td>5</td><td>Rashid Khan</td><td>90</td><td>58%</td></tr><tr><td>6</td><td>Axar Patel</td><td>89</td><td>53%</td></tr><tr><td>7</td><td>Matheesha Pathirana</td><td>89</td><td>68%</td></tr><tr><td>8</td><td>Bhuvneshwar Kumar</td><td>87</td><td>49%</td></tr><tr><td>9</td><td>Kuldeep Yadav</td><td>87</td><td>47%</td></tr><tr><td>10</td><td>Sikandar Raza</td><td>85</td><td>50%</td></tr></tbody></table></div></div>
+<p class="small">Score = 0–100 reliability composite (percentile among eligible players). P(top10) = share of 100 match-level bootstrap resamples in which the player stays in the top 10.
+This measures uncertainty in the 2022–26 evidence and is not a forecast. Andre Russell (data rank #5) is excluded because he formally retired from the IPL on 30 Nov 2025.</p>
+<h2>What RR gains</h2><ul>
+<li><b>Primary targets for RR's top need (finishing):</b> Shreyas Iyer, Namboori Tilak Varma, Tim David, Suryakumar Yadav, Glenn Phillips.</li>
+<li><b>Primary targets for RR's bowling needs:</b> Varun Chakravarthy, Jasprit Bumrah, Kuldeep Yadav (Kuldeep is now contracted to LSG). Availability depends on retentions due 17 Nov 2026; it is reported, never scored.</li></ul><h1>Contents</h1><ol class="toc">
+<li>Competition context and research questions</li><li>Data, provenance and preparation</li><li>Defining pressure</li><li>Measuring performance fairly</li>
+<li>Models and validation</li><li>The reliability score and its robustness</li><li>Top 10 batters: rankings and scouting profiles</li>
+<li>Top 10 bowlers: rankings and scouting profiles</li><li>Players who narrowly missed</li><li>Rajasthan Royals: squad intelligence and needs</li>
+<li>How these 20 players could strengthen Rajasthan Royals</li><li>Risks, limitations and auction feasibility</li><li>Final recommendations</li>
+<li>References and source register</li><li>Technical appendix: formulas and reproducibility</li></ol><h1>1. Competition context and research questions</h1>
+<p>SupeRR Selector Season 2 asks for two ordered top-10 lists (batters and bowlers) of the players who perform best under pressure, plus a report explaining how pressure was defined,
+how ratings were built, how comparisons were made fair, the evidence for the top 10, and the reliability and limitations of the method.</p>
+<div class="callout"><b>Central question.</b> Which batters and bowlers consistently deliver the most reliable performances in high-pressure T20 situations, relative to what the situation demands and to their own usual level?</div>
+<ul><li><b>Two separate lists:</b> batting and bowling are evaluated by independent but symmetric pipelines.</li>
+<li><b>Eligibility (decision):</b> IPL and T20I players are both eligible, with competition and opposition strength adjusted. A player must have ≥120 HIGH-pressure balls faced and ≥10 pressure innings (batting),
+or ≥150 HIGH legal balls and ≥10 pressure spells (bowling). The player must also appear in the data in 2025–26 and must not have formally retired from the IPL.</li>
+<li><b>Two layers:</b> layer 1 is the pressure-reliability ranking that answers the competition. Layer 2 is RR squad fit. It is kept separate and never reorders the lists.</li></ul>
+<figure><img src="figures/report/pipeline.png" style="width:100%"/><figcaption>Figure 1. Analytical pipeline. Purple: measurement and ranking (layer 1). Pink: verification and RR squad fit (layer 2).</figcaption></figure><h1>2. Data, provenance and preparation</h1>
+<p><b>Primary source:</b> the official RR data pack. It contains six CSVs (ball-by-ball, matches, competitions, teams, playing XIs, competition-team-player mapping) covering IPL 2022–2026,
+bilateral and multi-nation T20Is, and two A-team tournaments. The original archive is preserved unmodified (SHA-256 recorded), and all work runs on a copy.</p>
+<table class=""><thead><tr><th>Item</th><th>Value</th></tr></thead><tbody><tr><td>Deliveries (regulation innings)</td><td>200,961</td></tr><tr><td>Matches with ball-by-ball data</td><td>867</td></tr><tr><td>IPL matches</td><td>367</td></tr><tr><td>T20I matches</td><td>470</td></tr><tr><td>Distinct batters / bowlers</td><td>888 / 647</td></tr><tr><td>Date range</td><td>2022-01-22 to 2026-11-01</td></tr></tbody></table>
+<h2>Audit findings that shaped the method</h2><ul>
+<li><b>Complete and consistent:</b> all 16 matches without ball data were abandoned. Computed score margins match the official result in 806 of 816 checkable matches; the 10 exceptions are mostly D/L games.</li>
+<li><b>A hidden no-ball code:</b> extras type <code>other</code> behaves as a no-ball. Treating it as legal would create 244 seven-ball overs. Legal balls exclude wides and both no-ball codes.</li>
+<li><b>Attribution:</b> bowler runs exclude byes and leg-byes. Bowler wickets exclude run-outs, retirements and obstruction. "Retire Out" is not a batter failure.</li>
+<li><b>Identity:</b> joins use player IDs only, because some names belong to different people (e.g. Rashid Khan of Afghanistan vs Nepal).</li>
+<li><b>Mixed competition strength:</b> associate and A-team matches sit alongside IPL. This is handled by opponent adjustment, not by tier dummies (Section 4).</li>
+<li><b>Not available:</b> fielder attribution (so no fielding metrics), venue names, and 39% of bowling speeds.</li></ul>
+<p>Every pre-ball state variable uses only information available before the delivery: score, wickets in hand, legal balls left (respecting D/L-reduced innings), target, runs needed, and current and required rates.</p><h1>3. Defining pressure</h1>
+<p>Pressure cannot be observed directly, so it must be defined. We built two independent candidates, found that each had a blind spot, and combined them.</p>
+<h2>Stakes: the Leverage Index</h2><p>A win-probability model gives each team's chance of winning before every ball. The Leverage Index is the expected absolute swing in that probability from the next ball,
+normalised so the average ball = 1. A last-over chase needing 4 off 2 balls reaches about 30. A one-sided chase sits near 0.</p>
+<h2>Difficulty: a transparent rule-based index</h2>
+<table class=""><thead><tr><th>Component</th><th>Weight</th></tr></thead><tbody><tr><td>Scoreboard gap (chase: required rate vs era par; batting first: projected shortfall vs par)</td><td>25%</td></tr><tr><td>Wickets lost relative to balls used</td><td>20%</td></tr><tr><td>Closeness of contest (from win probability)</td><td>20%</td></tr><tr><td>Wickets in previous 12 balls (collapse)</td><td>15%</td></tr><tr><td>Dot-ball share of previous 12 legal balls (squeeze)</td><td>10%</td></tr><tr><td>Innings progress (share bowled)²</td><td>10%</td></tr></tbody></table>
+<div class="callout pink"><b>Why combine them?</b> Leverage alone put 92% of high-pressure balls in chases and none in first-innings death overs. The first-innings model is necessarily uncertain,
+so its swings are small. Difficulty alone ignores stakes. Final: <b>pressure = 50% leverage percentile + 50% difficulty percentile</b>. HIGH = top 20%, LOW = bottom 50%.</div>
+<p>A review (v1 → v2) fixed three flaws. Batting-first middle-overs collapses had been ignored (2.6% → 23.9% HIGH). There was a hard cliff between overs 15 and 16 (the largest jump fell from 39 to 5 percentage points).
+Leverage also stepped at phase boundaries.</p>
+<figure><img src="figures/pressure_by_over_heatmap.png" style="width:100%"/><figcaption>Figure 2. Share of deliveries classed HIGH pressure, by over and innings (v2). Pressure builds smoothly through both innings.</figcaption></figure>
+<figure><img src="figures/pressure_outcomes_by_definition.png" style="width:92%"/><figcaption>Figure 3. Batting outcomes by pressure band under three definitions. Dismissal rates rise under HIGH pressure. Raw strike rate is not the yardstick because HIGH balls cluster late in innings.</figcaption></figure>
+<figure><img src="figures/pressure_sensitivity.png" style="width:80%"/><figcaption>Figure 4. Which choices move the definition? Rule-based weights barely matter; the leverage/difficulty blend is the key judgement call, so rankings are re-run under 30/70 and 70/30.</figcaption></figure><h1>4. Measuring performance fairly</h1>
+<h2>Step 1: expectation for every ball</h2><p>LightGBM models estimate the runs and dismissal probability an <i>average</i> player would produce in each situation: over, wickets, chase state,
+bowling type and batter hand, plus the scoring environment. Separate models cover runs conceded and wickets for the bowler. <b>Player identity is never a feature.</b></p>
+<div class="callout"><b>Fairness across competitions.</b> We deliberately did <i>not</i> add a competition-tier variable. That would make "average for an associate match" equal to "average for an IPL match"
+and inflate players who mostly face weak opposition. Competition strength is calibrated in Step 3 through players and opponents who cross competitions. Only the scoring environment is modelled directly:
+a rolling par built from earlier matches only, for IPL and for internationals. IPL par rose from 171 (2022) to 191 (2026).</div>
+<h2>Step 2: value per ball</h2><p><b>Batting value</b> = (runs − expected runs) − C × (dismissed − expected dismissal probability). <b>Bowling value</b> is the mirror image.
+C is the cost of a wicket in that situation: the expected remaining runs with w wickets in hand minus with w − 1, for the same overs left. A wicket early in the innings costs more than one in the last over.</p>
+<h2>Step 3: opponent-adjusted ratings</h2><p>A ridge regression fits the per-ball value on batter and bowler effects together. Each player is rated net of the opponents actually faced.
+The ridge penalty acts as a Gaussian prior: small samples shrink towards average. Penalties were tuned <i>out of time</i>, fitting on 2022–24 and scoring 2025–26. Two ratings feed the score:
+<b>pressure performance</b> (a ridge on HIGH-pressure balls only) and <b>usual ability</b> (all balls).</p>
+<h2>Step 4: own-baseline comparison</h2><p>Each player's HIGH-minus-ordinary difference is shrunk by empirical Bayes. The true spread of this difference is estimated by subtracting sampling noise from the observed spread.
+Each player keeps the share of his raw difference that his sample size justifies.</p><h1>5. Models and validation</h1>
+<p>All models use a chronological split with matches kept whole: <b>train 2022–24, validate 2025, test 2026</b>. Models are chosen on validation only. Sophisticated models had to beat simple baselines.</p>
+<figure><img src="figures/report/wp_validation.png" style="width:90%"/><figcaption>Figure 5. Win-probability models on the held-out 2026 season. Logistic regression beat LightGBM on both validation and test, because trees could not extrapolate to 2026 scoring levels.</figcaption></figure>
+<table class=""><thead><tr><th>Model (2026 test)</th><th>Brier</th><th>Log loss</th><th>AUC</th></tr></thead><tbody><tr><td>Innings 1 · logistic</td><td>0.233</td><td>0.664</td><td>0.694</td></tr><tr><td>Innings 1 · base rate</td><td>0.253</td><td>0.698</td><td>0.500</td></tr><tr><td>Innings 2 · logistic</td><td>0.116</td><td>0.361</td><td>0.927</td></tr><tr><td>Innings 2 · base rate</td><td>0.254</td><td>0.702</td><td>0.500</td></tr></tbody></table>
+<p><b>Expectation models</b> beat an innings × over baseline on RMSE in both 2025 and 2026 (runs per ball, 2026: 1.808
+vs 1.826). Ball-level dismissals are close to random, so the wicket models only match the baseline.
+A bug caught during validation: without the environment par, 2026 expected runs per ball came out at 1.35 against 1.51 actual. That would have flattered every 2026 batter.</p>
+<h2>Is pressure performance a repeatable trait?</h2>
+<figure><img src="figures/report/clutch_variance.png" style="width:66%"/><figcaption>Figure 6. Most of the apparent spread in pressure-vs-normal performance is noise, especially for bowlers.</figcaption></figure>
+<p>Player-level persistence from 2022–24 to 2025–26 tells the same story. Ordinary-situation value carries over (batting r ≈ 0.37–0.49). Pressure-only value does not (r ≈ 0), and adding pressure terms to the rating model
+never improved out-of-time prediction. <b>Implication:</b> a raw "clutch" table would mostly rank noise. Our score uses opponent-adjusted pressure performance, consistency and impact (all shrunk by sample size),
+anchored by underlying ability.</p><h1>6. The reliability score and its robustness</h1>
+<table class=""><thead><tr><th>Component</th><th>Weight</th><th>Definition</th></tr></thead><tbody><tr><td>Pressure performance</td><td>35%</td><td>Opponent-adjusted value on HIGH balls (ridge, shrunk)</td></tr><tr><td>Consistency</td><td>20%</td><td>Share of pressure innings/spells with value ≥ 0 (Beta-Binomial shrunk)</td></tr><tr><td>Match impact</td><td>20%</td><td>Win Probability Added per HIGH ball (empirical Bayes)</td></tr><tr><td>Vs own baseline</td><td>15%</td><td>HIGH minus ordinary value (empirical Bayes)</td></tr><tr><td>Usual ability</td><td>10%</td><td>All-ball opponent-adjusted rating (best predictor)</td></tr></tbody></table>
+<p>The score is the weighted mean of component <i>percentiles</i> among eligible players (0–100), reported as whole numbers to avoid false precision. The prompt's starting weights were treated as a hypothesis.
+"Sample confidence" was dropped because shrinkage already uses sample size. "Role adaptability" moved to the squad-fit layer. Pressure performance and impact correlate (ρ ≈ 0.8), so a no-impact variant is also tested.</p>
+<div class="grid2"><div><h2>Weight sensitivity (top-10 kept)</h2><table class="dense"><thead><tr><th>Side</th><th>Variant</th><th>Top-10 kept</th><th>Spearman</th></tr></thead><tbody><tr><td>batting</td><td>final</td><td>10</td><td>1.0</td></tr><tr><td>batting</td><td>equal</td><td>9</td><td>0.996</td></tr><tr><td>batting</td><td>prompt_hypothesis_mapped</td><td>10</td><td>0.999</td></tr><tr><td>batting</td><td>pressure_only</td><td>10</td><td>0.971</td></tr><tr><td>batting</td><td>no_impact</td><td>9</td><td>0.987</td></tr><tr><td>batting</td><td>predictive_tilt</td><td>8</td><td>0.968</td></tr><tr><td>batting</td><td>baseline_delta_heavy</td><td>8</td><td>0.972</td></tr><tr><td>bowling</td><td>final</td><td>10</td><td>1.0</td></tr><tr><td>bowling</td><td>equal</td><td>9</td><td>0.997</td></tr><tr><td>bowling</td><td>prompt_hypothesis_mapped</td><td>10</td><td>0.999</td></tr><tr><td>bowling</td><td>pressure_only</td><td>9</td><td>0.968</td></tr><tr><td>bowling</td><td>no_impact</td><td>9</td><td>0.987</td></tr><tr><td>bowling</td><td>predictive_tilt</td><td>9</td><td>0.969</td></tr><tr><td>bowling</td><td>baseline_delta_heavy</td><td>9</td><td>0.974</td></tr></tbody></table></div>
+<div><h2>Pressure-definition sensitivity</h2><table class="dense"><thead><tr><th>Side</th><th>Variant</th><th>Top-10 kept</th><th>Spearman</th></tr></thead><tbody><tr><td>batting</td><td>blend_30lev_70rpi</td><td>8</td><td>0.746</td></tr><tr><td>bowling</td><td>blend_30lev_70rpi</td><td>6</td><td>0.864</td></tr><tr><td>batting</td><td>blend_70lev_30rpi</td><td>7</td><td>0.877</td></tr><tr><td>bowling</td><td>blend_70lev_30rpi</td><td>7</td><td>0.905</td></tr><tr><td>batting</td><td>high_top15pct</td><td>7</td><td>0.757</td></tr><tr><td>bowling</td><td>high_top15pct</td><td>8</td><td>0.893</td></tr><tr><td>batting</td><td>high_top30pct</td><td>5</td><td>0.848</td></tr><tr><td>bowling</td><td>high_top30pct</td><td>6</td><td>0.868</td></tr></tbody></table>
+<p class="small">Each variant re-runs the whole pipeline on the same eligible pool. The definition matters more than the weights.</p></div></div>
+<figure><img src="figures/rank_uncertainty_top20.png" style="width:100%"/><figcaption>Figure 7. Top 20 per side. Dot = final rank; thick bar = bootstrap 90% rank interval (100 match-level resamples of the full pipeline); thin bar = range across pressure definitions.</figcaption></figure><h1>7. Top 10 batters: rankings and scouting profiles</h1><table class="dense"><thead><tr><th>#</th><th>Player</th><th>Role (data)</th><th>Score</th><th>HIGH balls</th><th>Pressure inns</th><th>Value/100 HIGH</th><th>SR HIGH / LOW</th><th>P(top 10)</th><th>90% rank</th></tr></thead><tbody><tr><td>1</td><td>Shreyas Iyer</td><td>Middle order (4-5)</td><td>97</td><td>439</td><td>23</td><td>+33.7</td><td>159 / 156</td><td>76%</td><td>1–20</td></tr><tr><td>2</td><td>Heinrich Klaasen</td><td>Middle order (4-5)</td><td>95</td><td>310</td><td>17</td><td>+39.0</td><td>171 / 168</td><td>92%</td><td>1–11</td></tr><tr><td>3</td><td>Rajat Patidar</td><td>Middle order (4-5)</td><td>93</td><td>208</td><td>13</td><td>+42.3</td><td>163 / 181</td><td>54%</td><td>1–36</td></tr><tr><td>4</td><td>Namboori Tilak Varma</td><td>Middle order (4-5)</td><td>91</td><td>698</td><td>39</td><td>+19.5</td><td>152 / 146</td><td>63%</td><td>1–41</td></tr><tr><td>5</td><td>Ishan Kishan</td><td>Opener</td><td>85</td><td>370</td><td>19</td><td>+24.5</td><td>152 / 146</td><td>50%</td><td>1–62</td></tr><tr><td>6</td><td>Naman Dhir</td><td>Finisher (6-7)</td><td>83</td><td>227</td><td>12</td><td>+33.2</td><td>169 / 177</td><td>44%</td><td>2–50</td></tr><tr><td>7</td><td>David Miller</td><td>Middle order (4-5)</td><td>82</td><td>404</td><td>26</td><td>+18.6</td><td>160 / 144</td><td>37%</td><td>2–48</td></tr><tr><td>8</td><td>Tim David</td><td>Finisher (6-7)</td><td>82</td><td>469</td><td>34</td><td>+22.5</td><td>168 / 192</td><td>45%</td><td>2–38</td></tr><tr><td>9</td><td>Suryakumar Yadav</td><td>Middle order (4-5)</td><td>81</td><td>562</td><td>36</td><td>+19.0</td><td>159 / 171</td><td>28%</td><td>3–49</td></tr><tr><td>10</td><td>Glenn Phillips</td><td>Middle order (4-5)</td><td>81</td><td>298</td><td>14</td><td>+28.5</td><td>134 / 175</td><td>34%</td><td>3–41</td></tr></tbody></table>
+<p class="small">Value/100 HIGH = runs above context expectation per 100 HIGH-pressure balls (wicket-cost adjusted, before opponent adjustment). Raw SR/economy are descriptive.
+HIGH-pressure balls cluster late in innings, so a lower raw rate can still be above what the situation demanded.</p>
+<figure><img src="figures/report/components_batting.png" style="width:78%"/><figcaption>Figure 7a. Component percentiles for the top 10 batting.</figcaption></figure>
+<p>Each profile shows the verified identity and IPL 2027 status, the evidence, a comparison with the two strongest <i>unselected</i> players in the same data role, a bootstrap verdict on whether the
+difference is meaningful (clear ≥ 80%, moderate 65–80%, slight 55–65%, otherwise statistically indistinguishable), and how the player fits RR.</p>
+<section class="profile">
+  <div class="ph"><div class="rk">1</div><div><h3>Shreyas Santosh Iyer</h3>
+  <div class="meta">India · RHB / Right-arm leg break · age at auction 32 (calculated from verified DOB) · IPL 2026: Punjab Kings (captain) · data role: Middle order (4-5)</div></div>
+  <div class="score">97<span>/100</span></div></div>
+  <div class="flag"><b>IPL 2027:</b> Pending retention (17 Nov) · India T20I captain from Jun 2026; spleen injury on 2025 Australia tour, returned Jan 2026 <span class="src">[W-SI]</span></div>
+  <div class="kpis"><div><b>439</b>HIGH-pressure balls</div><div><b>23</b>pressure innings</div>
+  <div><b>+33.7</b>value per 100 on HIGH</div><div><b>76%</b>P(top 10)</div>
+  <div><b>1–20</b>90% rank interval</div><div><b>1–4</b>rank across definitions</div></div>
+  <div class="two">
+    <div><table class="mini"><thead><tr><th>Component (percentile)</th><th>Shreyas Iyer</th><th>Cameron Green</th><th>Daryl Mitchell</th></tr></thead><tbody><tr><td>Pressure perf.</td><td>100</td><td>87</td><td>81</td></tr><tr><td>Consistency</td><td>95</td><td>62</td><td>57</td></tr><tr><td>Impact</td><td>100</td><td>84</td><td>95</td></tr><tr><td>Vs baseline</td><td>100</td><td>83</td><td>74</td></tr><tr><td>Usual</td><td>77</td><td>68</td><td>71</td></tr><tr><td>Score (rank)</td><td>97 (1)</td><td>79 (12)</td><td>77 (14)</td></tr><tr><td>HIGH-pressure balls</td><td>439</td><td>314</td><td>262</td></tr></tbody></table><p class="small">Descriptive: SR 159.0 under HIGH pressure vs 156.2 in LOW-pressure situations. Strongest: pressure perf., impact. Weakest: usual.</p></div>
+    <div><img src="figures/report/players/batting_01.png" style="width:100%"/></div>
+  </div>
+  <h4>Why this player?</h4><ul><li>vs <b>Cameron Green</b> (rank 12, Middle order (4-5)): ahead most on consistency (+32 pts). Ranks higher in <b>89%</b> of bootstrap resamples, so the advantage is <i>clear</i>.</li><li>vs <b>Daryl Mitchell</b> (rank 14, Middle order (4-5)): ahead most on consistency (+38 pts). Ranks higher in <b>83%</b> of bootstrap resamples, so the advantage is <i>clear</i>.</li></ul>
+  <h4>How this player could strengthen Rajasthan Royals (layer 2, separate from the ranking)</h4>
+  <p>Best fits RR's <b>Death-overs / finishing batting</b> need (priority 81/100). Context value in the death phase is
+  +15.7 per 100 balls over 304 balls (percentile 84 among eligible players). Indian player;
+  squad-fit <b>85</b> (82 without the overseas-slot cost). <i>Hypothetical model estimate, not a forecast:</i>
+  +15.3 runs per season if given the 2026 death balls of Ravindra Jadeja (74 balls).</p>
+</section>
+<section class="profile">
+  <div class="ph"><div class="rk">2</div><div><h3>Heinrich Klaasen</h3>
+  <div class="meta">South Africa · RHB / Right-arm off spin · age at auction 35 (calculated from verified DOB) · IPL 2026: Sunrisers Hyderabad · data role: Middle order (4-5)</div></div>
+  <div class="score">95<span>/100</span></div></div>
+  <div class="flag"><b>IPL 2027:</b> Pending retention (17 Nov) · Retired from international cricket (2 Jun 2025); IPL/leagues only <span class="src">[W-HK]</span></div>
+  <div class="kpis"><div><b>310</b>HIGH-pressure balls</div><div><b>17</b>pressure innings</div>
+  <div><b>+39.0</b>value per 100 on HIGH</div><div><b>92%</b>P(top 10)</div>
+  <div><b>1–11</b>90% rank interval</div><div><b>1–4</b>rank across definitions</div></div>
+  <div class="two">
+    <div><table class="mini"><thead><tr><th>Component (percentile)</th><th>Heinrich Klaasen</th><th>Cameron Green</th><th>Daryl Mitchell</th></tr></thead><tbody><tr><td>Pressure perf.</td><td>97</td><td>87</td><td>81</td></tr><tr><td>Consistency</td><td>100</td><td>62</td><td>57</td></tr><tr><td>Impact</td><td>88</td><td>84</td><td>95</td></tr><tr><td>Vs baseline</td><td>90</td><td>83</td><td>74</td></tr><tr><td>Usual</td><td>96</td><td>68</td><td>71</td></tr><tr><td>Score (rank)</td><td>95 (2)</td><td>79 (12)</td><td>77 (14)</td></tr><tr><td>HIGH-pressure balls</td><td>310</td><td>314</td><td>262</td></tr></tbody></table><p class="small">Descriptive: SR 171.0 under HIGH pressure vs 168.1 in LOW-pressure situations. Strongest: consistency, pressure perf.. Weakest: impact.</p></div>
+    <div><img src="figures/report/players/batting_02.png" style="width:100%"/></div>
+  </div>
+  <h4>Why this player?</h4><ul><li>vs <b>Cameron Green</b> (rank 12, Middle order (4-5)): ahead most on consistency (+38 pts). Ranks higher in <b>89%</b> of bootstrap resamples, so the advantage is <i>clear</i>.</li><li>vs <b>Daryl Mitchell</b> (rank 14, Middle order (4-5)): ahead most on consistency (+43 pts), behind on impact (-6 pts). Ranks higher in <b>88%</b> of bootstrap resamples, so the advantage is <i>clear</i>.</li></ul>
+  <h4>How this player could strengthen Rajasthan Royals (layer 2, separate from the ranking)</h4>
+  <p>Best fits RR's <b>Middle-overs batting</b> need (priority 60/100). Context value in the middle phase is
+  +12.4 per 100 balls over 921 balls (percentile 97 among eligible players). Overseas player;
+  squad-fit <b>72</b> (75 without the overseas-slot cost). <i>Hypothetical model estimate, not a forecast:</i>
+  +30.5 runs per season if given the 2026 middle balls of Dhruv Jurel (203 balls).</p>
+</section>
+<section class="profile">
+  <div class="ph"><div class="rk">3</div><div><h3>Rajat Manohar Patidar</h3>
+  <div class="meta">India · RHB / Right-arm off break · age at auction 33 (calculated from verified DOB) · IPL 2026: Royal Challengers Bengaluru (captain) · data role: Middle order (4-5)</div></div>
+  <div class="score">93<span>/100</span></div></div>
+  <div class="flag"><b>IPL 2027:</b> Pending retention (17 Nov) · Missed IPL 2023 (Achilles); page reports RCB titles 2025 and 2026 (single source) <span class="src">[W-RP]</span></div>
+  <div class="kpis"><div><b>208</b>HIGH-pressure balls</div><div><b>13</b>pressure innings</div>
+  <div><b>+42.3</b>value per 100 on HIGH</div><div><b>54%</b>P(top 10)</div>
+  <div><b>1–36</b>90% rank interval</div><div><b>3–16</b>rank across definitions</div></div>
+  <div class="two">
+    <div><table class="mini"><thead><tr><th>Component (percentile)</th><th>Rajat Patidar</th><th>Cameron Green</th><th>Daryl Mitchell</th></tr></thead><tbody><tr><td>Pressure perf.</td><td>94</td><td>87</td><td>81</td></tr><tr><td>Consistency</td><td>99</td><td>62</td><td>57</td></tr><tr><td>Impact</td><td>91</td><td>84</td><td>95</td></tr><tr><td>Vs baseline</td><td>88</td><td>83</td><td>74</td></tr><tr><td>Usual</td><td>94</td><td>68</td><td>71</td></tr><tr><td>Score (rank)</td><td>93 (3)</td><td>79 (12)</td><td>77 (14)</td></tr><tr><td>HIGH-pressure balls</td><td>208</td><td>314</td><td>262</td></tr></tbody></table><p class="small">Descriptive: SR 163.0 under HIGH pressure vs 180.8 in LOW-pressure situations. Strongest: consistency, pressure perf.. Weakest: vs baseline.</p></div>
+    <div><img src="figures/report/players/batting_03.png" style="width:100%"/></div>
+  </div>
+  <h4>Why this player?</h4><ul><li>vs <b>Cameron Green</b> (rank 12, Middle order (4-5)): ahead most on consistency (+36 pts). Ranks higher in <b>73%</b> of bootstrap resamples, so the advantage is <i>moderate</i>.</li><li>vs <b>Daryl Mitchell</b> (rank 14, Middle order (4-5)): ahead most on consistency (+42 pts), behind on impact (-4 pts). Ranks higher in <b>67%</b> of bootstrap resamples, so the advantage is <i>moderate</i>.</li></ul>
+  <h4>How this player could strengthen Rajasthan Royals (layer 2, separate from the ranking)</h4>
+  <p>Best fits RR's <b>Middle-overs batting</b> need (priority 60/100). Context value in the middle phase is
+  +8.3 per 100 balls over 603 balls (percentile 91 among eligible players). Indian player;
+  squad-fit <b>77</b> (73 without the overseas-slot cost). <i>Hypothetical model estimate, not a forecast:</i>
+  +22.1 runs per season if given the 2026 middle balls of Dhruv Jurel (203 balls).</p>
+</section>
+<section class="profile">
+  <div class="ph"><div class="rk">4</div><div><h3>Namboori Thakur Tilak Varma</h3>
+  <div class="meta">India · LHB / Right-arm off break · age at auction 24 (calculated from verified DOB) · IPL 2026: Mumbai Indians · data role: Middle order (4-5)</div></div>
+  <div class="score">91<span>/100</span></div></div>
+  <div class="flag"><b>IPL 2027:</b> Pending retention (17 Nov) · Returned from surgery before Feb 2026 T20 WC call-up <span class="src">[W-TV]</span></div>
+  <div class="kpis"><div><b>698</b>HIGH-pressure balls</div><div><b>39</b>pressure innings</div>
+  <div><b>+19.5</b>value per 100 on HIGH</div><div><b>63%</b>P(top 10)</div>
+  <div><b>1–41</b>90% rank interval</div><div><b>1–15</b>rank across definitions</div></div>
+  <div class="two">
+    <div><table class="mini"><thead><tr><th>Component (percentile)</th><th>Namboori Tilak Varma</th><th>Cameron Green</th><th>Daryl Mitchell</th></tr></thead><tbody><tr><td>Pressure perf.</td><td>99</td><td>87</td><td>81</td></tr><tr><td>Consistency</td><td>86</td><td>62</td><td>57</td></tr><tr><td>Impact</td><td>96</td><td>84</td><td>95</td></tr><tr><td>Vs baseline</td><td>75</td><td>83</td><td>74</td></tr><tr><td>Usual</td><td>90</td><td>68</td><td>71</td></tr><tr><td>Score (rank)</td><td>91 (4)</td><td>79 (12)</td><td>77 (14)</td></tr><tr><td>HIGH-pressure balls</td><td>698</td><td>314</td><td>262</td></tr></tbody></table><p class="small">Descriptive: SR 151.7 under HIGH pressure vs 146.0 in LOW-pressure situations. Strongest: pressure perf., impact. Weakest: vs baseline.</p></div>
+    <div><img src="figures/report/players/batting_04.png" style="width:100%"/></div>
+  </div>
+  <h4>Why this player?</h4><ul><li>vs <b>Cameron Green</b> (rank 12, Middle order (4-5)): ahead most on consistency (+23 pts), behind on vs baseline (-8 pts). Ranks higher in <b>69%</b> of bootstrap resamples, so the advantage is <i>moderate</i>.</li><li>vs <b>Daryl Mitchell</b> (rank 14, Middle order (4-5)): ahead most on consistency (+29 pts). Ranks higher in <b>71%</b> of bootstrap resamples, so the advantage is <i>moderate</i>.</li></ul>
+  <h4>How this player could strengthen Rajasthan Royals (layer 2, separate from the ranking)</h4>
+  <p>Best fits RR's <b>Death-overs / finishing batting</b> need (priority 81/100). Context value in the death phase is
+  +21.5 per 100 balls over 554 balls (percentile 95 among eligible players). Indian player;
+  squad-fit <b>89</b> (87 without the overseas-slot cost). <i>Hypothetical model estimate, not a forecast:</i>
+  +19.7 runs per season if given the 2026 death balls of Ravindra Jadeja (74 balls).</p>
+</section>
+<section class="profile">
+  <div class="ph"><div class="rk">5</div><div><h3>Ishan Pranav Kumar Pandey Kishan</h3>
+  <div class="meta">India · LHB / Leg break / off break · age at auction 28 (calculated from verified DOB) · IPL 2026: Sunrisers Hyderabad (interim captain early 2026) · data role: Opener</div></div>
+  <div class="score">85<span>/100</span></div></div>
+  <div class="flag"><b>IPL 2027:</b> Pending retention (17 Nov) · Wicket-keeper batter <span class="src">[W-IK]</span></div>
+  <div class="kpis"><div><b>370</b>HIGH-pressure balls</div><div><b>19</b>pressure innings</div>
+  <div><b>+24.5</b>value per 100 on HIGH</div><div><b>50%</b>P(top 10)</div>
+  <div><b>1–62</b>90% rank interval</div><div><b>3–20</b>rank across definitions</div></div>
+  <div class="two">
+    <div><table class="mini"><thead><tr><th>Component (percentile)</th><th>Ishan Kishan</th><th>Abhishek Sharma</th><th>Shubman Gill</th></tr></thead><tbody><tr><td>Pressure perf.</td><td>92</td><td>86</td><td>78</td></tr><tr><td>Consistency</td><td>94</td><td>82</td><td>71</td></tr><tr><td>Impact</td><td>79</td><td>74</td><td>64</td></tr><tr><td>Vs baseline</td><td>94</td><td>56</td><td>79</td></tr><tr><td>Usual</td><td>44</td><td>100</td><td>82</td></tr><tr><td>Score (rank)</td><td>85 (5)</td><td>80 (11)</td><td>74 (16)</td></tr><tr><td>HIGH-pressure balls</td><td>370</td><td>143</td><td>202</td></tr></tbody></table><p class="small">Descriptive: SR 151.9 under HIGH pressure vs 145.8 in LOW-pressure situations. Strongest: consistency, vs baseline. Weakest: usual.</p></div>
+    <div><img src="figures/report/players/batting_05.png" style="width:100%"/></div>
+  </div>
+  <h4>Why this player?</h4><ul><li>vs <b>Abhishek Sharma</b> (rank 11, Opener): ahead most on vs baseline (+38 pts), behind on usual (-56 pts). Ranks higher in <b>53%</b> of bootstrap resamples, so the advantage is <i>statistically indistinguishable</i>.</li><li>vs <b>Shubman Gill</b> (rank 16, Opener): ahead most on consistency (+23 pts), behind on usual (-38 pts). Ranks higher in <b>65%</b> of bootstrap resamples, so the advantage is <i>moderate</i>.</li></ul>
+  <h4>How this player could strengthen Rajasthan Royals (layer 2, separate from the ranking)</h4>
+  <p>Best fits RR's <b>Middle-overs batting</b> need (priority 60/100). Context value in the middle phase is
+  +3.4 per 100 balls over 1011 balls (percentile 67 among eligible players). Indian player;
+  squad-fit <b>68</b> (63 without the overseas-slot cost). <i>Hypothetical model estimate, not a forecast:</i>
+  +12.1 runs per season if given the 2026 middle balls of Dhruv Jurel (203 balls).</p>
+</section>
+<section class="profile">
+  <div class="ph"><div class="rk">6</div><div><h3>Naman Dhir</h3>
+  <div class="meta">India · RHB / Right-arm off break · age at auction 26 (calculated from verified DOB) · IPL 2026: Mumbai Indians · data role: Finisher (6-7)</div></div>
+  <div class="score">83<span>/100</span></div></div>
+  <div class="flag"><b>IPL 2027:</b> Pending retention (17 Nov) · India debut 2026; 14 games / 318 runs IPL 2026 (page) <span class="src">[W-ND]</span></div>
+  <div class="kpis"><div><b>227</b>HIGH-pressure balls</div><div><b>12</b>pressure innings</div>
+  <div><b>+33.2</b>value per 100 on HIGH</div><div><b>44%</b>P(top 10)</div>
+  <div><b>2–50</b>90% rank interval</div><div><b>2–10</b>rank across definitions</div></div>
+  <div class="two">
+    <div><table class="mini"><thead><tr><th>Component (percentile)</th><th>Naman Dhir</th><th>Rinku Singh</th><th>Jimmy Neesham</th></tr></thead><tbody><tr><td>Pressure perf.</td><td>90</td><td>82</td><td>55</td></tr><tr><td>Consistency</td><td>68</td><td>87</td><td>47</td></tr><tr><td>Impact</td><td>97</td><td>82</td><td>75</td></tr><tr><td>Vs baseline</td><td>91</td><td>53</td><td>77</td></tr><tr><td>Usual</td><td>47</td><td>78</td><td>32</td></tr><tr><td>Score (rank)</td><td>83 (6)</td><td>78 (13)</td><td>58 (33)</td></tr><tr><td>HIGH-pressure balls</td><td>227</td><td>377</td><td>165</td></tr></tbody></table><p class="small">Descriptive: SR 169.2 under HIGH pressure vs 177.2 in LOW-pressure situations. Strongest: impact, vs baseline. Weakest: usual.</p></div>
+    <div><img src="figures/report/players/batting_06.png" style="width:100%"/></div>
+  </div>
+  <h4>Why this player?</h4><ul><li>vs <b>Rinku Singh</b> (rank 13, Finisher (6-7)): ahead most on vs baseline (+38 pts), behind on usual (-31 pts). Ranks higher in <b>61%</b> of bootstrap resamples, so the advantage is <i>slight</i>.</li><li>vs <b>Jimmy Neesham</b> (rank 33, Finisher (6-7)): ahead most on pressure perf. (+35 pts). Ranks higher in <b>80%</b> of bootstrap resamples, so the advantage is <i>clear</i>.</li></ul>
+  <h4>How this player could strengthen Rajasthan Royals (layer 2, separate from the ranking)</h4>
+  <p>Best fits RR's <b>Death-overs / finishing batting</b> need (priority 81/100). Context value in the death phase is
+  +8.3 per 100 balls over 180 balls (percentile 61 among eligible players). Indian player;
+  squad-fit <b>77</b> (73 without the overseas-slot cost). <i>Hypothetical model estimate, not a forecast:</i>
+  +9.9 runs per season if given the 2026 death balls of Ravindra Jadeja (74 balls).</p>
+</section>
+<section class="profile">
+  <div class="ph"><div class="rk">7</div><div><h3>David Andrew Miller</h3>
+  <div class="meta">South Africa · LHB / Right-arm off break · age at auction 37 (calculated from verified DOB) · IPL 2026: Delhi Capitals · data role: Middle order (4-5)</div></div>
+  <div class="score">82<span>/100</span></div></div>
+  <div class="flag"><b>IPL 2027:</b> Pending retention (17 Nov) · Overseas; age 37 at auction <span class="src">[W-DM]</span></div>
+  <div class="kpis"><div><b>404</b>HIGH-pressure balls</div><div><b>26</b>pressure innings</div>
+  <div><b>+18.6</b>value per 100 on HIGH</div><div><b>37%</b>P(top 10)</div>
+  <div><b>2–48</b>90% rank interval</div><div><b>5–15</b>rank across definitions</div></div>
+  <div class="two">
+    <div><table class="mini"><thead><tr><th>Component (percentile)</th><th>David Miller</th><th>Cameron Green</th><th>Daryl Mitchell</th></tr></thead><tbody><tr><td>Pressure perf.</td><td>88</td><td>87</td><td>81</td></tr><tr><td>Consistency</td><td>73</td><td>62</td><td>57</td></tr><tr><td>Impact</td><td>83</td><td>84</td><td>95</td></tr><tr><td>Vs baseline</td><td>87</td><td>83</td><td>74</td></tr><tr><td>Usual</td><td>69</td><td>68</td><td>71</td></tr><tr><td>Score (rank)</td><td>82 (7)</td><td>79 (12)</td><td>77 (14)</td></tr><tr><td>HIGH-pressure balls</td><td>404</td><td>314</td><td>262</td></tr></tbody></table><p class="small">Descriptive: SR 160.4 under HIGH pressure vs 144.0 in LOW-pressure situations. Strongest: pressure perf., vs baseline. Weakest: usual.</p></div>
+    <div><img src="figures/report/players/batting_07.png" style="width:100%"/></div>
+  </div>
+  <h4>Why this player?</h4><ul><li>vs <b>Cameron Green</b> (rank 12, Middle order (4-5)): ahead most on consistency (+10 pts), behind on impact (-1 pts). Ranks higher in <b>60%</b> of bootstrap resamples, so the advantage is <i>slight</i>.</li><li>vs <b>Daryl Mitchell</b> (rank 14, Middle order (4-5)): ahead most on consistency (+16 pts), behind on impact (-12 pts). Ranks higher in <b>52%</b> of bootstrap resamples, so the advantage is <i>statistically indistinguishable</i>.</li></ul>
+  <h4>How this player could strengthen Rajasthan Royals (layer 2, separate from the ranking)</h4>
+  <p>Best fits RR's <b>Death-overs / finishing batting</b> need (priority 81/100). Context value in the death phase is
+  +7.9 per 100 balls over 496 balls (percentile 60 among eligible players). Overseas player;
+  squad-fit <b>69</b> (72 without the overseas-slot cost). <i>Hypothetical model estimate, not a forecast:</i>
+  +9.6 runs per season if given the 2026 death balls of Ravindra Jadeja (74 balls).</p>
+</section>
+<section class="profile">
+  <div class="ph"><div class="rk">8</div><div><h3>Timothy Hays David</h3>
+  <div class="meta">Australia · RHB / Right-arm off break · age at auction 30 (calculated from verified DOB) · IPL 2026: Royal Challengers Bengaluru · data role: Finisher (6-7)</div></div>
+  <div class="score">82<span>/100</span></div></div>
+  <div class="flag"><b>IPL 2027:</b> Pending retention (17 Nov) · Overseas <span class="src">[W-TD]</span></div>
+  <div class="kpis"><div><b>469</b>HIGH-pressure balls</div><div><b>34</b>pressure innings</div>
+  <div><b>+22.5</b>value per 100 on HIGH</div><div><b>45%</b>P(top 10)</div>
+  <div><b>2–38</b>90% rank interval</div><div><b>7–13</b>rank across definitions</div></div>
+  <div class="two">
+    <div><table class="mini"><thead><tr><th>Component (percentile)</th><th>Tim David</th><th>Rinku Singh</th><th>Jimmy Neesham</th></tr></thead><tbody><tr><td>Pressure perf.</td><td>96</td><td>82</td><td>55</td></tr><tr><td>Consistency</td><td>92</td><td>87</td><td>47</td></tr><tr><td>Impact</td><td>92</td><td>82</td><td>75</td></tr><tr><td>Vs baseline</td><td>10</td><td>53</td><td>77</td></tr><tr><td>Usual</td><td>97</td><td>78</td><td>32</td></tr><tr><td>Score (rank)</td><td>82 (8)</td><td>78 (13)</td><td>58 (33)</td></tr><tr><td>HIGH-pressure balls</td><td>469</td><td>377</td><td>165</td></tr></tbody></table><p class="small">Descriptive: SR 168.0 under HIGH pressure vs 192.3 in LOW-pressure situations. Strongest: usual, pressure perf.. Weakest: vs baseline.</p></div>
+    <div><img src="figures/report/players/batting_08.png" style="width:100%"/></div>
+  </div>
+  <h4>Why this player?</h4><ul><li>vs <b>Rinku Singh</b> (rank 13, Finisher (6-7)): ahead most on usual (+19 pts), behind on vs baseline (-43 pts). Ranks higher in <b>64%</b> of bootstrap resamples, so the advantage is <i>slight</i>.</li><li>vs <b>Jimmy Neesham</b> (rank 33, Finisher (6-7)): ahead most on usual (+65 pts), behind on vs baseline (-66 pts). Ranks higher in <b>84%</b> of bootstrap resamples, so the advantage is <i>clear</i>.</li></ul>
+  <h4>How this player could strengthen Rajasthan Royals (layer 2, separate from the ranking)</h4>
+  <p>Best fits RR's <b>Death-overs / finishing batting</b> need (priority 81/100). Context value in the death phase is
+  +19.6 per 100 balls over 573 balls (percentile 90 among eligible players). Overseas player;
+  squad-fit <b>80</b> (85 without the overseas-slot cost). <i>Hypothetical model estimate, not a forecast:</i>
+  +18.3 runs per season if given the 2026 death balls of Ravindra Jadeja (74 balls).</p>
+</section>
+<section class="profile">
+  <div class="ph"><div class="rk">9</div><div><h3>Suryakumar Ashok Yadav</h3>
+  <div class="meta">India · RHB / Right-arm off break · age at auction 36 (calculated from verified DOB) · IPL 2026: Mumbai Indians · data role: Middle order (4-5)</div></div>
+  <div class="score">81<span>/100</span></div></div>
+  <div class="flag"><b>IPL 2027:</b> Pending retention (17 Nov) · Removed as India T20I captain and dropped from T20I squads in 2026; page calls IPL 2026 &#x27;terrible&#x27; <span class="src">[W-SKY]</span></div>
+  <div class="kpis"><div><b>562</b>HIGH-pressure balls</div><div><b>36</b>pressure innings</div>
+  <div><b>+19.0</b>value per 100 on HIGH</div><div><b>28%</b>P(top 10)</div>
+  <div><b>3–49</b>90% rank interval</div><div><b>6–44</b>rank across definitions</div></div>
+  <div class="two">
+    <div><table class="mini"><thead><tr><th>Component (percentile)</th><th>Suryakumar Yadav</th><th>Cameron Green</th><th>Daryl Mitchell</th></tr></thead><tbody><tr><td>Pressure perf.</td><td>95</td><td>87</td><td>81</td></tr><tr><td>Consistency</td><td>96</td><td>62</td><td>57</td></tr><tr><td>Impact</td><td>86</td><td>84</td><td>95</td></tr><tr><td>Vs baseline</td><td>13</td><td>83</td><td>74</td></tr><tr><td>Usual</td><td>99</td><td>68</td><td>71</td></tr><tr><td>Score (rank)</td><td>81 (9)</td><td>79 (12)</td><td>77 (14)</td></tr><tr><td>HIGH-pressure balls</td><td>562</td><td>314</td><td>262</td></tr></tbody></table><p class="small">Descriptive: SR 158.5 under HIGH pressure vs 171.4 in LOW-pressure situations. Strongest: usual, consistency. Weakest: vs baseline.</p></div>
+    <div><img src="figures/report/players/batting_09.png" style="width:100%"/></div>
+  </div>
+  <h4>Why this player?</h4><ul><li>vs <b>Cameron Green</b> (rank 12, Middle order (4-5)): ahead most on consistency (+34 pts), behind on vs baseline (-70 pts). Ranks higher in <b>59%</b> of bootstrap resamples, so the advantage is <i>slight</i>.</li><li>vs <b>Daryl Mitchell</b> (rank 14, Middle order (4-5)): ahead most on consistency (+39 pts), behind on vs baseline (-61 pts). Ranks higher in <b>45%</b> of bootstrap resamples, so the advantage is <i>statistically indistinguishable</i>.</li></ul>
+  <h4>How this player could strengthen Rajasthan Royals (layer 2, separate from the ranking)</h4>
+  <p>Best fits RR's <b>Death-overs / finishing batting</b> need (priority 81/100). Context value in the death phase is
+  +22.6 per 100 balls over 361 balls (percentile 98 among eligible players). Indian player;
+  squad-fit <b>90</b> (88 without the overseas-slot cost). <i>Hypothetical model estimate, not a forecast:</i>
+  +20.4 runs per season if given the 2026 death balls of Ravindra Jadeja (74 balls).</p>
+</section>
+<section class="profile">
+  <div class="ph"><div class="rk">10</div><div><h3>Glenn Dominic Phillips</h3>
+  <div class="meta">New Zealand · RHB / Right-arm off break · age at auction 30 (calculated from verified DOB) · IPL 2026: Gujarat Titans · data role: Middle order (4-5)</div></div>
+  <div class="score">81<span>/100</span></div></div>
+  <div class="flag"><b>IPL 2027:</b> Pending retention (17 Nov) · Overseas; missed IPL 2025 (injury) but retained by GT for 2026 (S11); only 5 IPL games each in 2023 and 2026 in data, so rating leans on T20Is <span class="src">[W-GP; S11; D]</span></div>
+  <div class="kpis"><div><b>298</b>HIGH-pressure balls</div><div><b>14</b>pressure innings</div>
+  <div><b>+28.5</b>value per 100 on HIGH</div><div><b>34%</b>P(top 10)</div>
+  <div><b>3–41</b>90% rank interval</div><div><b>7–22</b>rank across definitions</div></div>
+  <div class="two">
+    <div><table class="mini"><thead><tr><th>Component (percentile)</th><th>Glenn Phillips</th><th>Cameron Green</th><th>Daryl Mitchell</th></tr></thead><tbody><tr><td>Pressure perf.</td><td>91</td><td>87</td><td>81</td></tr><tr><td>Consistency</td><td>47</td><td>62</td><td>57</td></tr><tr><td>Impact</td><td>90</td><td>84</td><td>95</td></tr><tr><td>Vs baseline</td><td>84</td><td>83</td><td>74</td></tr><tr><td>Usual</td><td>88</td><td>68</td><td>71</td></tr><tr><td>Score (rank)</td><td>81 (10)</td><td>79 (12)</td><td>77 (14)</td></tr><tr><td>HIGH-pressure balls</td><td>298</td><td>314</td><td>262</td></tr></tbody></table><p class="small">Descriptive: SR 133.6 under HIGH pressure vs 174.7 in LOW-pressure situations. Strongest: pressure perf., impact. Weakest: consistency.</p></div>
+    <div><img src="figures/report/players/batting_10.png" style="width:100%"/></div>
+  </div>
+  <h4>Why this player?</h4><ul><li>vs <b>Cameron Green</b> (rank 12, Middle order (4-5)): ahead most on usual (+21 pts), behind on consistency (-16 pts). Ranks higher in <b>63%</b> of bootstrap resamples, so the advantage is <i>slight</i>.</li><li>vs <b>Daryl Mitchell</b> (rank 14, Middle order (4-5)): ahead most on usual (+17 pts), behind on consistency (-10 pts). Ranks higher in <b>49%</b> of bootstrap resamples, so the advantage is <i>statistically indistinguishable</i>.</li></ul>
+  <h4>How this player could strengthen Rajasthan Royals (layer 2, separate from the ranking)</h4>
+  <p>Best fits RR's <b>Death-overs / finishing batting</b> need (priority 81/100). Context value in the death phase is
+  +16.9 per 100 balls over 242 balls (percentile 85 among eligible players). Overseas player;
+  squad-fit <b>78</b> (83 without the overseas-slot cost). <i>Hypothetical model estimate, not a forecast:</i>
+  +16.2 runs per season if given the 2026 death balls of Ravindra Jadeja (74 balls).</p>
+</section><h1>8. Top 10 bowlers: rankings and scouting profiles</h1><table class="dense"><thead><tr><th>#</th><th>Player</th><th>Role (data)</th><th>Score</th><th>HIGH balls</th><th>Pressure spells</th><th>Value/100 HIGH</th><th>Econ HIGH / LOW</th><th>P(top 10)</th><th>90% rank</th></tr></thead><tbody><tr><td>1</td><td>Varun Chakravarthy</td><td>Middle-overs</td><td>96</td><td>400</td><td>33</td><td>+35.1</td><td>7.30 / 8.48</td><td>84%</td><td>1–17</td></tr><tr><td>2</td><td>Sunil Narine</td><td>Middle-overs</td><td>93</td><td>276</td><td>22</td><td>+35.3</td><td>6.20 / 7.26</td><td>68%</td><td>1–25</td></tr><tr><td>3</td><td>Jasprit Bumrah</td><td>Multi-phase</td><td>91</td><td>374</td><td>30</td><td>+36.0</td><td>7.16 / 7.63</td><td>60%</td><td>1–33</td></tr><tr><td>4</td><td>Lockie Ferguson</td><td>Multi-phase</td><td>90</td><td>229</td><td>20</td><td>+35.0</td><td>7.81 / 9.94</td><td>68%</td><td>1–26</td></tr><tr><td>5</td><td>Rashid Khan</td><td>Middle-overs</td><td>90</td><td>573</td><td>48</td><td>+21.6</td><td>7.45 / 7.72</td><td>58%</td><td>1–41</td></tr><tr><td>6</td><td>Axar Patel</td><td>Middle-overs</td><td>89</td><td>581</td><td>52</td><td>+16.7</td><td>7.18 / 7.92</td><td>53%</td><td>1–30</td></tr><tr><td>7</td><td>Matheesha Pathirana</td><td>Death specialist</td><td>89</td><td>278</td><td>23</td><td>+37.1</td><td>8.55 / 8.24</td><td>68%</td><td>1–23</td></tr><tr><td>8</td><td>Bhuvneshwar Kumar</td><td>Powerplay specialist</td><td>87</td><td>429</td><td>39</td><td>+37.7</td><td>9.37 / 7.86</td><td>49%</td><td>1–38</td></tr><tr><td>9</td><td>Kuldeep Yadav</td><td>Middle-overs</td><td>87</td><td>501</td><td>41</td><td>+22.7</td><td>7.71 / 8.80</td><td>47%</td><td>3–35</td></tr><tr><td>10</td><td>Sikandar Raza</td><td>Middle-overs</td><td>85</td><td>215</td><td>16</td><td>+34.6</td><td>6.28 / 7.10</td><td>50%</td><td>2–28</td></tr></tbody></table>
+<p class="small">Value/100 HIGH = runs above context expectation per 100 HIGH-pressure balls (wicket-cost adjusted, before opponent adjustment). Raw SR/economy are descriptive.
+HIGH-pressure balls cluster late in innings, so a lower raw rate can still be above what the situation demanded.</p>
+<figure><img src="figures/report/components_bowling.png" style="width:78%"/><figcaption>Figure 8a. Component percentiles for the top 10 bowling.</figcaption></figure>
+<p>Each profile shows the verified identity and IPL 2027 status, the evidence, a comparison with the two strongest <i>unselected</i> players in the same data role, a bootstrap verdict on whether the
+difference is meaningful (clear ≥ 80%, moderate 65–80%, slight 55–65%, otherwise statistically indistinguishable), and how the player fits RR.</p>
+<section class="profile">
+  <div class="ph"><div class="rk">1</div><div><h3>Varun Chakaravarthy Vinod</h3>
+  <div class="meta">India · RHB / Right-arm leg break googly · age at auction 35 (calculated from verified DOB) · IPL 2026: Kolkata Knight Riders · data role: Middle-overs</div></div>
+  <div class="score">96<span>/100</span></div></div>
+  <div class="flag"><b>IPL 2027:</b> Pending retention (17 Nov) · Missed early IPL 2026 games (fitness reports, news only) <span class="src">[W-VC]</span></div>
+  <div class="kpis"><div><b>400</b>HIGH-pressure balls</div><div><b>33</b>pressure spells</div>
+  <div><b>+35.1</b>value per 100 on HIGH</div><div><b>84%</b>P(top 10)</div>
+  <div><b>1–17</b>90% rank interval</div><div><b>1–4</b>rank across definitions</div></div>
+  <div class="two">
+    <div><table class="mini"><thead><tr><th>Component (percentile)</th><th>Varun Chakravarthy</th><th>Krunal Pandya</th><th>Adam Zampa</th></tr></thead><tbody><tr><td>Pressure perf.</td><td>99</td><td>84</td><td>79</td></tr><tr><td>Consistency</td><td>99</td><td>82</td><td>72</td></tr><tr><td>Impact</td><td>97</td><td>95</td><td>91</td></tr><tr><td>Vs baseline</td><td>84</td><td>77</td><td>97</td></tr><tr><td>Usual</td><td>100</td><td>80</td><td>23</td></tr><tr><td>Score (rank)</td><td>96 (1)</td><td>84 (12)</td><td>77 (16)</td></tr><tr><td>HIGH-pressure balls</td><td>400</td><td>264</td><td>323</td></tr></tbody></table><p class="small">Descriptive: economy 7.30 under HIGH pressure vs 8.48 in LOW; 30 HIGH-pressure wickets. Strongest: usual, pressure perf.. Weakest: vs baseline.</p></div>
+    <div><img src="figures/report/players/bowling_01.png" style="width:100%"/></div>
+  </div>
+  <h4>Why this player?</h4><ul><li>vs <b>Krunal Pandya</b> (rank 12, Middle-overs): ahead most on usual (+20 pts). Ranks higher in <b>78%</b> of bootstrap resamples, so the advantage is <i>moderate</i>.</li><li>vs <b>Adam Zampa</b> (rank 16, Middle-overs): ahead most on usual (+77 pts), behind on vs baseline (-13 pts). Ranks higher in <b>86%</b> of bootstrap resamples, so the advantage is <i>clear</i>.</li></ul>
+  <h4>How this player could strengthen Rajasthan Royals (layer 2, separate from the ranking)</h4>
+  <p>Best fits RR's <b>Middle-overs bowling</b> need (priority 56/100). Context value in the middle phase is
+  +15.9 per 100 balls over 1497 balls (percentile 99 among eligible players). Indian player;
+  squad-fit <b>78</b> (74 without the overseas-slot cost). <i>Hypothetical model estimate, not a forecast:</i>
+  +26.0 runs per season if given the 2026 middle balls of Yash Punja (156 balls).</p>
+</section>
+<section class="profile">
+  <div class="ph"><div class="rk">2</div><div><h3>Sunil Philip Narine</h3>
+  <div class="meta">West Indies · LHB / Right-arm off break · age at auction 38 (calculated from verified DOB) · IPL 2026: Kolkata Knight Riders · data role: Middle-overs</div></div>
+  <div class="score">93<span>/100</span></div></div>
+  <div class="flag"><b>IPL 2027:</b> Pending retention (17 Nov) · Retired from internationals (Nov 2023); age 38 at auction; first overseas bowler to 200 IPL wickets (3 May 2026) <span class="src">[W-SN]</span></div>
+  <div class="kpis"><div><b>276</b>HIGH-pressure balls</div><div><b>22</b>pressure spells</div>
+  <div><b>+35.3</b>value per 100 on HIGH</div><div><b>68%</b>P(top 10)</div>
+  <div><b>1–25</b>90% rank interval</div><div><b>1–3</b>rank across definitions</div></div>
+  <div class="two">
+    <div><table class="mini"><thead><tr><th>Component (percentile)</th><th>Sunil Narine</th><th>Krunal Pandya</th><th>Adam Zampa</th></tr></thead><tbody><tr><td>Pressure perf.</td><td>92</td><td>84</td><td>79</td></tr><tr><td>Consistency</td><td>88</td><td>82</td><td>72</td></tr><tr><td>Impact</td><td>100</td><td>95</td><td>91</td></tr><tr><td>Vs baseline</td><td>89</td><td>77</td><td>97</td></tr><tr><td>Usual</td><td>97</td><td>80</td><td>23</td></tr><tr><td>Score (rank)</td><td>93 (2)</td><td>84 (12)</td><td>77 (16)</td></tr><tr><td>HIGH-pressure balls</td><td>276</td><td>264</td><td>323</td></tr></tbody></table><p class="small">Descriptive: economy 6.20 under HIGH pressure vs 7.26 in LOW; 15 HIGH-pressure wickets. Strongest: impact, usual. Weakest: consistency.</p></div>
+    <div><img src="figures/report/players/bowling_02.png" style="width:100%"/></div>
+  </div>
+  <h4>Why this player?</h4><ul><li>vs <b>Krunal Pandya</b> (rank 12, Middle-overs): ahead most on usual (+17 pts). Ranks higher in <b>64%</b> of bootstrap resamples, so the advantage is <i>slight</i>.</li><li>vs <b>Adam Zampa</b> (rank 16, Middle-overs): ahead most on usual (+75 pts), behind on vs baseline (-8 pts). Ranks higher in <b>79%</b> of bootstrap resamples, so the advantage is <i>moderate</i>.</li></ul>
+  <h4>How this player could strengthen Rajasthan Royals (layer 2, separate from the ranking)</h4>
+  <p>Best fits RR's <b>Death-overs bowling</b> need (priority 61/100). Context value in the death phase is
+  +20.5 per 100 balls over 220 balls (percentile 97 among eligible players). Overseas player;
+  squad-fit <b>72</b> (76 without the overseas-slot cost). <i>Hypothetical model estimate, not a forecast:</i>
+  +10.3 runs per season if given the 2026 death balls of Tushar Deshpande (48 balls).</p>
+</section>
+<section class="profile">
+  <div class="ph"><div class="rk">3</div><div><h3>Jasprit Jasbir Singh Bumrah</h3>
+  <div class="meta">India · RHB / Right-arm fast · age at auction 33 (calculated from verified DOB) · IPL 2026: Mumbai Indians · data role: Multi-phase</div></div>
+  <div class="score">91<span>/100</span></div></div>
+  <div class="flag"><b>IPL 2027:</b> Pending retention (17 Nov) · Workload management references (Mar and Oct 2026); missed IPL 2023 (back) <span class="src">[W-JB]</span></div>
+  <div class="kpis"><div><b>374</b>HIGH-pressure balls</div><div><b>30</b>pressure spells</div>
+  <div><b>+36.0</b>value per 100 on HIGH</div><div><b>60%</b>P(top 10)</div>
+  <div><b>1–33</b>90% rank interval</div><div><b>1–12</b>rank across definitions</div></div>
+  <div class="two">
+    <div><table class="mini"><thead><tr><th>Component (percentile)</th><th>Jasprit Bumrah</th><th>Maheesh Theekshana</th><th>Joshua Little</th></tr></thead><tbody><tr><td>Pressure perf.</td><td>97</td><td>83</td><td>81</td></tr><tr><td>Consistency</td><td>76</td><td>63</td><td>25</td></tr><tr><td>Impact</td><td>96</td><td>84</td><td>64</td></tr><tr><td>Vs baseline</td><td>83</td><td>92</td><td>87</td></tr><tr><td>Usual</td><td>99</td><td>56</td><td>44</td></tr><tr><td>Score (rank)</td><td>91 (3)</td><td>78 (14)</td><td>64 (23)</td></tr><tr><td>HIGH-pressure balls</td><td>374</td><td>293</td><td>202</td></tr></tbody></table><p class="small">Descriptive: economy 7.16 under HIGH pressure vs 7.63 in LOW; 25 HIGH-pressure wickets. Strongest: usual, pressure perf.. Weakest: consistency.</p></div>
+    <div><img src="figures/report/players/bowling_03.png" style="width:100%"/></div>
+  </div>
+  <h4>Why this player?</h4><ul><li>vs <b>Maheesh Theekshana</b> (rank 14, Multi-phase): ahead most on usual (+43 pts), behind on vs baseline (-9 pts). Ranks higher in <b>70%</b> of bootstrap resamples, so the advantage is <i>moderate</i>.</li><li>vs <b>Joshua Little</b> (rank 23, Multi-phase): ahead most on usual (+55 pts), behind on vs baseline (-4 pts). Ranks higher in <b>81%</b> of bootstrap resamples, so the advantage is <i>clear</i>.</li></ul>
+  <h4>How this player could strengthen Rajasthan Royals (layer 2, separate from the ranking)</h4>
+  <p>Best fits RR's <b>Death-overs bowling</b> need (priority 61/100). Context value in the death phase is
+  +27.5 per 100 balls over 566 balls (percentile 98 among eligible players). Indian player;
+  squad-fit <b>80</b> (76 without the overseas-slot cost). <i>Hypothetical model estimate, not a forecast:</i>
+  +13.6 runs per season if given the 2026 death balls of Tushar Deshpande (48 balls).</p>
+</section>
+<section class="profile">
+  <div class="ph"><div class="rk">4</div><div><h3>Lachlan Hammond Ferguson</h3>
+  <div class="meta">New Zealand · RHB / Right-arm fast · age at auction 35 (calculated from verified DOB) · IPL 2026: Punjab Kings · data role: Multi-phase</div></div>
+  <div class="score">90<span>/100</span></div></div>
+  <div class="flag"><b>IPL 2027:</b> Pending retention (17 Nov) · Overseas; only 4 (2025) and 3 (2026) IPL matches in data, so rating leans on T20Is <span class="src">[W-LF; D]</span></div>
+  <div class="kpis"><div><b>229</b>HIGH-pressure balls</div><div><b>20</b>pressure spells</div>
+  <div><b>+35.0</b>value per 100 on HIGH</div><div><b>68%</b>P(top 10)</div>
+  <div><b>1–26</b>90% rank interval</div><div><b>3–9</b>rank across definitions</div></div>
+  <div class="two">
+    <div><table class="mini"><thead><tr><th>Component (percentile)</th><th>Lockie Ferguson</th><th>Maheesh Theekshana</th><th>Joshua Little</th></tr></thead><tbody><tr><td>Pressure perf.</td><td>89</td><td>83</td><td>81</td></tr><tr><td>Consistency</td><td>100</td><td>63</td><td>25</td></tr><tr><td>Impact</td><td>93</td><td>84</td><td>64</td></tr><tr><td>Vs baseline</td><td>91</td><td>92</td><td>87</td></tr><tr><td>Usual</td><td>67</td><td>56</td><td>44</td></tr><tr><td>Score (rank)</td><td>90 (4)</td><td>78 (14)</td><td>64 (23)</td></tr><tr><td>HIGH-pressure balls</td><td>229</td><td>293</td><td>202</td></tr></tbody></table><p class="small">Descriptive: economy 7.81 under HIGH pressure vs 9.94 in LOW; 18 HIGH-pressure wickets. Strongest: consistency, impact. Weakest: usual.</p></div>
+    <div><img src="figures/report/players/bowling_04.png" style="width:100%"/></div>
+  </div>
+  <h4>Why this player?</h4><ul><li>vs <b>Maheesh Theekshana</b> (rank 14, Multi-phase): ahead most on consistency (+37 pts), behind on vs baseline (-1 pts). Ranks higher in <b>75%</b> of bootstrap resamples, so the advantage is <i>moderate</i>.</li><li>vs <b>Joshua Little</b> (rank 23, Multi-phase): ahead most on consistency (+75 pts). Ranks higher in <b>91%</b> of bootstrap resamples, so the advantage is <i>clear</i>.</li></ul>
+  <h4>How this player could strengthen Rajasthan Royals (layer 2, separate from the ranking)</h4>
+  <p>Best fits RR's <b>Powerplay bowling</b> need (priority 49/100). Context value in the powerplay phase is
+  +5.7 per 100 balls over 352 balls (percentile 79 among eligible players). Overseas player;
+  squad-fit <b>60</b> (61 without the overseas-slot cost). <i>Hypothetical model estimate, not a forecast:</i>
+  +6.1 runs per season if given the 2026 powerplay balls of Brijesh Sharma (72 balls).</p>
+</section>
+<section class="profile">
+  <div class="ph"><div class="rk">5</div><div><h3>Rashid Khan Arman</h3>
+  <div class="meta">Afghanistan · RHB / Leg break googly · age at auction 28 (calculated from verified DOB) · IPL 2026: Gujarat Titans · data role: Middle-overs</div></div>
+  <div class="score">90<span>/100</span></div></div>
+  <div class="flag"><b>IPL 2027:</b> Pending retention (17 Nov) · Overseas <span class="src">[W-RK]</span></div>
+  <div class="kpis"><div><b>573</b>HIGH-pressure balls</div><div><b>48</b>pressure spells</div>
+  <div><b>+21.6</b>value per 100 on HIGH</div><div><b>58%</b>P(top 10)</div>
+  <div><b>1–41</b>90% rank interval</div><div><b>2–10</b>rank across definitions</div></div>
+  <div class="two">
+    <div><table class="mini"><thead><tr><th>Component (percentile)</th><th>Rashid Khan</th><th>Krunal Pandya</th><th>Adam Zampa</th></tr></thead><tbody><tr><td>Pressure perf.</td><td>95</td><td>84</td><td>79</td></tr><tr><td>Consistency</td><td>96</td><td>82</td><td>72</td></tr><tr><td>Impact</td><td>88</td><td>95</td><td>91</td></tr><tr><td>Vs baseline</td><td>71</td><td>77</td><td>97</td></tr><tr><td>Usual</td><td>95</td><td>80</td><td>23</td></tr><tr><td>Score (rank)</td><td>90 (5)</td><td>84 (12)</td><td>77 (16)</td></tr><tr><td>HIGH-pressure balls</td><td>573</td><td>264</td><td>323</td></tr></tbody></table><p class="small">Descriptive: economy 7.45 under HIGH pressure vs 7.72 in LOW; 35 HIGH-pressure wickets. Strongest: consistency, pressure perf.. Weakest: vs baseline.</p></div>
+    <div><img src="figures/report/players/bowling_05.png" style="width:100%"/></div>
+  </div>
+  <h4>Why this player?</h4><ul><li>vs <b>Krunal Pandya</b> (rank 12, Middle-overs): ahead most on usual (+15 pts), behind on impact (-7 pts). Ranks higher in <b>63%</b> of bootstrap resamples, so the advantage is <i>slight</i>.</li><li>vs <b>Adam Zampa</b> (rank 16, Middle-overs): ahead most on usual (+72 pts), behind on vs baseline (-27 pts). Ranks higher in <b>70%</b> of bootstrap resamples, so the advantage is <i>moderate</i>.</li></ul>
+  <h4>How this player could strengthen Rajasthan Royals (layer 2, separate from the ranking)</h4>
+  <p>Best fits RR's <b>Death-overs bowling</b> need (priority 61/100). Context value in the death phase is
+  +13.0 per 100 balls over 528 balls (percentile 94 among eligible players). Overseas player;
+  squad-fit <b>71</b> (75 without the overseas-slot cost). <i>Hypothetical model estimate, not a forecast:</i>
+  +6.7 runs per season if given the 2026 death balls of Tushar Deshpande (48 balls).</p>
+</section>
+<section class="profile">
+  <div class="ph"><div class="rk">6</div><div><h3>Akshar Rajeshbhai Patel (Axar)</h3>
+  <div class="meta">India · LHB / Slow left-arm orthodox · age at auction 32 (calculated from verified DOB) · IPL 2026: Delhi Capitals (captain) · data role: Middle-overs</div></div>
+  <div class="score">89<span>/100</span></div></div>
+  <div class="flag"><b>IPL 2027:</b> Pending retention (17 Nov) · All-rounder <span class="src">[W-AP]</span></div>
+  <div class="kpis"><div><b>581</b>HIGH-pressure balls</div><div><b>52</b>pressure spells</div>
+  <div><b>+16.7</b>value per 100 on HIGH</div><div><b>53%</b>P(top 10)</div>
+  <div><b>1–30</b>90% rank interval</div><div><b>5–13</b>rank across definitions</div></div>
+  <div class="two">
+    <div><table class="mini"><thead><tr><th>Component (percentile)</th><th>Axar Patel</th><th>Krunal Pandya</th><th>Adam Zampa</th></tr></thead><tbody><tr><td>Pressure perf.</td><td>88</td><td>84</td><td>79</td></tr><tr><td>Consistency</td><td>89</td><td>82</td><td>72</td></tr><tr><td>Impact</td><td>99</td><td>95</td><td>91</td></tr><tr><td>Vs baseline</td><td>95</td><td>77</td><td>97</td></tr><tr><td>Usual</td><td>65</td><td>80</td><td>23</td></tr><tr><td>Score (rank)</td><td>89 (6)</td><td>84 (12)</td><td>77 (16)</td></tr><tr><td>HIGH-pressure balls</td><td>581</td><td>264</td><td>323</td></tr></tbody></table><p class="small">Descriptive: economy 7.18 under HIGH pressure vs 7.92 in LOW; 30 HIGH-pressure wickets. Strongest: impact, vs baseline. Weakest: usual.</p></div>
+    <div><img src="figures/report/players/bowling_06.png" style="width:100%"/></div>
+  </div>
+  <h4>Why this player?</h4><ul><li>vs <b>Krunal Pandya</b> (rank 12, Middle-overs): ahead most on vs baseline (+17 pts), behind on usual (-15 pts). Ranks higher in <b>59%</b> of bootstrap resamples, so the advantage is <i>slight</i>.</li><li>vs <b>Adam Zampa</b> (rank 16, Middle-overs): ahead most on usual (+43 pts), behind on vs baseline (-3 pts). Ranks higher in <b>72%</b> of bootstrap resamples, so the advantage is <i>moderate</i>.</li></ul>
+  <h4>How this player could strengthen Rajasthan Royals (layer 2, separate from the ranking)</h4>
+  <p>Best fits RR's <b>Powerplay bowling</b> need (priority 49/100). Context value in the powerplay phase is
+  +6.6 per 100 balls over 651 balls (percentile 85 among eligible players). Indian player;
+  squad-fit <b>69</b> (64 without the overseas-slot cost). <i>Hypothetical model estimate, not a forecast:</i>
+  +6.7 runs per season if given the 2026 powerplay balls of Brijesh Sharma (72 balls).</p>
+</section>
+<section class="profile">
+  <div class="ph"><div class="rk">7</div><div><h3>Matheesha Pathirana</h3>
+  <div class="meta">Sri Lanka · RHB / Right-arm fast · age at auction 23 (calculated from verified DOB) · IPL 2026: Kolkata Knight Riders · data role: Death specialist</div></div>
+  <div class="score">89<span>/100</span></div></div>
+  <div class="flag warn"><b>IPL 2027:</b> Pending retention (17 Nov) · INJURY: ruled out of IPL 2026 (hamstring, 24 May 2026) after 1 match; earlier calf injury at Feb 2026 T20 WC; surgery reported Jun 2026 (news, not opened) <span class="src">[W-MP; S8]</span></div>
+  <div class="kpis"><div><b>278</b>HIGH-pressure balls</div><div><b>23</b>pressure spells</div>
+  <div><b>+37.1</b>value per 100 on HIGH</div><div><b>68%</b>P(top 10)</div>
+  <div><b>1–23</b>90% rank interval</div><div><b>3–15</b>rank across definitions</div></div>
+  <div class="two">
+    <div><table class="mini"><thead><tr><th>Component (percentile)</th><th>Matheesha Pathirana</th><th>T Natarajan</th><th>Mustafizur Rahman</th></tr></thead><tbody><tr><td>Pressure perf.</td><td>96</td><td>56</td><td>61</td></tr><tr><td>Consistency</td><td>91</td><td>95</td><td>40</td></tr><tr><td>Impact</td><td>69</td><td>9</td><td>25</td></tr><tr><td>Vs baseline</td><td>100</td><td>61</td><td>24</td></tr><tr><td>Usual</td><td>81</td><td>48</td><td>77</td></tr><tr><td>Score (rank)</td><td>89 (7)</td><td>54 (33)</td><td>46 (41)</td></tr><tr><td>HIGH-pressure balls</td><td>278</td><td>228</td><td>305</td></tr></tbody></table><p class="small">Descriptive: economy 8.55 under HIGH pressure vs 8.24 in LOW; 24 HIGH-pressure wickets. Strongest: vs baseline, pressure perf.. Weakest: impact.</p></div>
+    <div><img src="figures/report/players/bowling_07.png" style="width:100%"/></div>
+  </div>
+  <h4>Why this player?</h4><ul><li>vs <b>T Natarajan</b> (rank 33, Death specialist): ahead most on impact (+60 pts), behind on consistency (-4 pts). Ranks higher in <b>96%</b> of bootstrap resamples, so the advantage is <i>clear</i>.</li><li>vs <b>Mustafizur Rahman</b> (rank 41, Death specialist): ahead most on vs baseline (+76 pts). Ranks higher in <b>97%</b> of bootstrap resamples, so the advantage is <i>clear</i>.</li></ul>
+  <h4>How this player could strengthen Rajasthan Royals (layer 2, separate from the ranking)</h4>
+  <p>Best fits RR's <b>Death-overs bowling</b> need (priority 61/100). Context value in the death phase is
+  +14.0 per 100 balls over 605 balls (percentile 95 among eligible players). Overseas player;
+  squad-fit <b>71</b> (75 without the overseas-slot cost). <i>Hypothetical model estimate, not a forecast:</i>
+  +7.1 runs per season if given the 2026 death balls of Tushar Deshpande (48 balls).</p>
+</section>
+<section class="profile">
+  <div class="ph"><div class="rk">8</div><div><h3>Bhuvneshwar Kumar Singh</h3>
+  <div class="meta">India · RHB / Right-arm medium · age at auction 36 (calculated from verified DOB) · IPL 2026: Royal Challengers Bengaluru · data role: Powerplay specialist</div></div>
+  <div class="score">87<span>/100</span></div></div>
+  <div class="flag"><b>IPL 2027:</b> Pending retention (17 Nov) · Recalled to India T20I squad Oct 2026; age 36 at auction <span class="src">[W-BK]</span></div>
+  <div class="kpis"><div><b>429</b>HIGH-pressure balls</div><div><b>39</b>pressure spells</div>
+  <div><b>+37.7</b>value per 100 on HIGH</div><div><b>49%</b>P(top 10)</div>
+  <div><b>1–38</b>90% rank interval</div><div><b>8–14</b>rank across definitions</div></div>
+  <div class="two">
+    <div><table class="mini"><thead><tr><th>Component (percentile)</th><th>Bhuvneshwar Kumar</th><th>Mohsin Khan</th><th>Kagiso Rabada</th></tr></thead><tbody><tr><td>Pressure perf.</td><td>100</td><td>85</td><td>91</td></tr><tr><td>Consistency</td><td>65</td><td>93</td><td>87</td></tr><tr><td>Impact</td><td>79</td><td>89</td><td>68</td></tr><tr><td>Vs baseline</td><td>88</td><td>64</td><td>85</td></tr><tr><td>Usual</td><td>96</td><td>88</td><td>75</td></tr><tr><td>Score (rank)</td><td>87 (8)</td><td>85 (11)</td><td>83 (13)</td></tr><tr><td>HIGH-pressure balls</td><td>429</td><td>165</td><td>355</td></tr></tbody></table><p class="small">Descriptive: economy 9.37 under HIGH pressure vs 7.86 in LOW; 33 HIGH-pressure wickets. Strongest: pressure perf., usual. Weakest: consistency.</p></div>
+    <div><img src="figures/report/players/bowling_08.png" style="width:100%"/></div>
+  </div>
+  <h4>Why this player?</h4><ul><li>vs <b>Mohsin Khan</b> (rank 11, Powerplay specialist): ahead most on vs baseline (+24 pts), behind on consistency (-27 pts). Ranks higher in <b>55%</b> of bootstrap resamples, so the advantage is <i>slight</i>.</li><li>vs <b>Kagiso Rabada</b> (rank 13, Powerplay specialist): ahead most on usual (+21 pts), behind on consistency (-21 pts). Ranks higher in <b>69%</b> of bootstrap resamples, so the advantage is <i>moderate</i>.</li></ul>
+  <h4>How this player could strengthen Rajasthan Royals (layer 2, separate from the ranking)</h4>
+  <p>Best fits RR's <b>Powerplay bowling</b> need (priority 49/100). Context value in the powerplay phase is
+  +14.2 per 100 balls over 1373 balls (percentile 98 among eligible players). Indian player;
+  squad-fit <b>74</b> (69 without the overseas-slot cost). <i>Hypothetical model estimate, not a forecast:</i>
+  +12.2 runs per season if given the 2026 powerplay balls of Brijesh Sharma (72 balls).</p>
+</section>
+<section class="profile">
+  <div class="ph"><div class="rk">9</div><div><h3>Kuldeep Yadav</h3>
+  <div class="meta">India · LHB / Left-arm wrist spin · age at auction 32 (calculated from verified DOB) · IPL 2026: Delhi Capitals · data role: Middle-overs</div></div>
+  <div class="score">87<span>/100</span></div></div>
+  <div class="flag warn"><b>IPL 2027:</b> TRADED DC -&gt; LSG (IPL press release 23 Jun 2026, Rs 13.5 cr) · Under contract with LSG for 2027 unless released <span class="src">[W-KY; S9; S10]</span></div>
+  <div class="kpis"><div><b>501</b>HIGH-pressure balls</div><div><b>41</b>pressure spells</div>
+  <div><b>+22.7</b>value per 100 on HIGH</div><div><b>47%</b>P(top 10)</div>
+  <div><b>3–35</b>90% rank interval</div><div><b>2–16</b>rank across definitions</div></div>
+  <div class="two">
+    <div><table class="mini"><thead><tr><th>Component (percentile)</th><th>Kuldeep Yadav</th><th>Krunal Pandya</th><th>Adam Zampa</th></tr></thead><tbody><tr><td>Pressure perf.</td><td>93</td><td>84</td><td>79</td></tr><tr><td>Consistency</td><td>84</td><td>82</td><td>72</td></tr><tr><td>Impact</td><td>87</td><td>95</td><td>91</td></tr><tr><td>Vs baseline</td><td>69</td><td>77</td><td>97</td></tr><tr><td>Usual</td><td>93</td><td>80</td><td>23</td></tr><tr><td>Score (rank)</td><td>87 (9)</td><td>84 (12)</td><td>77 (16)</td></tr><tr><td>HIGH-pressure balls</td><td>501</td><td>264</td><td>323</td></tr></tbody></table><p class="small">Descriptive: economy 7.71 under HIGH pressure vs 8.80 in LOW; 29 HIGH-pressure wickets. Strongest: pressure perf., usual. Weakest: vs baseline.</p></div>
+    <div><img src="figures/report/players/bowling_09.png" style="width:100%"/></div>
+  </div>
+  <h4>Why this player?</h4><ul><li>vs <b>Krunal Pandya</b> (rank 12, Middle-overs): ahead most on usual (+13 pts), behind on impact (-8 pts). Ranks higher in <b>53%</b> of bootstrap resamples, so the advantage is <i>statistically indistinguishable</i>.</li><li>vs <b>Adam Zampa</b> (rank 16, Middle-overs): ahead most on usual (+71 pts), behind on vs baseline (-28 pts). Ranks higher in <b>62%</b> of bootstrap resamples, so the advantage is <i>slight</i>.</li></ul>
+  <h4>How this player could strengthen Rajasthan Royals (layer 2, separate from the ranking)</h4>
+  <p>Best fits RR's <b>Death-overs bowling</b> need (priority 61/100). Context value in the death phase is
+  +10.9 per 100 balls over 303 balls (percentile 92 among eligible players). Indian player;
+  squad-fit <b>78</b> (74 without the overseas-slot cost). <i>Hypothetical model estimate, not a forecast:</i>
+  +5.7 runs per season if given the 2026 death balls of Tushar Deshpande (48 balls).</p>
+</section>
+<section class="profile">
+  <div class="ph"><div class="rk">10</div><div><h3>Sikandar Raza Butt</h3>
+  <div class="meta">Zimbabwe · RHB / Right-arm off break · age at auction 40 (calculated from verified DOB) · IPL 2026: None (last IPL: Punjab Kings 2024) · data role: Middle-overs</div></div>
+  <div class="score">85<span>/100</span></div></div>
+  <div class="flag warn"><b>IPL 2027:</b> No IPL contract: potential auction entrant if registered (registration not verified) · Zimbabwe T20I captain; age 40 at auction <span class="src">[W-SR; D]</span></div>
+  <div class="kpis"><div><b>215</b>HIGH-pressure balls</div><div><b>16</b>pressure spells</div>
+  <div><b>+34.6</b>value per 100 on HIGH</div><div><b>50%</b>P(top 10)</div>
+  <div><b>2–28</b>90% rank interval</div><div><b>7–25</b>rank across definitions</div></div>
+  <div class="two">
+    <div><table class="mini"><thead><tr><th>Component (percentile)</th><th>Sikandar Raza</th><th>Krunal Pandya</th><th>Adam Zampa</th></tr></thead><tbody><tr><td>Pressure perf.</td><td>87</td><td>84</td><td>79</td></tr><tr><td>Consistency</td><td>93</td><td>82</td><td>72</td></tr><tr><td>Impact</td><td>92</td><td>95</td><td>91</td></tr><tr><td>Vs baseline</td><td>96</td><td>77</td><td>97</td></tr><tr><td>Usual</td><td>36</td><td>80</td><td>23</td></tr><tr><td>Score (rank)</td><td>85 (10)</td><td>84 (12)</td><td>77 (16)</td></tr><tr><td>HIGH-pressure balls</td><td>215</td><td>264</td><td>323</td></tr></tbody></table><p class="small">Descriptive: economy 6.28 under HIGH pressure vs 7.10 in LOW; 12 HIGH-pressure wickets. Strongest: vs baseline, consistency. Weakest: usual.</p></div>
+    <div><img src="figures/report/players/bowling_10.png" style="width:100%"/></div>
+  </div>
+  <h4>Why this player?</h4><ul><li>vs <b>Krunal Pandya</b> (rank 12, Middle-overs): ahead most on vs baseline (+19 pts), behind on usual (-44 pts). Ranks higher in <b>56%</b> of bootstrap resamples, so the advantage is <i>slight</i>.</li><li>vs <b>Adam Zampa</b> (rank 16, Middle-overs): ahead most on consistency (+21 pts), behind on vs baseline (-1 pts). Ranks higher in <b>69%</b> of bootstrap resamples, so the advantage is <i>moderate</i>.</li></ul>
+  <h4>How this player could strengthen Rajasthan Royals (layer 2, separate from the ranking)</h4>
+  <p>Best fits RR's <b>Middle-overs bowling</b> need (priority 56/100). Context value in the middle phase is
+  +4.2 per 100 balls over 917 balls (percentile 72 among eligible players). Overseas player;
+  squad-fit <b>61</b> (63 without the overseas-slot cost). <i>Hypothetical model estimate, not a forecast:</i>
+  +7.7 runs per season if given the 2026 middle balls of Yash Punja (156 balls).</p>
+</section><h1>9. Players who narrowly missed</h1>
+<p>These players were considered seriously. Most beat our #10 in 30–50% of resamples. They remain credible alternatives, especially for the RR needs noted.</p>
+<table class="dense"><thead><tr><th>Side</th><th>Rank</th><th>Player</th><th>Role</th><th>Score</th><th>Gap to #10</th><th>P(top10)</th><th>P(beats #10)</th><th>Main shortfall vs #10</th><th>Rank range (defs)</th></tr></thead><tbody><tr><td>batting</td><td>11</td><td>Abhishek Sharma</td><td>Opener</td><td>79.7</td><td>0.9</td><td>0.43</td><td>0.5</td><td>delta percentile -0.29</td><td>10-25</td></tr><tr><td>batting</td><td>12</td><td>Cameron Green</td><td>Middle order (4-5)</td><td>79.0</td><td>1.6</td><td>0.27</td><td>0.37</td><td>usual percentile -0.21</td><td>2-22</td></tr><tr><td>batting</td><td>13</td><td>Rinku Singh</td><td>Finisher (6-7)</td><td>78.2</td><td>2.4</td><td>0.21</td><td>0.43</td><td>delta percentile -0.31</td><td>7-23</td></tr><tr><td>batting</td><td>14</td><td>Daryl Mitchell</td><td>Middle order (4-5)</td><td>76.8</td><td>3.8</td><td>0.35</td><td>0.51</td><td>usual percentile -0.17</td><td>5-60</td></tr><tr><td>batting</td><td>15</td><td>Curtis Campher</td><td>Middle order (4-5)</td><td>75.8</td><td>4.8</td><td>0.17</td><td>0.3</td><td>usual percentile -0.65</td><td>13-58</td></tr><tr><td>bowling</td><td>11</td><td>Mohsin Khan</td><td>Powerplay specialist</td><td>84.7</td><td>0.6</td><td>0.43</td><td>0.47</td><td>delta percentile -0.32</td><td>5-11</td></tr><tr><td>bowling</td><td>12</td><td>Krunal Pandya</td><td>Middle-overs</td><td>84.3</td><td>0.9</td><td>0.42</td><td>0.44</td><td>delta percentile -0.19</td><td>6-30</td></tr><tr><td>bowling</td><td>13</td><td>Kagiso Rabada</td><td>Powerplay specialist</td><td>82.9</td><td>2.3</td><td>0.31</td><td>0.31</td><td>impact percentile -0.24</td><td>5-23</td></tr><tr><td>bowling</td><td>14</td><td>Maheesh Theekshana</td><td>Multi-phase</td><td>77.7</td><td>7.6</td><td>0.26</td><td>0.34</td><td>consistency percentile -0.30</td><td>6-16</td></tr><tr><td>bowling</td><td>15</td><td>Taskin Ahmed</td><td>Powerplay specialist</td><td>77.5</td><td>7.8</td><td>0.18</td><td>0.28</td><td>delta percentile -0.20</td><td>9-22</td></tr></tbody></table>
+<p><b>Excluded despite statistical eligibility:</b> Dinesh Karthik (no data 2025-26), Matthew Wade (no data 2025-26), Mohammad Rizwan (no data 2025-26), Iftikhar Ahmed (no data 2025-26), Andre Russell (Andre Russell: retired from IPL 30 Nov 2025 (S7)), Naveen ul Haq (no data 2025-26), Riley Meredith (no data 2025-26).</p><h1>10. Rajasthan Royals: squad intelligence and needs</h1>
+<div class="callout pink"><b>Process:</b> understand the existing squad first, measure it with the <i>same</i> framework as every candidate, derive needs from evidence, and only then match candidates to needs.</div>
+<h2>Squad status</h2><p>The 2026 squad (27 players) is verified against the data pack and official RR announcements. These record 13 retentions and the trades of Samson for Jadeja and Curran and of Rana for Ferreira.
+RR entered the auction with ₹16.05 cr and one overseas slot. Parag captained; Curran was ruled out for the season. RR won 9 of 16 matches and lost Qualifier 2.
+<b>The IPL 2027 squad is pending:</b> retentions are due 17 Nov 2026, and the mini-auction is on 16 Dec 2026 (Goa; maximum 25 players, 8 overseas).</p>
+<figure><img src="figures/report/rr_phase_ranks.png" style="width:100%"/><figcaption>Figure 10a. RR rank among 10 IPL teams by phase, 2025–2026. Elite powerplay batting; weak death-overs batting; 2025 death bowling worst in the league.</figcaption></figure>
+<figure><img src="figures/report/rr_players_pressure.png" style="width:100%"/><figcaption>Figure 10b. RR players rated with the same pressure framework as all candidates. Most of the middle order and death bowlers sit below the pool median under pressure.</figcaption></figure>
+<table class="dense"><thead><tr><th>RR batter</th><th>Role</th><th>Balls</th><th>SR</th><th>SR HIGH</th><th>Pressure pctile</th><th>Eligible / rank</th></tr></thead><tbody><tr><td>Yashasvi Jaiswal</td><td>Opener</td><td>1872</td><td>156.4</td><td>206.7</td><td>94</td><td>No (sample)</td></tr><tr><td>Dhruv Jurel</td><td>Middle order (4-5)</td><td>798</td><td>151.3</td><td>135.4</td><td>6</td><td>Yes, #66</td></tr><tr><td>Ravindra Jadeja</td><td>Finisher (6-7)</td><td>958</td><td>135.1</td><td>140.0</td><td>20</td><td>Yes, #68</td></tr><tr><td>Riyan Parag</td><td>Middle order (4-5)</td><td>1084</td><td>151.5</td><td>148.6</td><td>45</td><td>Yes, #53</td></tr><tr><td>Shimron Hetmyer</td><td>Middle order (4-5)</td><td>1245</td><td>151.6</td><td>144.1</td><td>38</td><td>Yes, #58</td></tr><tr><td>Dasun Shanaka</td><td>Finisher (6-7)</td><td>774</td><td>139.5</td><td>141.2</td><td>52</td><td>Yes, #42</td></tr><tr><td>Sam Curran</td><td>Finisher (6-7)</td><td>858</td><td>130.8</td><td>135.8</td><td>23</td><td>Yes, #65</td></tr></tbody></table>
+<figure><img src="figures/report/rr_priorities.png" style="width:85%"/><figcaption>Figure 10c. Recruitment priorities. Severity from 2025–26 phase ranks; coverage from the best eligible RR player in the role.</figcaption></figure>
+<h2>Evidence-led requirements</h2><ol>
+<li><b>Finisher / middle-order batter reliable under pressure (High, 81).</b> Death batting ranked 7th–10th on every metric in both seasons.
+In 2026 Jadeja (SR 140.5), Jurel (150.0) and Dubey (146.3) were well below the league death SR of 169.4. Only Ferreira was above par.</li>
+<li><b>Death bowler reliable under pressure (High, 61).</b> 2025 was the league's worst on every death metric. In 2026, Sandeep Sharma conceded 13.70 an over and Deshpande 12.38 at the death.</li>
+<li><b>Middle-overs batting (High, 60)</b> and <b>middle-overs bowling control (Medium)</b>. Dot % ranked 10th and 9th; Jadeja is strong, but the second spin option is weak under pressure.</li>
+<li><b>Not a need:</b> opening batting. RR ranked #1 in the league in both seasons (Sooryavanshi SR 234 in the 2026 powerplay).</li></ol><h1>11. How these 20 players could strengthen Rajasthan Royals</h1>
+<p>Squad fit is a separate layer, scored as follows:</p>
+<ul><li>50%: RR's priority for the player's best-fit need.</li>
+<li>35%: the player's phase evidence.</li>
+<li>15%: roster slot (Indian 1.0, overseas 0.5). An overseas signing must displace an overseas regular in a maximum-4 XI. This is an assumption, so scores are also reported without it.</li></ul>
+<h2>Squad-building implications</h2><ul>
+<li><b>Batting:</b> RR's top order is strong (Jaiswal, Sooryavanshi). On phase evidence, seven of the ten batters best fit RR's top need, <b>death-overs finishing</b>:
+Shreyas, Tilak, Dhir, Miller, Tim David, Suryakumar and Phillips. They would take death balls from players who were below par in 2026. Klaasen, Patidar and Kishan best fit <b>middle-overs batting</b>.
+The Indian finishing options (Suryakumar, Tilak, Shreyas, Dhir) avoid the overseas-slot squeeze.</li>
+<li><b>Bowling:</b> on phase evidence, Bumrah, Kuldeep (now LSG), Narine, Rashid and Pathirana best fit <b>death-overs bowling</b>. Varun (99th percentile in the middle overs) and Raza fit
+<b>middle-overs control</b> alongside Jadeja. Bhuvneshwar, Axar and Ferguson fit <b>powerplay bowling</b>. Overseas bowlers (Narine, Rashid, Pathirana, Ferguson, Raza) would compete with Archer and Burger for slots.</li>
+<li><b>Indian/overseas balance:</b> 9 overseas players were listed in 2026, but Curran, Maphaka and Pretorius played 0–2 games. Overseas recruitment depends on who is released on 17 Nov.</li>
+<li><b>Realism:</b> most of these players are core retentions at their franchises. Treat the list as a ranked shortlist for each need. The near-misses in Section 9 provide depth if targets are retained.</li></ul><figure><img src="figures/report/fit_vs_reliability.png" style="width:100%"/><figcaption>Figure 11. Reliability rank (layer 1) vs RR squad fit (layer 2). Primary targets sit right of the dotted line.</figcaption></figure>
+<table class="dense"><thead><tr><th>Side</th><th>Rank</th><th>Player</th><th>Ind/Ovs</th><th>RR need</th><th>Fit</th><th>Top alternative</th><th>P(beats alt.)</th><th>Uplift* (runs)</th><th>Tier</th></tr></thead><tbody><tr><td>batting</td><td>1</td><td>Shreyas Iyer</td><td>Indian</td><td>Death-overs / finishing batting</td><td>85</td><td>Cameron Green</td><td>0.89</td><td>15.3</td><td>Primary target</td></tr><tr><td>batting</td><td>2</td><td>Heinrich Klaasen</td><td>Overseas</td><td>Middle-overs batting</td><td>72</td><td>Cameron Green</td><td>0.89</td><td>30.5</td><td>Strong option</td></tr><tr><td>batting</td><td>3</td><td>Rajat Patidar</td><td>Indian</td><td>Middle-overs batting</td><td>77</td><td>Cameron Green</td><td>0.73</td><td>22.1</td><td>Strong option</td></tr><tr><td>batting</td><td>4</td><td>Namboori Tilak Varma</td><td>Indian</td><td>Death-overs / finishing batting</td><td>89</td><td>Cameron Green</td><td>0.69</td><td>19.7</td><td>Primary target</td></tr><tr><td>batting</td><td>5</td><td>Ishan Kishan</td><td>Indian</td><td>Middle-overs batting</td><td>68</td><td>Abhishek Sharma</td><td>0.53</td><td>12.1</td><td>Situational / depth</td></tr><tr><td>batting</td><td>6</td><td>Naman Dhir</td><td>Indian</td><td>Death-overs / finishing batting</td><td>77</td><td>Rinku Singh</td><td>0.61</td><td>9.9</td><td>Strong option</td></tr><tr><td>batting</td><td>7</td><td>David Miller</td><td>Overseas</td><td>Death-overs / finishing batting</td><td>69</td><td>Cameron Green</td><td>0.6</td><td>9.6</td><td>Situational / depth</td></tr><tr><td>batting</td><td>8</td><td>Tim David</td><td>Overseas</td><td>Death-overs / finishing batting</td><td>80</td><td>Rinku Singh</td><td>0.64</td><td>18.3</td><td>Primary target</td></tr><tr><td>batting</td><td>9</td><td>Suryakumar Yadav</td><td>Indian</td><td>Death-overs / finishing batting</td><td>90</td><td>Cameron Green</td><td>0.59</td><td>20.4</td><td>Primary target</td></tr><tr><td>batting</td><td>10</td><td>Glenn Phillips</td><td>Overseas</td><td>Death-overs / finishing batting</td><td>78</td><td>Cameron Green</td><td>0.63</td><td>16.2</td><td>Primary target</td></tr><tr><td>bowling</td><td>1</td><td>Varun Chakravarthy</td><td>Indian</td><td>Middle-overs bowling</td><td>78</td><td>Krunal Pandya</td><td>0.78</td><td>26.0</td><td>Primary target</td></tr><tr><td>bowling</td><td>2</td><td>Sunil Narine</td><td>Overseas</td><td>Death-overs bowling</td><td>72</td><td>Krunal Pandya</td><td>0.64</td><td>10.3</td><td>Strong option</td></tr><tr><td>bowling</td><td>3</td><td>Jasprit Bumrah</td><td>Indian</td><td>Death-overs bowling</td><td>80</td><td>Maheesh Theekshana</td><td>0.7</td><td>13.6</td><td>Primary target</td></tr><tr><td>bowling</td><td>4</td><td>Lockie Ferguson</td><td>Overseas</td><td>Powerplay bowling</td><td>60</td><td>Maheesh Theekshana</td><td>0.75</td><td>6.1</td><td>Situational / depth</td></tr><tr><td>bowling</td><td>5</td><td>Rashid Khan</td><td>Overseas</td><td>Death-overs bowling</td><td>71</td><td>Krunal Pandya</td><td>0.63</td><td>6.7</td><td>Strong option</td></tr><tr><td>bowling</td><td>6</td><td>Axar Patel</td><td>Indian</td><td>Powerplay bowling</td><td>69</td><td>Krunal Pandya</td><td>0.59</td><td>6.7</td><td>Situational / depth</td></tr><tr><td>bowling</td><td>7</td><td>Matheesha Pathirana</td><td>Overseas</td><td>Death-overs bowling</td><td>71</td><td>T Natarajan</td><td>0.96</td><td>7.1</td><td>Strong option</td></tr><tr><td>bowling</td><td>8</td><td>Bhuvneshwar Kumar</td><td>Indian</td><td>Powerplay bowling</td><td>74</td><td>Mohsin Khan</td><td>0.55</td><td>12.2</td><td>Strong option</td></tr><tr><td>bowling</td><td>9</td><td>Kuldeep Yadav</td><td>Indian</td><td>Death-overs bowling</td><td>78</td><td>Krunal Pandya</td><td>0.53</td><td>5.7</td><td>Primary target</td></tr><tr><td>bowling</td><td>10</td><td>Sikandar Raza</td><td>Overseas</td><td>Middle-overs bowling</td><td>61</td><td>Krunal Pandya</td><td>0.56</td><td>7.7</td><td>Situational / depth</td></tr></tbody></table>
+<p class="small">*Hypothetical model estimate, not a forecast: the player's phase value minus that of RR's weakest 2026 regular in the phase, times that regular's 2026 balls. It ignores role interactions and opposition.</p>
+<h1>12. Risks, limitations and auction feasibility</h1><h2>Player-specific risks (verified)</h2><ul>
+<li><b>Matheesha Pathirana:</b> ruled out of IPL 2026 with a hamstring injury after one match (IPL announcement, 24 May 2026); calf injury at the Feb 2026 T20 World Cup. Fitness for 2027 is unverified.</li>
+<li><b>Kuldeep Yadav:</b> traded from DC to LSG (IPL announcement, 23 Jun 2026), so he is under contract unless released.</li>
+<li><b>Sikandar Raza:</b> no IPL contract since 2024, so a potential auction entrant (registration not verifiable until ~3 Dec). Age 40 at auction.</li>
+<li><b>Lockie Ferguson, Glenn Phillips:</b> few recent IPL appearances, so their ratings lean on T20Is.</li>
+<li><b>Suryakumar Yadav:</b> lost the India T20I captaincy in 2026, and a poor IPL 2026 is reported. His P(top 10) is only 28%.</li>
+<li><b>Age context</b> (not scored): Narine 38, Miller 37, Bhuvneshwar 36, Suryakumar 36 at auction.</li></ul>
+<h2>Method limitations</h2><ul>
+<li>Pressure is unobserved; the definition is a reasoned choice, stress-tested in Section 6.</li>
+<li>The data covers 2022–26, IPL plus bilateral T20I plus A-team. There are no domestic leagues, no fielding attribution and no venue names.</li>
+<li>Openers face few HIGH balls, so elite openers (e.g. Jaiswal) can fall below eligibility. This is a property of the definition, not evidence of weakness.</li>
+<li>Bootstrap intervals describe measurement uncertainty in past performance, not future probabilities. Uplift estimates are hypothetical.</li>
+<li>The 2026 win-probability calibration is weaker than 2025, but WP is used to measure stakes, not to predict results.</li></ul>
+<h2>Auction feasibility</h2><p>IPL 2027 rules as reported (SportsTak, citing a BCCI communique of 2 Nov 2026): mini-auction, no retention cap, no Right-to-Match, maximum 25 players and 8 overseas.
+The IPL 2027 purse is not verified, so <b>no financial claims are made</b>. Every recommendation is conditional on the 17 Nov retentions.</p><h1>13. Final recommendations</h1>
+<div class="grid2"><div><h2>Submitted top 10 batters</h2><table class=""><thead><tr><th>#</th><th>Player</th><th>Score</th></tr></thead><tbody><tr><td>1</td><td>Shreyas Iyer</td><td>97</td></tr><tr><td>2</td><td>Heinrich Klaasen</td><td>95</td></tr><tr><td>3</td><td>Rajat Patidar</td><td>93</td></tr><tr><td>4</td><td>Namboori Tilak Varma</td><td>91</td></tr><tr><td>5</td><td>Ishan Kishan</td><td>85</td></tr><tr><td>6</td><td>Naman Dhir</td><td>83</td></tr><tr><td>7</td><td>David Miller</td><td>82</td></tr><tr><td>8</td><td>Tim David</td><td>82</td></tr><tr><td>9</td><td>Suryakumar Yadav</td><td>81</td></tr><tr><td>10</td><td>Glenn Phillips</td><td>81</td></tr></tbody></table></div>
+<div><h2>Submitted top 10 bowlers</h2><table class=""><thead><tr><th>#</th><th>Player</th><th>Score</th></tr></thead><tbody><tr><td>1</td><td>Varun Chakravarthy</td><td>96</td></tr><tr><td>2</td><td>Sunil Narine</td><td>93</td></tr><tr><td>3</td><td>Jasprit Bumrah</td><td>91</td></tr><tr><td>4</td><td>Lockie Ferguson</td><td>90</td></tr><tr><td>5</td><td>Rashid Khan</td><td>90</td></tr><tr><td>6</td><td>Axar Patel</td><td>89</td></tr><tr><td>7</td><td>Matheesha Pathirana</td><td>89</td></tr><tr><td>8</td><td>Bhuvneshwar Kumar</td><td>87</td></tr><tr><td>9</td><td>Kuldeep Yadav</td><td>87</td></tr><tr><td>10</td><td>Sikandar Raza</td><td>85</td></tr></tbody></table></div></div>
+<div class="callout"><b>For Rajasthan Royals.</b> Prioritise a <b>finisher</b> (Suryakumar, Tilak, Shreyas, Tim David, Phillips) and a <b>death bowler</b> (Bumrah; then Narine, Rashid and Pathirana subject to overseas slots and fitness; Kuldeep only if LSG release him).
+Add middle-overs spin control (Varun) if available. Keep the opening pair; it is RR's clearest strength. Re-run the needs analysis as soon as the official 2027 retentions are published.</div>
+<h2>Conclusion</h2><p>Reliable pressure performance is real but noisy. The defensible way to find it is to define pressure from the match situation, judge players against context and opponents, shrink small samples,
+and report how sure we are. On that basis the lists above are the most reliable performers under pressure in the 2022–26 data. Their value to RR is clearest where RR has been weakest: finishing innings and defending at the death.</p><h1>14. References and source register</h1><div class="small"><table class='dense'><thead><tr><th>ID</th><th>Source</th><th>URL</th><th>Published / updated</th><th>Accessed</th><th>Type</th></tr></thead><tbody><tr><td style='word-break:break-all'>D</td><td style='word-break:break-all'>RR SupeRR Selector data pack (`data_set.zip`, SHA-256 `82da62e9…7f7d`)</td><td style='word-break:break-all'>— (private, supplied by RR)</td><td style='word-break:break-all'>Files dated 10–11 Nov 2026</td><td style='word-break:break-all'>2026-11-14</td><td style='word-break:break-all'>O</td></tr><tr><td style='word-break:break-all'>S1</td><td style='word-break:break-all'>Rajasthan Royals: &quot;Rajasthan Royals announce retained players ahead of IPL 2026&quot;</td><td style='word-break:break-all'>https://www.rajasthanroyals.com/latest-news/ipl-2026-rr-players-retention-list</td><td style='word-break:break-all'>15 Nov 2025</td><td style='word-break:break-all'>2026-11-14</td><td style='word-break:break-all'>O</td></tr><tr><td style='word-break:break-all'>S2</td><td style='word-break:break-all'>Rajasthan Royals: trade announcement (Jadeja, Curran in; Samson out)</td><td style='word-break:break-all'>https://www.rajasthanroyals.com/ipl-2026-trade-rr-ravindra-jadeja-sam-curran-sanju-samson-csk</td><td style='word-break:break-all'>15 Nov 2025</td><td style='word-break:break-all'>2026-11-14</td><td style='word-break:break-all'>O</td></tr><tr><td style='word-break:break-all'>S3</td><td style='word-break:break-all'>Rajasthan Royals: &quot;Rajasthan Royals at IPL 2026 auction: Purse, slots and squad status&quot;</td><td style='word-break:break-all'>https://www.rajasthanroyals.com/latest-news/rajasthan-royals-ipl-2026-auction-purse-slots-squad</td><td style='word-break:break-all'>15 Dec 2025</td><td style='word-break:break-all'>2026-11-14</td><td style='word-break:break-all'>O</td></tr><tr><td style='word-break:break-all'>S4</td><td style='word-break:break-all'>Wikipedia: &quot;2026 Rajasthan Royals season&quot;</td><td style='word-break:break-all'>https://en.wikipedia.org/wiki/2026_Rajasthan_Royals_season</td><td style='word-break:break-all'>Last updated 12 Oct 2026 (per page)</td><td style='word-break:break-all'>2026-11-14</td><td style='word-break:break-all'>W</td></tr><tr><td style='word-break:break-all'>S5</td><td style='word-break:break-all'>SportsTak: &quot;BCCI extends IPL 2027 retention deadline…&quot;</td><td style='word-break:break-all'>https://thesportstak.com/cricket/story/bcci-extends-ipl-2027-retention-deadline-amid-india-new-zealand-odi-clash-will-auction-date-change-too-3559176-2026-11-02</td><td style='word-break:break-all'>2 Nov 2026</td><td style='word-break:break-all'>2026-11-14</td><td style='word-break:break-all'>N</td></tr><tr><td style='word-break:break-all'>S6</td><td style='word-break:break-all'>Outlook India: RR IPL 2026 preview</td><td style='word-break:break-all'>https://www.outlookindia.com/sports/cricket/rajasthan-royals-preview-indian-premier-league-2026</td><td style='word-break:break-all'>22 Mar 2026</td><td style='word-break:break-all'>2026-11-14</td><td style='word-break:break-all'>N</td></tr><tr><td style='word-break:break-all'>S7</td><td style='word-break:break-all'>Jamaica Gleaner (CMC): &quot;Russell retires from IPL, transitions to KKR&#x27;s &#x27;Power coach&#x27;&quot;</td><td style='word-break:break-all'>https://jamaica-gleaner.com/article/sports/20251201/russell-retires-ipl-transitions-kkrs-power-coach</td><td style='word-break:break-all'>30 Nov 2025 (updated 9 Dec 2025)</td><td style='word-break:break-all'>2026-11-14</td><td style='word-break:break-all'>N</td></tr><tr><td style='word-break:break-all'>S8</td><td style='word-break:break-all'>IPL (iplt20.com) media advisory: &quot;KKR pick Luvnith Sisodia as replacement for injured Matheesha Pathirana&quot;</td><td style='word-break:break-all'>https://www.iplt20.com/news/4371/kkr-pick-luvnith-sisodia-as-replacement-for-injured-matheesha-pathirana</td><td style='word-break:break-all'>24 May 2026</td><td style='word-break:break-all'>2026-11-14</td><td style='word-break:break-all'>O</td></tr><tr><td style='word-break:break-all'>S9</td><td style='word-break:break-all'>IPL (iplt20.com) media advisory: &quot;Rishabh Pant and Kuldeep Yadav complete high-profile trade between DC and LSG&quot;</td><td style='word-break:break-all'>https://www.iplt20.com/news/article/rishabh-pant-and-kuldeep-yadav-complete-high-profile-trade-between-dc-and-lsg</td><td style='word-break:break-all'>23 Jun 2026</td><td style='word-break:break-all'>2026-11-14</td><td style='word-break:break-all'>O</td></tr><tr><td style='word-break:break-all'>S10</td><td style='word-break:break-all'>Lucknow Super Giants: &quot;Rishabh Pant and Kuldeep Yadav complete trade between LSG and DC&quot;</td><td style='word-break:break-all'>https://www.lucknowsupergiants.in/news/rishabh-pant-kuldeep-yadav-trade-ipl-2027-lucknow-super-giants-cricket</td><td style='word-break:break-all'>23 Jun 2026</td><td style='word-break:break-all'>2026-11-14</td><td style='word-break:break-all'>O</td></tr><tr><td style='word-break:break-all'>S11</td><td style='word-break:break-all'>Tribune India (ANI): &quot;Glenn Phillips is a brilliant player: GT wicketkeeper-batter Jos Buttler&quot;</td><td style='word-break:break-all'>https://www.tribuneindia.com/news/sports/glenn-phillips-is-a-brilliant-player-gt-wicketkeeper-batter-jos-buttler/</td><td style='word-break:break-all'>28 Mar 2026</td><td style='word-break:break-all'>2026-11-14</td><td style='word-break:break-all'>N</td></tr><tr><td style='word-break:break-all'>W-GP</td><td style='word-break:break-all'>Wikipedia: Glenn Phillips (cricketer)</td><td style='word-break:break-all'>https://en.wikipedia.org/wiki/Glenn_Phillips_(cricketer)</td><td style='word-break:break-all'>~12 Nov 2026 (summary only)</td><td style='word-break:break-all'>2026-11-14</td><td style='word-break:break-all'>W</td></tr><tr><td style='word-break:break-all'>W-*</td><td style='word-break:break-all'>Wikipedia player pages (20). Identity fields read verbatim; &quot;last edited&quot; 12–13 Nov 2026</td><td style='word-break:break-all'>en.wikipedia.org/wiki/{Shreyas_Iyer, Heinrich_Klaasen, Rajat_Patidar, Tilak_Varma, Andre_Russell, Ishan_Kishan, Naman_Dhir, Tim_David, David_Miller_(South_African_cricketer), Suryakumar_Yadav, Varun_Chakravarthy, Sunil_Narine, Jasprit_Bumrah, Lockie_Ferguson, Rashid_Khan, Axar_Patel, Matheesha_Pathirana, Bhuvneshwar_Kumar, Kuldeep_Yadav, Sikandar_Raza}</td><td style='word-break:break-all'>12–13 Nov 2026</td><td style='word-break:break-all'>2026-11-14</td><td style='word-break:break-all'>W</td></tr></tbody></table></div>
+<h2>Methodological references</h2><ul class="small">
+<li>Tango, T. M., Lichtman, M. G., Dolphin, A. E. (2007). <i>The Book: Playing the Percentages in Baseball</i>: Leverage Index and win-probability-added concepts adapted here.</li>
+<li>Rosenbaum, D. (2004). Measuring how NBA players help their teams win: adjusted plus-minus. The ridge (regularised) variant is used here for opponent adjustment.</li>
+<li>Efron, B. &amp; Morris, C. (1975). Data analysis using Stein's estimator and its generalizations. <i>JASA</i>: empirical-Bayes shrinkage.</li>
+<li>Duckworth, F. C. &amp; Lewis, A. J. (1998). A fair method for resetting the target in interrupted one-day cricket matches. <i>JORS</i>: the resources concept behind the wicket-cost table.</li></ul><h1>15. Technical appendix: formulas and reproducibility</h1><ul>
+<li><b>Legal ball:</b> extras type ∉ {wide, Overstep, other}. <b>Ball faced:</b> not a wide. <b>Bowler runs:</b> bat runs + wide/no-ball extras.</li>
+<li><b>Leverage:</b> LI = Σ<sub>o</sub> p(o | tier, over) · |WP(state after o) − WP(state)| ÷ mean over all balls, with outcomes o ∈ {0, 1, 2, 3, 4, 6, wicket, wide}.</li>
+<li><b>Pressure score:</b> percentile(0.5 · leverage percentile + 0.5 · RPI percentile). The leverage percentile is computed within each over for innings 1 and within the innings for innings 2. HIGH = top 20%.</li>
+<li><b>Value per ball:</b> batting v = (r − x̂r) − C(s) · (out − p̂out); bowling v = (x̂c − c) + C(s) · (wkt − p̂wkt). C(s) = E[remaining | overs left, w] − E[remaining | overs left, w − 1].</li>
+<li><b>Ratings:</b> v = μ + a<sub>player</sub> + d<sub>player</sub>·HIGH + b<sub>opponent</sub> + e<sub>opponent</sub>·HIGH, with a ridge penalty (α = 1000) tuned out of time. Pressure-only ridge on HIGH balls (α = 2000).</li>
+<li><b>Empirical Bayes delta:</b> δ̂ = δ<sub>raw</sub> · τ² ÷ (τ² + s²<sub>i</sub>), where τ² = Var(δ<sub>raw</sub>) − mean(s²).</li>
+<li><b>Consistency:</b> (good + 10p₀) ÷ (n + 10). Score = Σ w<sub>k</sub> · percentile<sub>k</sub> × 100.</li>
+<li><b>Reproduce:</b> see README. The pipeline is <code>src/</code> (data → models → features → scouting → reporting), with 56 automated tests, fixed seed 2027, and leave-one-year-out cross-fitting for all production predictions.</li></ul>
+<p class="small">Generated by <code>src/reporting/build_report.py</code>. Every table and player figure is read from pipeline outputs in <code>reports/</code> and <code>research/</code>.</p></body></html>
