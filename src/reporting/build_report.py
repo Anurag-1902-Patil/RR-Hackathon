@@ -186,8 +186,8 @@ and only about {cv.at['bowling', 'reliability_of_raw_delta']:.0%} for bowlers. P
 with consistency, match impact, the shrunk own-baseline delta and underlying ability.</li>
 <li><b>The top of each list is robust, but the middle is not.</b> Across 7 weightings and 4 alternative pressure definitions, the leaders hold.
 Ranks 6–15 are statistically close, and we say so player by player.</li>
-<li><b>RR's clearest needs are a finisher and a death bowler who hold up under pressure.</b> RR's death-overs batting ranked 7th–10th of 10 on every measure in 2025–26,
-and its 2025 death bowling was the league's worst. Opening batting is a strength (#1 in both seasons).</li></ul>
+<li><b>RR's clearest needs are a finisher and a death bowler who hold up under pressure.</b> RR's death-overs batting ranked 7th–10th of 10 on run rate, boundary %, context value and wickets lost in both 2025 and 2026,
+and in 2025 its death bowling conceded runs faster than any other team's. Opening batting is a strength (#1 in both seasons).</li></ul>
 <div class="grid2"><div><h2>Top 10 batters</h2>{table(pd.DataFrame({'#': bt['rank'], 'Player': bt.player, 'Score': bt.score.round(0).astype(int), 'P(top10)': bt.p_top10.map('{:.0%}'.format)}))}</div>
 <div><h2>Top 10 bowlers</h2>{table(pd.DataFrame({'#': bw['rank'], 'Player': bw.player, 'Score': bw.score.round(0).astype(int), 'P(top10)': bw.p_top10.map('{:.0%}'.format)}))}</div></div>
 <p class="small">Score = 0–100 reliability composite (percentile among eligible players). P(top10) = share of 100 match-level bootstrap resamples in which the player stays in the top 10.
@@ -307,14 +307,14 @@ difference is meaningful (clear ≥ 80%, moderate 65–80%, slight 55–65%, oth
 <h2>Squad status</h2><p>The 2026 squad (27 players) is verified against the data pack and official RR announcements. These record 13 retentions and the trades of Samson for Jadeja and Curran and of Rana for Ferreira.
 RR entered the auction with ₹16.05 cr and one overseas slot. Parag captained; Curran was ruled out for the season. RR won 9 of 16 matches and lost Qualifier 2.
 <b>The IPL 2027 squad is pending:</b> retentions are due 17 Nov 2026, and the mini-auction is on 16 Dec 2026 (Goa; maximum 25 players, 8 overseas).</p>
-{img(FIG / 'report' / 'rr_phase_ranks.png', 'Figure 10a. RR rank among 10 IPL teams by phase, 2025–2026. Elite powerplay batting; weak death-overs batting; 2025 death bowling worst in the league.')}
+{img(FIG / 'report' / 'rr_phase_ranks.png', 'Figure 10a. RR rank among 10 IPL teams by phase, 2025–2026. Elite powerplay batting; weak death-overs batting; 2025 death bowling last on run rate, dot %, boundary % and value.')}
 {img(FIG / 'report' / 'rr_players_pressure.png', 'Figure 10b. RR players rated with the same pressure framework as all candidates. Most of the middle order and death bowlers sit below the pool median under pressure.')}
 {table(rr_bat_table(D['aud']), 'dense')}
 {img(FIG / 'report' / 'rr_priorities.png', 'Figure 10c. Recruitment priorities. Severity from 2025–26 phase ranks; coverage from the best eligible RR player in the role.', '85%')}
 <h2>Evidence-led requirements</h2><ol>
-<li><b>Finisher / middle-order batter reliable under pressure (High, {pm.set_index('requirement').at['Death-overs / finishing batting', 'priority_score']:.0f}).</b> Death batting ranked 7th–10th on every metric in both seasons.
+<li><b>Finisher / middle-order batter reliable under pressure (High, {pm.set_index('requirement').at['Death-overs / finishing batting', 'priority_score']:.0f}).</b> Death batting ranked 7th–10th on run rate, boundary %, context value and wickets lost in both seasons (dot-ball % was mid-table).
 In 2026 Jadeja (SR 140.5), Jurel (150.0) and Dubey (146.3) were well below the league death SR of 169.4. Only Ferreira was above par.</li>
-<li><b>Death bowler reliable under pressure (High, {pm.set_index('requirement').at['Death-overs bowling', 'priority_score']:.0f}).</b> 2025 was the league's worst on every death metric. In 2026, Sandeep Sharma conceded 13.70 an over and Deshpande 12.38 at the death.</li>
+<li><b>Death bowler reliable under pressure (High, {pm.set_index('requirement').at['Death-overs bowling', 'priority_score']:.0f}).</b> In 2025 RR ranked last of 10 on death-overs run rate conceded, dot %, boundary % and context value (9th on wickets). In 2026, Sandeep Sharma conceded 13.70 an over and Deshpande 12.38 at the death.</li>
 <li><b>Middle-overs batting (High, {pm.set_index('requirement').at['Middle-overs batting', 'priority_score']:.0f})</b> and <b>middle-overs bowling control (Medium)</b>. Dot % ranked 10th and 9th; Jadeja is strong, but the second spin option is weak under pressure.</li>
 <li><b>Not a need:</b> opening batting. RR ranked #1 in the league in both seasons (Sooryavanshi SR 234 in the 2026 powerplay).</li></ol>""")
     # ---------------- 11 strengthen RR

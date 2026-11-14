@@ -236,8 +236,8 @@ s = slide("CONTENT", "RR's batting is elite up front and weak at the death");
 image(s, "report/rr_phase_ranks.png", M, 1.35, 12.1, 3.9, "RR phase ranks among 10 IPL teams, 2025 and 2026");
 bullets(s, [
   "Powerplay batting #1 of 10 in both seasons, so opening is not a need.",
-  "Death batting 7th–10th on every metric. In 2026, Jadeja (SR 140.5), Jurel (150.0) and Dubey (146.3) were all below the league death SR of 169.4.",
-  "2025 death bowling was the worst in the league. In 2026, Sandeep Sharma conceded 13.70 an over at the death.",
+  "Death batting 7th–10th on run rate, boundary %, context value and wickets lost. In 2026, Jadeja (SR 140.5), Jurel (150.0) and Dubey (146.3) were all below the league death SR of 169.4.",
+  "2025: RR conceded runs faster at the death than any other team. In 2026, Sandeep Sharma conceded 13.70 an over at the death.",
 ], { x: M, y: 5.35, w: 12.1, h: 1.55, fontSize: 15 });
 s.addNotes("RR players were rated with exactly the same framework as all candidates; no preferential treatment. The 2027 squad is pending the 17 Nov retention deadline.");
 
@@ -249,7 +249,7 @@ s.addChart(pres.charts.BAR, [{ name: "Priority", labels: pr.map((r) => r.require
 bullets(s, [
   "Priority = 60% severity (RR's phase ranks, 2025–26) + 40% coverage gap (best eligible RR player's pressure percentile).",
   "High: finishing batting, death bowling, middle-overs batting.",
-  "Only Jadeja ranks in the bowling top 20 among current RR players. RR's eligible middle order ranks #53–#68 under pressure.",
+  "Only Jadeja ranks in the bowling top 20 among current RR players. RR's eligible middle order (Parag, Hetmyer, Jurel) ranks #53–#66 under pressure.",
 ], { x: 8.3, y: 1.5, w: 4.4, h: 5.3, fontSize: 15 });
 s.addNotes("Needs were derived before matching any candidate; the method is in the PDF section 10.");
 

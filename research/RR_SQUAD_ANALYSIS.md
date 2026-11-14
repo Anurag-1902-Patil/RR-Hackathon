@@ -71,7 +71,7 @@ Percentiles are against the full eligible candidate pool (82 batters, 78 bowlers
 
 **Reading.**
 - No current RR batter is in the candidate top 25 for pressure reliability.
-- The eligible middle-order and finishing batters all sit in the **bottom half** (#53–#68 of 82).
+- Every eligible middle-order and finishing batter except Dasun Shanaka (#42, an injury replacement) sits in the **bottom half** (#53–#68 of 82).
 - The two openers rate highly but have too few pressure balls to qualify. Openers structurally face fewer HIGH-pressure balls; this is noted as a framework limitation.
 - In bowling, **Jadeja is the one RR player in the top 20**. Bishnoi and Sandeep Sharma, RR's most-used spinner and an experienced seamer, rate in the bottom fifth under pressure.
 
@@ -120,8 +120,8 @@ Percentiles are against the full eligible candidate pool (82 batters, 78 bowlers
 - **Overseas balance:** 3 of the 9 overseas players (Curran, Maphaka, Pretorius) made 0–2 appearances in 2026. If they are released, slots open up, but **that depends on the 17 Nov retentions**.
 
 ## 7. Evidence-led recruitment requirements
-1. **A middle-order / finishing batter who is reliable under pressure.** This is the clearest, most persistent gap. RR's death batting ranked 7th–10th on every metric in both seasons, and every eligible RR middle-order batter rates below the pool median under pressure. Ideally the player bats 4–7, and Indian or overseas depending on slots.
-2. **A death-overs bowler who is reliable under pressure.** RR were the league's worst death attack in 2025 and improved to mid-table in 2026. Two of the five 2026 death options conceded more than 12 an over. Team bowling value under HIGH pressure ranked #8 in 2026.
+1. **A middle-order / finishing batter who is reliable under pressure.** This is the clearest, most persistent gap. RR's death batting ranked 7th–10th on run rate, boundary %, context value and wickets lost in both seasons (dot-ball % was mid-table), and every eligible RR middle-order batter (Parag, Hetmyer, Jurel) rates below the pool median under pressure. Ideally the player bats 4–7, and Indian or overseas depending on slots.
+2. **A death-overs bowler who is reliable under pressure.** In 2025 RR ranked last of 10 on death-overs run rate conceded, dot %, boundary % and context value (9th on wickets), and improved to mid-table in 2026. Two of the five 2026 death options conceded more than 12 an over. Team bowling value under HIGH pressure ranked #8 in 2026.
 3. **Middle-overs control.** Dot % ranked 10th and 9th. Jadeja is strong, but RR's second spin option rated poorly under pressure. This could be met by a spinner or by a batter who bowls, and is lower priority than 1–2.
 4. **Not a need:** opening and powerplay batting, where RR were the league's best in both seasons.
 
