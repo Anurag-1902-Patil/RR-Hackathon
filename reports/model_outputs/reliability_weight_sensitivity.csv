@@ -1,0 +1,15 @@
+side,variant,top10_overlap,spearman_vs_final
+batting,final,10,1.0
+batting,equal,8,0.9958710870380958
+batting,prompt_hypothesis_mapped,10,0.9986216141025317
+batting,pressure_only,9,0.9713765435805618
+batting,no_impact,9,0.9878791327802315
+batting,predictive_tilt,8,0.9695551832257292
+batting,baseline_delta_heavy,7,0.97138882743556
+bowling,final,10,1.0
+bowling,equal,9,0.9976691092964883
+bowling,prompt_hypothesis_mapped,10,0.9989678391655766
+bowling,pressure_only,9,0.9684140014853807
+bowling,no_impact,9,0.9881270548901708
+bowling,predictive_tilt,9,0.9706352786777673
+bowling,baseline_delta_heavy,9,0.974975905531358

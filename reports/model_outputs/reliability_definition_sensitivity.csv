@@ -1,0 +1,9 @@
+side,variant,top10_overlap,spearman_vs_final
+batting,blend_30lev_70rpi,9,0.7570879384911101
+bowling,blend_30lev_70rpi,6,0.8573264342403576
+batting,blend_70lev_30rpi,6,0.8735552239560939
+bowling,blend_70lev_30rpi,7,0.9072379168900718
+batting,high_top15pct,7,0.7652589582352168
+bowling,high_top15pct,8,0.8978584660182274
+batting,high_top30pct,6,0.8521026575029486
+bowling,high_top30pct,6,0.872452118279129

@@ -1,0 +1,6 @@
+,pressure_perf_per100,consistency_post,impact_eb,delta_eb,usual_per100
+pressure_perf_per100,1.0,0.61,0.81,0.67,0.59
+consistency_post,0.61,1.0,0.43,0.36,0.4
+impact_eb,0.81,0.43,1.0,0.52,0.5
+delta_eb,0.67,0.36,0.52,1.0,-0.04
+usual_per100,0.59,0.4,0.5,-0.04,1.0
