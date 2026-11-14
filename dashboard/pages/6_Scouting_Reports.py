@@ -3,7 +3,7 @@ import streamlit as st
 
 import common as C
 
-C.setup("Scouting Reports", "Individual profiles for the 20 selected players: evidence, alternatives, RR fit and risks")
+C.setup("Scouting Reports", "Individual profiles for the 20 selected players RR can sign: evidence, alternatives, RR fit and risks")
 
 side = st.radio("Discipline", ["batting", "bowling"], horizontal=True)
 s = C.reliability(side).query("rank <= 10")

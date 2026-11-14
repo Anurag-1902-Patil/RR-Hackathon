@@ -25,10 +25,10 @@ with tab1:
                         marker=dict(color=C.PINK, size=12), name="Selected")
         fig.update_layout(title="Pressure performance vs sample size (all eligible)")
         c2.plotly_chart(C.style(fig, 430), use_container_width=True)
-        cols = ["rank", "score", "p_top10", hc, "pressure_innings", "value_per100_high", "consistency_raw", "wpa_high_total",
+        cols = ["rank", "overall_rank", "rr_acquirable", "score", "p_top10", hc, "pressure_innings", "value_per100_high", "consistency_raw", "wpa_high_total",
                 "pressure_perf_per100", "usual_per100", "delta_eb"]
         st.dataframe(sub[cols].T.round(2), use_container_width=True)
-        C.note("delta_eb = pressure vs own baseline after empirical-Bayes shrinkage (batting retains ~21% of raw signal, bowling ~4%).")
+        C.note("rank = rank among players RR can sign (blank if not signable); overall_rank = rank among all eligible. delta_eb = pressure vs own baseline after empirical-Bayes shrinkage (batting retains ~21% of raw signal, bowling ~4%).")
 
 with tab2:
     alt = C.csv("reports/player_comparisons.csv")

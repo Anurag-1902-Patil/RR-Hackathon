@@ -50,5 +50,5 @@ st.markdown("""
 - Data covers IPL + bilateral T20I + A-team T20 from 2022. It has no domestic leagues or World Cups by name, and no fielder attribution (so no fielding metrics).
 - Openers face few HIGH-pressure balls, so some elite openers fall below eligibility.
 - Bootstrap intervals describe measurement uncertainty in 2022–26 performance, not probabilities of future performance.
-- IPL 2027 squads are unknown until retentions (17 Nov 2026); availability is reported, never scored.
+- The submitted lists rank only players RR can sign today (not on an IPL 2026 squad, not Pakistani or Bangladeshi, not retired or banned). Releases on 17 Nov 2026 will add players; the pipeline re-runs to include them.
 """)
