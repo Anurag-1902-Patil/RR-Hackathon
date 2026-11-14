@@ -1,0 +1,28 @@
+player_id,player,bat_role,bat_balls,bat_balls_high,bat_runs,bat_sr,bat_sr_high,bat_value100_high,bat_usual100,bat_pressure_perf100,bat_usual_pctile_vs_eligible,bat_pressure_pctile_vs_eligible,bat_eligible,bat_reliability_rank,bat_reliability_score,bowl_role,bowl_type,bowl_balls,bowl_balls_high,bowl_wkts,bowl_econ,bowl_econ_high,bowl_value100_high,bowl_usual100,bowl_pressure_perf100,bowl_usual_pctile_vs_eligible,bowl_pressure_pctile_vs_eligible,bowl_eligible,bowl_reliability_rank,bowl_reliability_score
+6819,Yashasvi Jaiswal,Opener,1872.0,120.0,2927.0,156.4,206.7,77.12,8.42,4.52,62.0,94.0,False,,,Death specialist,Right-arm Leg-Break,7.0,,0.0,14.57,,,-0.58,,27.0,,False,,
+7260,Dhruv Jurel,Middle order (4-5),798.0,316.0,1207.0,151.3,135.4,-16.04,0.94,-1.78,13.0,6.0,True,66.0,25.0,,,,,,,,,,,,,,,
+3298,Jofra Archer,Lower order (8+),145.0,54.0,187.0,129.0,150.0,-24.55,-3.69,-0.59,4.0,20.0,False,,,Powerplay specialist,Right-arm Fast,1259.0,261.0,71.0,9.04,8.83,-4.78,4.3,-0.68,59.0,33.0,True,51.0,38.0
+50284,Vaibhav Sooryavanshi,Opener,676.0,111.0,1509.0,223.2,203.6,41.61,31.64,2.32,100.0,68.0,False,,,,,,,,,,,,,,,,,
+8182,Donovan Ferreira,Finisher (6-7),343.0,93.0,562.0,163.8,189.2,36.47,4.01,1.75,35.0,63.0,False,,,Middle-overs,Right-arm offbreak,109.0,12.0,3.0,9.74,12.0,-19.42,-2.4,-0.13,17.0,45.0,False,,
+152,Ravindra Jadeja,Finisher (6-7),958.0,300.0,1294.0,135.1,140.0,-6.84,1.11,-0.55,16.0,20.0,True,68.0,23.0,Middle-overs,Slow left-arm orthodox,1396.0,214.0,58.0,7.9,7.15,16.99,7.37,1.55,76.0,73.0,True,17.0,77.0
+6423,Riyan Parag,Middle order (4-5),1084.0,276.0,1642.0,151.5,148.6,5.34,7.13,1.06,55.0,45.0,True,53.0,37.0,Middle-overs,Right-arm offbreak,260.0,46.0,10.0,8.7,7.83,10.97,-2.08,0.24,18.0,50.0,False,,
+7312,Nandre Burger,Lower order (8+),30.0,5.0,24.0,80.0,200.0,85.53,-1.16,0.22,9.0,29.0,False,,,Powerplay specialist,Left-arm fast-medium,441.0,109.0,22.0,9.8,8.86,8.86,-3.69,0.38,15.0,55.0,False,,
+67036,Brijesh Sharma,Lower order (8+),4.0,,2.0,50.0,,,-0.09,,11.0,,False,,,Multi-phase,Right-arm Fast,273.0,59.0,14.0,9.89,8.44,49.79,1.51,1.55,38.0,74.0,False,,
+7503,Ravi Bishnoi,Lower order (8+),105.0,48.0,102.0,97.1,114.6,-62.64,-6.9,-1.41,0.0,12.0,False,,,Middle-overs,Right-arm Leg-Break,2327.0,538.0,124.0,8.35,8.83,-7.68,4.91,-2.0,62.0,14.0,True,65.0,24.0
+3297,Shimron Hetmyer,Middle order (4-5),1245.0,413.0,1888.0,151.6,144.1,1.66,6.42,0.85,49.0,38.0,True,58.0,32.0,,,,,,,,,,,,,,,
+41503,Yash Punja,,,,,,,,,,,,,,,Middle-overs,Right-arm Leg-Break,180.0,33.0,9.0,9.3,7.45,20.21,-0.07,0.31,29.0,53.0,False,,
+2436,Dasun Shanaka,Finisher (6-7),774.0,388.0,1080.0,139.5,141.2,5.94,4.13,1.39,35.0,52.0,True,42.0,49.0,Middle-overs,Right-arm medium,529.0,93.0,27.0,8.85,8.19,20.82,-5.24,0.91,10.0,65.0,False,,
+25139,Shubham Dubey,Finisher (6-7),143.0,68.0,220.0,153.8,169.1,0.43,-1.34,0.12,7.0,29.0,False,,,,,,,,,,,,,,,,,
+6806,Tushar Deshpande,Lower order (8+),24.0,4.0,33.0,137.5,25.0,-91.64,-1.45,-0.17,7.0,26.0,False,,,Powerplay specialist,Right-arm medium,1037.0,206.0,54.0,9.96,9.76,6.8,0.8,0.48,32.0,59.0,True,30.0,59.0
+2411,Sandeep Sharma,Lower order (8+),11.0,,8.0,72.7,,,1.02,,15.0,,False,,,Multi-phase,Right-arm medium-fast,961.0,281.0,39.0,9.02,10.72,-14.29,1.16,-2.09,33.0,13.0,True,68.0,21.0
+7269,Sushant Mishra,Lower order (8+),3.0,,1.0,33.3,,,-0.29,,10.0,,False,,,Middle-overs,Left-arm medium-fast,38.0,,2.0,10.58,,,0.47,,29.0,,False,,
+43798,Lhuan Pretorius,No.3,77.0,9.0,103.0,133.8,155.6,130.41,-4.25,0.6,1.0,32.0,False,,,,,,,,,,,,,,,,,
+1487,Adam Milne,Lower order (8+),56.0,8.0,53.0,94.6,62.5,-116.64,-5.79,-0.46,0.0,22.0,False,,,Powerplay specialist,Right-arm Fast,545.0,142.0,35.0,9.48,9.17,22.69,-0.28,1.52,28.0,73.0,False,,
+60700,Ravi Singh,Finisher (6-7),2.0,,4.0,200.0,,,-0.47,,10.0,,False,,,,,,,,,,,,,,,,,
+4409,Sam Curran,Finisher (6-7),858.0,218.0,1122.0,130.8,135.8,-6.86,-0.52,-0.36,9.0,23.0,True,65.0,26.0,Multi-phase,Left-arm medium-fast,1350.0,234.0,62.0,9.64,10.46,-12.79,-6.31,-1.53,9.0,18.0,True,66.0,24.0
+7545,Kuldeep Sen,Lower order (8+),3.0,,0.0,0.0,,,-0.16,,11.0,,False,,,Middle-overs,Right-arm medium-fast,241.0,42.0,14.0,9.63,11.57,-23.56,-0.23,-0.56,28.0,37.0,False,,
+8580,Yudhvir Singh,Lower order (8+),16.0,3.0,22.0,137.5,33.3,-287.8,-0.22,-0.43,10.0,22.0,False,,,Powerplay specialist,Right-arm medium-fast,138.0,26.0,8.0,11.0,8.54,62.66,0.22,0.77,29.0,64.0,False,,
+26663,Kwena Maphaka,Lower order (8+),25.0,16.0,27.0,108.0,112.5,14.13,-0.75,0.14,9.0,29.0,False,,,Multi-phase,Left-arm Fast,305.0,78.0,15.0,10.74,8.62,6.46,-3.43,0.2,15.0,49.0,False,,
+43965,Emanjot Singh Chahal,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+47523,Aman Rao Perala,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+48557,Vignesh Puthur,,,,,,,,,,,,,,,Middle-overs,Left-arm Chinaman,72.0,14.0,6.0,9.08,8.57,-6.65,1.37,-0.06,37.0,46.0,False,,
