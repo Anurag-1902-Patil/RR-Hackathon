@@ -1,0 +1,87 @@
+{
+  "selected_model": "logit",
+  "selection_rule": "lowest mean validation Brier across innings",
+  "candidates": [
+    "constant(base rate)",
+    "logit",
+    "lgbm (monotone)"
+  ],
+  "production_values": "leave-one-year-out cross-fitting",
+  "train_years": [
+    2022,
+    2023,
+    2024
+  ],
+  "valid_years": [
+    2025
+  ],
+  "test_years": [
+    2026
+  ],
+  "seed": 2027,
+  "features_inn1": [
+    "balls_left",
+    "wkts_left",
+    "tier_T20I_full",
+    "tier_T20I_assoc",
+    "tier_A_team",
+    "frac_left",
+    "wkts_x_frac",
+    "score_vs_par",
+    "proj_vs_par",
+    "proj_x_frac"
+  ],
+  "features_inn2": [
+    "balls_left",
+    "wkts_left",
+    "tier_T20I_full",
+    "tier_T20I_assoc",
+    "tier_A_team",
+    "frac_left",
+    "wkts_x_frac",
+    "rrr_vs_par",
+    "rrr_vs_par_sq",
+    "need_frac",
+    "need_per_wkt",
+    "rrr_x_wkts",
+    "target_vs_par"
+  ],
+  "test_metrics": {
+    "inn1_constant(base rate)": {
+      "brier": 0.2526,
+      "log_loss": 0.6983,
+      "auc": 0.5,
+      "ece": 0.0724
+    },
+    "inn1_logit": {
+      "brier": 0.233,
+      "log_loss": 0.6636,
+      "auc": 0.6935,
+      "ece": 0.1122
+    },
+    "inn1_lgbm": {
+      "brier": 0.2433,
+      "log_loss": 0.7013,
+      "auc": 0.6769,
+      "ece": 0.1221
+    },
+    "inn2_constant(base rate)": {
+      "brier": 0.2543,
+      "log_loss": 0.7017,
+      "auc": 0.5,
+      "ece": 0.0737
+    },
+    "inn2_logit": {
+      "brier": 0.1162,
+      "log_loss": 0.3607,
+      "auc": 0.9266,
+      "ece": 0.0657
+    },
+    "inn2_lgbm": {
+      "brier": 0.1388,
+      "log_loss": 0.4292,
+      "auc": 0.9106,
+      "ece": 0.0852
+    }
+  }
+}

@@ -77,6 +77,21 @@ def add_delivery_flags(bb: pd.DataFrame) -> pd.DataFrame:
     return d
 
 
+PAR_WINDOW = 60
+PAR_PRIOR = 160.0  # ASSUMPTION: fallback par for the very first match of a tier (no history yet)
+
+
+def par_scores(d: pd.DataFrame, matches: pd.DataFrame) -> pd.Series:
+    """Pre-match par: mean full-length first-innings total over the previous PAR_WINDOW matches
+    of the same tier, using strictly earlier matches only (no leakage). Captures scoring inflation."""
+    inn1 = d[d["innings"].eq(1) & d["max_balls"].eq(120)].groupby("match_id")["total_runs"].sum()
+    mt = matches[["match_id", "match_date", "tier"]].sort_values(["match_date", "match_id"])
+    mt["inn1"] = mt["match_id"].map(inn1)
+    mt["par"] = (mt.groupby("tier")["inn1"]
+                   .transform(lambda s: s.shift(1).rolling(PAR_WINDOW, min_periods=1).mean()))
+    return mt.set_index("match_id")["par"].fillna(PAR_PRIOR)
+
+
 def add_match_state(d: pd.DataFrame, matches: pd.DataFrame) -> pd.DataFrame:
     """Pre-delivery match state per innings (only past information is used)."""
     d = d.sort_values(["match_id", "innings", "innings_ball_num"], kind="stable").reset_index(drop=True)
@@ -99,6 +114,8 @@ def add_match_state(d: pd.DataFrame, matches: pd.DataFrame) -> pd.DataFrame:
     d["target"] = np.where(is_chase, target, np.nan)
     d["runs_needed"] = np.where(is_chase, d["target"] - d["score_before"], np.nan)
     d["rrr"] = np.where(is_chase & (d["balls_left"] > 0), d["runs_needed"] * 6 / d["balls_left"].replace(0, np.nan), np.nan)
+
+    d["par"] = d["match_id"].map(par_scores(d, matches))
 
     # outcome labels (used only as model targets, never as features)
     d["batting_team_won"] = d["batting_team_id"].eq(d["match_id"].map(mm["win_team_id"]))
