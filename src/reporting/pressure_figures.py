@@ -8,7 +8,7 @@ import numpy as np
 import pandas as pd
 
 from src.config import FEATURES_DIR, FIGURES_DIR, PROCESSED_DIR
-from src.features.pressure import rule_based_components
+from src.features.pressure import RPI_WEIGHTS, rule_based_components
 
 INK, MUTED, GRID, SURFACE = "#1B1F3B", "#6B6F8A", "#E6E6EF", "#FFFFFF"
 SEQ = ["#D9CCF2", "#9B7FD6", "#4B2A99"]  # low -> high (one purple hue, light -> dark)
@@ -70,20 +70,25 @@ def fig_outcomes(x: pd.DataFrame) -> None:
 def sensitivity_table(x: pd.DataFrame) -> pd.DataFrame:
     comp = rule_based_components(x)
     z = (comp - comp.mean()) / comp.std(ddof=0)
-    base_w = {"rrr_gap": .25, "wkt_pressure": .20, "recent_wkts": .15, "recent_dots": .10, "death": .10, "closeness": .20}
+    base_w = {k.removeprefix("z_"): v for k, v in RPI_WEIGHTS.items()}
 
     def high(wts: dict, lev_w: float = 0.5) -> pd.Series:
         r = sum(v * z[k] for k, v in wts.items())
         return (lev_w * x["lev_pct_inn"] + (1 - lev_w) * r.rank(pct=True)).rank(pct=True) >= 0.8
 
+    def drop(name: str) -> dict:
+        kept = {k: v for k, v in base_w.items() if k != name}
+        return {k: v / sum(kept.values()) for k, v in kept.items()}
+
     base = x["pressure_band"].eq("high")
     alts = {
-        "RPI: equal weights": (dict.fromkeys(comp.columns, 1 / 6), 0.5),
-        "RPI: drop dot-squeeze": ({"rrr_gap": .3, "wkt_pressure": .22, "recent_wkts": .17, "death": .11, "closeness": .2}, 0.5),
-        "RPI: drop closeness": ({"rrr_gap": .3, "wkt_pressure": .25, "recent_wkts": .2, "recent_dots": .1, "death": .15}, 0.5),
+        "RPI: equal weights": (dict.fromkeys(base_w, 1 / len(base_w)), 0.5),
+        "RPI: drop dot-squeeze": (drop("recent_dots"), 0.5),
+        "RPI: drop closeness": (drop("closeness"), 0.5),
+        "RPI: drop scoreboard": (drop("scoreboard"), 0.5),
         "Blend 30% leverage / 70% RPI": (base_w, 0.3),
         "Blend 70% leverage / 30% RPI": (base_w, 0.7),
-        "Leverage only (within-innings pct)": (base_w, 1.0),
+        "Leverage only (as used in blend)": (base_w, 1.0),
         "RPI only": (base_w, 0.0),
     }
     rows = []
@@ -102,7 +107,7 @@ def fig_sensitivity(t: pd.DataFrame) -> None:
     ax.set_xlim(0, 1); ax.grid(axis="x", color=GRID, zorder=0); ax.spines[["top", "right"]].set_visible(False)
     ax.set_xlabel("Overlap of HIGH-pressure ball sets with final definition (Jaccard, 1 = identical)")
     ax.set_title("Which choices move the pressure definition?", loc="left")
-    _note(fig, "Rule-based weights barely matter (0.78–0.86); the leverage/rule-based blend is the decisive choice.")
+    _note(fig, "Pressure v2. Each bar re-derives the top-20% HIGH set under one alternative choice.")
     fig.tight_layout(rect=(0, 0.06, 1, 1)); fig.savefig(FIGURES_DIR / "pressure_sensitivity.png", dpi=200); plt.close(fig)
 
 

@@ -46,3 +46,27 @@ The dot-squeeze term is partly endogenous (a batter's own dots raise the pressur
 | D | **Keep the 50/50 blend** as the primary definition, with 30/70 and 70/30 as mandatory ranking-sensitivity runs | Judgement call |
 
 Acceptance tests for v2: no adjacent-over change in HIGH share above 15 percentage points; innings-1 middle overs with 4+ down at ≥ 15% HIGH; all existing pressure tests still pass.
+
+---
+
+## v2 outcome (approved by user, implemented 2026-11-14)
+
+| Fix | As implemented |
+|---|---|
+| A | Innings-1 scoreboard term = era par − projected total. Projected total = score + par × E[remaining runs ÷ par \| overs left, wickets in hand], from full-length first innings of **other years** (leave-one-year-out, cells with ≥30 innings, else the overs-left average). Each innings' scoreboard gap is z-scored within that innings |
+| B | Binary death flag → (share of innings bowled)². Leverage outcome probabilities now by tier × over, smoothed over a centred 3-over window |
+| C | **Changed from the proposal.** Damping innings-1 overs 1–2 was tried first: it left batting-first middle overs at 1–5% HIGH (only 7.8% with 4+ down), because the innings-1 WP model imposes its own over-shape on leverage. Final: innings-1 leverage is ranked **within each over** (it only compares situations at the same stage), chase leverage is ranked within the innings (that WP model has AUC 0.93, so its death-over rise is real) |
+| D | Blend kept at 50/50. Bands for 30/70 and 70/30 stored (`pressure_band_l30`, `pressure_band_l70`) for mandatory ranking sensitivity |
+
+**Acceptance results** (tested in `tests/test_pressure.py`):
+
+| Check | v1 | v2 | Target |
+|---|---:|---:|---:|
+| Max adjacent-over change in HIGH share | 39 pp | **5 pp** | ≤ 15 ✅ |
+| Innings-1 overs 7–15, 4+ down, HIGH share | 2.6% | **23.9%** | ≥ 15% ✅ |
+| HIGH balls in dead games (WP < 5% or > 95%) | ~1% | **0.8%** | < 2% ✅ |
+| HIGH share in chases | 46% | 42% | balanced ✅ |
+| Dismissal rate HIGH vs LOW | 6.1 vs 5.3% | 6.2 vs 5.3% | HIGH > LOW ✅ |
+| HIGH share by tier | — | IPL 20.5%, T20I full 20.5%, associate 15.4%, A-team 15.1% | — |
+
+**v2 sensitivity** (Jaccard overlap of the HIGH set with the final definition): RPI equal weights 0.89, drop dot-squeeze 0.88, drop scoreboard 0.83, drop closeness 0.81, blend 70/30 0.73, blend 30/70 0.59. The blend remains the most consequential choice. The RPI-heavy blend shifts the set most, so player rankings will be reported under both blends.

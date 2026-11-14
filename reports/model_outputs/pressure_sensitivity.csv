@@ -1,8 +1,9 @@
 variant,jaccard_vs_final
-RPI: equal weights,0.864
-RPI: drop dot-squeeze,0.826
-RPI: drop closeness,0.78
-Blend 30% leverage / 70% RPI,0.684
-Blend 70% leverage / 30% RPI,0.671
-Leverage only (within-innings pct),0.425
-RPI only,0.341
+RPI: equal weights,0.886
+RPI: drop dot-squeeze,0.877
+RPI: drop closeness,0.811
+RPI: drop scoreboard,0.832
+Blend 30% leverage / 70% RPI,0.591
+Blend 70% leverage / 30% RPI,0.732
+Leverage only (as used in blend),0.507
+RPI only,0.228

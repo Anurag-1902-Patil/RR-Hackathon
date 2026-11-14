@@ -69,32 +69,28 @@
 
 | Component | Weight | Signal |
 |---|---:|---|
-| Required-rate gap vs era par rate (chases) | 0.25 | Scoreboard pressure |
+| Scoreboard gap, z-scored within innings. Chase: RRR − era par rate. Setting: era par − projected total (leave-one-year-out expected-remaining-runs table) | 0.25 | Scoreboard pressure |
 | Wickets lost relative to balls used | 0.20 | Resource pressure |
 | Closeness of contest, 1 − \|2·WP − 1\| | 0.20 | Match in the balance |
 | Wickets in previous 12 deliveries | 0.15 | Collapse pressure |
 | Dot-ball share of previous 12 legal balls | 0.10 | Squeeze / build-up |
-| Death overs (16–20) | 0.10 | Phase |
+| Innings progress, (share of innings bowled)² | 0.10 | Phase (smooth, no cliff) |
 
 ### 3.2 What the comparison showed (`reports/model_outputs/pressure_*.csv`)
 - The two definitions **barely agree**: Spearman ρ = 0.06, and the high-pressure sets overlap by Jaccard 0.11.
 - **Leverage alone is biased toward chases:** 92% of its top-20% balls fall in innings 2, and **none** fall in first-innings death overs. The innings-1 WP model is necessarily uncertain, so its swings are compressed. Batting-first specialists and bowlers defending a first-innings total would be structurally excluded.
 - **RPI alone ignores stakes.** A collapse in a dead game still scores high.
 
-### 3.3 Final definition: composite
-`pressure_score = percentile( 0.5 × leverage percentile within innings + 0.5 × RPI percentile )`
+### 3.3 Final definition: composite (v2, after review; see `research/PRESSURE_REVIEW.md`)
+`pressure_score = percentile( 0.5 × leverage percentile + 0.5 × RPI percentile )`
+- **Leverage percentile:** innings 1 is ranked *within each over*. The innings-1 WP model (AUC 0.69) imposes its own over-by-over shape on leverage, so only like-for-like stage comparisons are trusted. Innings 2 is ranked within the innings, because the chase model (AUC 0.93) has a genuine death-over rise.
 - **HIGH pressure = top 20% of deliveries. LOW (ordinary) = bottom 50%.** Bands are percentile-based, so they are interpretable and not tied to the scale of any index.
-- Balance achieved: 46% of high-pressure balls are in chases and 44% in death overs. First-innings death overs are 42% high pressure, and quiet first-innings middle overs only 2%.
-- **Pressure does change outcomes** (league-wide, balls faced):
-
-| Band | Balls | SR | Dismissal % | Dot % |
-|---|---:|---:|---:|---:|
-| Low | 96,887 | 142.8 | 5.28 | 33.0 |
-| Medium | 57,968 | 135.4 | 5.34 | 37.7 |
-| High | 38,396 | 137.2 | **6.09** | 36.9 |
+- v1 → v2 review: three flaws were found and fixed. Batting-first middle-over collapses were barely recognised (2.6% → 23.9% HIGH), there was a hard 15→16 over cliff (largest adjacent-over jump 39 pp → 5 pp), and leverage stepped at phase boundaries.
+- Balance: 42% of HIGH balls are in chases. HIGH share rises smoothly from about 3% in over 1 to about 40% in over 20 in both innings. Dead-game share is 0.8%.
+- **Pressure does change outcomes** (league-wide, balls faced, v2): dismissal rate is **6.2%** under HIGH vs 5.3% under LOW. Raw SR is roughly flat (140 vs 142), because HIGH is concentrated late in the innings where scoring is faster. This is exactly why players are judged against **context-expected** performance, not raw averages.
 
 - **Known limitation:** the dot-squeeze component is partly *endogenous*. A batter's own dot balls raise the pressure label on their next ball. Its weight is therefore kept low (0.10), and RPI-without-dots is one of the sensitivity variants.
-- Leverage-only and RPI-only remain available (`pressure_band_lev`, `pressure_band_rpi`). Final rankings will be re-run under each and under thresholds of 15%, 20% and 30%. Rank stability across definitions is reported.
+- Sensitivity variants stored per delivery: blend 30/70 and 70/30 (`pressure_band_l30`, `pressure_band_l70`), leverage-only and RPI-only (`pressure_band_lev`, `pressure_band_rpi`). Overlap of the HIGH set with the final: RPI weight changes 0.81–0.89 Jaccard, blend 70/30 0.73, blend 30/70 0.59. Final rankings will be re-run under the blend variants and under HIGH thresholds of 15% and 30%, and rank stability across definitions is reported.
 
 ## 4. Batting reliability engine 🔜
 - **Expected runs and expected dismissal per ball.** A context model (phase, balls left, wickets in hand, innings, chase state, tier, bowler type (pace/spin), batter hand, era par, opposition bowling strength), trained with the same chronological split. Outputs: **Runs Above Expected (RAE)** and **Dismissals Below Expected**, per ball and aggregated.
