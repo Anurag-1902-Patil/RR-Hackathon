@@ -36,6 +36,8 @@ FACTS = {
            "Pending retention (17 Nov)", "Overseas; age 37 at auction", "W-DM"),
     1699: ("Suryakumar Ashok Yadav", "1990-09-14", "India", "RHB", "Right-arm off break", "Mumbai Indians",
            "Pending retention (17 Nov)", "Removed as India T20I captain and dropped from T20I squads in 2026; page calls IPL 2026 'terrible'", "W-SKY"),
+    4853: ("Glenn Dominic Phillips", "1996-12-06", "New Zealand", "RHB", "Right-arm off break", "Gujarat Titans",
+           "Pending retention (17 Nov)", "Overseas; missed IPL 2025 (injury) but retained by GT for 2026 (S11); only 5 IPL games each in 2023 and 2026 in data, so rating leans on T20Is", "W-GP; S11; D"),
     6256: ("Varun Chakaravarthy Vinod", "1991-08-29", "India", "RHB", "Right-arm leg break googly", "Kolkata Knight Riders",
            "Pending retention (17 Nov)", "Missed early IPL 2026 games (fitness reports, news only)", "W-VC"),
     781: ("Sunil Philip Narine", "1988-05-26", "West Indies", "LHB", "Right-arm off break", "Kolkata Knight Riders",

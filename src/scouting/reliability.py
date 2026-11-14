@@ -154,6 +154,9 @@ def bootstrap(d: pd.DataFrame, base_tabs: dict[str, pd.DataFrame], n_boot: int =
 
 
 RECENT_YEARS = (2025, 2026)  # auction relevance: must appear in the data in 2025 or 2026
+# Verified formal IPL retirements (user decision 2026-11-14: exclude from IPL 2027 lists).
+# player_id -> source ID in research/RESEARCH_SOURCE_REGISTER.md
+RETIRED_FROM_IPL: dict[int, str] = {1318: "Andre Russell: retired from IPL 30 Nov 2025 (S7)"}
 
 
 def recent_flag(d: pd.DataFrame) -> dict[str, pd.Series]:
@@ -170,9 +173,12 @@ def run(n_boot: int = 100) -> dict[str, pd.DataFrame]:
     excluded = []
     for side, t in tabs.items():
         t["active_recent"] = t.index.isin(rec[side].index)
-        excluded.append(t[t["eligible"] & ~t["active_recent"]][["player", "last_match"]].assign(side=side))
+        t["retired_from_ipl"] = t.index.isin(list(RETIRED_FROM_IPL))
+        excluded.append(t[t["eligible"] & ~t["active_recent"]][["player", "last_match"]].assign(side=side, reason="no data 2025-26"))
+        excluded.append(t[t["eligible"] & t["retired_from_ipl"]][["player", "last_match"]].assign(
+            side=side, reason=lambda x: x.index.map(RETIRED_FROM_IPL)))
         t["eligible_statistical"] = t["eligible"]
-        t["eligible"] = t["eligible"] & t["active_recent"]
+        t["eligible"] = t["eligible"] & t["active_recent"] & ~t["retired_from_ipl"]
     pd.concat(excluded).to_csv(out_dir / "excluded_inactive.csv")
     for side, c in comp_correlations(tabs).items():
         c.to_csv(out_dir / f"reliability_component_corr_{side}.csv")

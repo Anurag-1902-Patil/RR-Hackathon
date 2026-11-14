@@ -34,14 +34,14 @@ batting: alpha=1000.0 delta_scale=0.25
 bowling: alpha=1000.0 delta_scale=0.25
 definition sensitivity:
    side           variant  top10_overlap  spearman_vs_final
-batting blend_30lev_70rpi              9              0.757
-bowling blend_30lev_70rpi              6              0.857
-batting blend_70lev_30rpi              6              0.874
-bowling blend_70lev_30rpi              7              0.907
-batting     high_top15pct              7              0.765
-bowling     high_top15pct              8              0.898
-batting     high_top30pct              6              0.852
-bowling     high_top30pct              6              0.872
+batting blend_30lev_70rpi              8              0.746
+bowling blend_30lev_70rpi              6              0.864
+batting blend_70lev_30rpi              7              0.877
+bowling blend_70lev_30rpi              7              0.905
+batting     high_top15pct              7              0.757
+bowling     high_top15pct              8              0.893
+batting     high_top30pct              5              0.848
+bowling     high_top30pct              6              0.868
 batting: alpha=1000.0 delta_scale=0.25
 bowling: alpha=1000.0 delta_scale=0.25
 batting: alpha=1000.0 delta_scale=0.25
@@ -256,54 +256,56 @@ bootstrap 100/100
 == batting
                          player                  latest_team                role  score  rank  rank_min_across_defs  rank_max_across_defs  boot_rank_p05  boot_rank_p95  p_top10
 player_id                                                                                                                                                                       
-3647               Shreyas Iyer                        India  Middle order (4-5)  96.28     1                     1                     4           1.00          21.00     0.74
-4260           Heinrich Klaasen          Sunrisers Hyderabad  Middle order (4-5)  94.62     2                     1                     4           1.00          12.00     0.91
-5039              Rajat Patidar  Royal Challengers Bengaluru  Middle order (4-5)  93.08     3                     3                    16           1.00          36.15     0.52
-7897       Namboori Tilak Varma                        India  Middle order (4-5)  90.90     4                     1                    17           1.00          42.10     0.63
-1318              Andre Russell                  West Indies      Finisher (6-7)  85.32     5                     2                    25           2.00          40.05     0.54
-4117               Ishan Kishan                        India              Opener  84.81     6                     3                    21           2.00          63.00     0.47
-37052                Naman Dhir                        India      Finisher (6-7)  82.05     7                     2                    10           2.00          51.05     0.40
-6396                  Tim David                    Australia      Finisher (6-7)  81.35     8                     8                    14           2.00          39.15     0.43
-1077               David Miller               Delhi Capitals  Middle order (4-5)  81.15     9                     6                    15           2.00          49.00     0.37
-1699           Suryakumar Yadav               Mumbai Indians  Middle order (4-5)  80.90    10                     6                    45           3.00          50.00     0.27
-4853             Glenn Phillips                  New Zealand  Middle order (4-5)  80.19    11                     7                    23           3.00          42.05     0.34
-6281            Abhishek Sharma                        India              Opener  78.97    12                    10                    26           1.00          54.10     0.40
-5939              Cameron Green        Kolkata Knight Riders  Middle order (4-5)  78.21    13                     3                    21           3.00          58.05     0.25
-4708                Rinku Singh                        India      Finisher (6-7)  77.37    14                     7                    24           4.95          43.05     0.21
-4106             Daryl Mitchell                  New Zealand  Middle order (4-5)  76.28    15                     5                    61           3.00          53.10     0.31
-7094             Curtis Campher                      Ireland  Middle order (4-5)  75.00    16                    14                    59           6.00          58.00     0.16
-6288               Shubman Gill               Gujarat Titans              Opener  73.46    17                    16                    43           4.00          54.00     0.23
-813                 Jos Buttler                      England              Opener  72.37    18                     8                    46           2.00          62.00     0.21
-3672               Kusal Mendis                    Sri Lanka              Opener  70.90    19                     4                    26           8.90          53.00     0.09
-4904             Kamindu Mendis                    Sri Lanka  Middle order (4-5)  68.33    20                    19                    52           7.00          54.00     0.08
+3647               Shreyas Iyer                        India  Middle order (4-5)  96.62     1                     1                     4           1.00          20.05     0.76
+4260           Heinrich Klaasen          Sunrisers Hyderabad  Middle order (4-5)  94.81     2                     1                     4           1.00          11.00     0.92
+5039              Rajat Patidar  Royal Challengers Bengaluru  Middle order (4-5)  93.25     3                     3                    16           1.00          36.10     0.54
+7897       Namboori Tilak Varma                        India  Middle order (4-5)  91.17     4                     1                    15           1.00          41.10     0.63
+4117               Ishan Kishan                        India              Opener  85.26     5                     3                    20           1.95          62.00     0.50
+37052                Naman Dhir                        India      Finisher (6-7)  82.66     6                     2                    10           2.00          50.05     0.44
+1077               David Miller               Delhi Capitals  Middle order (4-5)  82.01     7                     5                    15           2.00          48.00     0.37
+6396                  Tim David                    Australia      Finisher (6-7)  81.82     8                     7                    13           2.95          38.15     0.45
+1699           Suryakumar Yadav               Mumbai Indians  Middle order (4-5)  81.36     9                     6                    44           3.00          49.00     0.28
+4853             Glenn Phillips                  New Zealand  Middle order (4-5)  80.58    10                     7                    22           3.00          41.05     0.34
+6281            Abhishek Sharma                        India              Opener  79.68    11                    10                    25           1.00          53.10     0.43
+5939              Cameron Green        Kolkata Knight Riders  Middle order (4-5)  79.03    12                     2                    22           3.00          57.05     0.27
+4708                Rinku Singh                        India      Finisher (6-7)  78.18    13                     7                    23           4.00          42.05     0.21
+4106             Daryl Mitchell                  New Zealand  Middle order (4-5)  76.82    14                     5                    60           3.00          52.10     0.35
+7094             Curtis Campher                      Ireland  Middle order (4-5)  75.78    15                    13                    58           6.00          57.00     0.17
+6288               Shubman Gill               Gujarat Titans              Opener  74.22    16                    16                    42           3.00          52.05     0.24
+813                 Jos Buttler                      England              Opener  73.18    17                     8                    45           2.00          60.05     0.24
+3672               Kusal Mendis                    Sri Lanka              Opener  71.62    18                     4                    26           7.95          52.00     0.10
+4904             Kamindu Mendis                    Sri Lanka  Middle order (4-5)  69.03    19                    17                    51           7.00          53.05     0.09
+6931            Pathum Nissanka                    Sri Lanka              Opener  67.27    20                     9                    29           5.95          54.20     0.12
 
 == bowling
                         player                  latest_team                  role  score  rank  rank_min_across_defs  rank_max_across_defs  boot_rank_p05  boot_rank_p95  p_top10
 player_id                                                                                                                                                                        
-6256        Varun Chakravarthy                        India          Middle-overs  96.38     1                     1                     4           1.00          17.05     0.84
-781               Sunil Narine        Kolkata Knight Riders          Middle-overs  93.03     2                     1                     3           1.00          25.40     0.68
-2933            Jasprit Bumrah                        India           Multi-phase  90.86     3                     1                    12           1.00          33.00     0.60
-4692           Lockie Ferguson                  New Zealand           Multi-phase  90.33     4                     3                     9           1.00          26.05     0.67
-4722               Rashid Khan                  Afghanistan          Middle-overs  90.13     5                     2                    10           1.00          41.05     0.58
-2876                Axar Patel                        India          Middle-overs  89.28     6                     5                    13           1.95          30.05     0.53
-8661       Matheesha Pathirana        Kolkata Knight Riders      Death specialist  88.88     7                     3                    15           1.00          23.05     0.68
-360          Bhuvneshwar Kumar                        India  Powerplay specialist  86.78     8                     8                    14           1.00          38.05     0.49
-3644             Kuldeep Yadav                        India          Middle-overs  86.71     9                     2                    16           3.00          35.15     0.47
-2984             Sikandar Raza                     Zimbabwe          Middle-overs  85.46    10                     7                    25           2.00          27.10     0.50
-6669               Mohsin Khan         Lucknow Super Giants  Powerplay specialist  84.87    11                     5                    11           2.00          38.00     0.44
-4219             Krunal Pandya  Royal Challengers Bengaluru          Middle-overs  84.54    12                     6                    30           2.00          42.10     0.42
-3628             Kagiso Rabada               Gujarat Titans  Powerplay specialist  83.16    13                     5                    23           5.95          49.15     0.32
-19316       Maheesh Theekshana                    Sri Lanka           Multi-phase  77.96    14                     6                    16           4.00          44.10     0.26
-2681              Taskin Ahmed                   Bangladesh  Powerplay specialist  77.76    15                     9                    22           6.00          53.15     0.18
-2636                Adam Zampa                    Australia          Middle-overs  77.24    16                    15                    24           3.00          44.05     0.29
-152            Ravindra Jadeja             Rajasthan Royals          Middle-overs  76.78    17                     9                    24           6.00          51.05     0.20
-6355            Shaheen Afridi                     Pakistan  Powerplay specialist  73.75    18                    13                    24           5.95          50.00     0.20
-4101          Mitchell Santner                  New Zealand          Middle-overs  70.20    19                    18                    39           5.95          52.15     0.15
-830             Josh Hazlewood  Royal Challengers Bengaluru  Powerplay specialist  69.67    20                    14                    23           6.00          66.15     0.20
- player_id          player last_match    side
-       143  Dinesh Karthik 2024-05-22 batting
-       796    Matthew Wade 2024-04-10 batting
-      3024 Mohammad Rizwan 2024-12-13 batting
-      3056  Iftikhar Ahmed 2024-05-30 batting
-      5809   Naveen ul Haq 2024-12-12 bowling
-      5940  Riley Meredith 2024-09-04 bowling
+6256        Varun Chakravarthy                        India          Middle-overs  96.33     1                     1                     4           1.00          17.05     0.84
+781               Sunil Narine        Kolkata Knight Riders          Middle-overs  92.93     2                     1                     3           1.00          25.35     0.68
+2933            Jasprit Bumrah                        India           Multi-phase  90.73     3                     1                    12           1.00          33.00     0.60
+4692           Lockie Ferguson                  New Zealand           Multi-phase  90.20     4                     3                     9           1.00          26.05     0.68
+4722               Rashid Khan                  Afghanistan          Middle-overs  90.00     5                     2                    10           1.00          41.05     0.58
+2876                Axar Patel                        India          Middle-overs  89.13     6                     5                    13           1.95          30.05     0.53
+8661       Matheesha Pathirana        Kolkata Knight Riders      Death specialist  88.73     7                     3                    15           1.00          23.05     0.68
+360          Bhuvneshwar Kumar                        India  Powerplay specialist  86.60     8                     8                    14           1.00          38.05     0.49
+3644             Kuldeep Yadav                        India          Middle-overs  86.53     9                     2                    16           3.00          35.15     0.47
+2984             Sikandar Raza                     Zimbabwe          Middle-overs  85.27    10                     7                    25           2.00          28.05     0.50
+6669               Mohsin Khan         Lucknow Super Giants  Powerplay specialist  84.67    11                     5                    11           2.00          38.05     0.43
+4219             Krunal Pandya  Royal Challengers Bengaluru          Middle-overs  84.33    12                     6                    30           2.00          42.10     0.42
+3628             Kagiso Rabada               Gujarat Titans  Powerplay specialist  82.93    13                     5                    23           5.95          48.20     0.31
+19316       Maheesh Theekshana                    Sri Lanka           Multi-phase  77.67    14                     6                    16           4.00          43.15     0.26
+2681              Taskin Ahmed                   Bangladesh  Powerplay specialist  77.47    15                     9                    22           6.95          53.15     0.18
+2636                Adam Zampa                    Australia          Middle-overs  76.93    16                    15                    24           3.00          44.05     0.30
+152            Ravindra Jadeja             Rajasthan Royals          Middle-overs  76.47    17                     9                    24           6.00          50.10     0.20
+6355            Shaheen Afridi                     Pakistan  Powerplay specialist  73.40    18                    13                    24           5.95          49.05     0.20
+4101          Mitchell Santner                  New Zealand          Middle-overs  69.80    19                    18                    39           5.95          52.10     0.15
+830             Josh Hazlewood  Royal Challengers Bengaluru  Powerplay specialist  69.27    20                    14                    23           6.00          66.10     0.20
+ player_id          player last_match    side                                           reason
+       143  Dinesh Karthik 2024-05-22 batting                                  no data 2025-26
+       796    Matthew Wade 2024-04-10 batting                                  no data 2025-26
+      3024 Mohammad Rizwan 2024-12-13 batting                                  no data 2025-26
+      3056  Iftikhar Ahmed 2024-05-30 batting                                  no data 2025-26
+      1318   Andre Russell 2025-07-22 batting Andre Russell: retired from IPL 30 Nov 2025 (S7)
+      5809   Naveen ul Haq 2024-12-12 bowling                                  no data 2025-26
+      5940  Riley Meredith 2024-09-04 bowling                                  no data 2025-26
+      1318   Andre Russell 2025-07-22 bowling Andre Russell: retired from IPL 30 Nov 2025 (S7)

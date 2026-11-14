@@ -35,7 +35,14 @@ Age is reported for context only and is **not** used in the reliability score.
 - Raza is the only shortlisted player currently without an IPL contract.
 - **The competition asks for the most reliable players under pressure.** The top-10 lists therefore remain a data ranking, and auction feasibility is reported alongside it, not used to filter. **The exception is players who have formally retired from the IPL**: see the decision below.
 
-## Decision needed (user)
-How to handle **Andre Russell** (rank #5 on the data):
-- **Option A (recommended): exclude players who have officially retired from the IPL** from the submitted lists. Russell drops out, ranks 6–10 move up, and **Glenn Phillips (#11, score 80)** enters at #10. The submission is framed around IPL 2027, where Russell cannot play. His pressure record is still discussed in the report.
-- Option B: keep him as a pure data ranking, with a "retired from IPL" flag.
+## Decision (user, 2026-11-14): verified IPL retirements are excluded
+**Andre Russell has been removed** (`RETIRED_FROM_IPL` in `src/scouting/reliability.py`, with a regression test), and the full pipeline was re-run. **Glenn Phillips** enters the batting list at #10.
+
+Phillips' verification:
+- Glenn Dominic Phillips, born 6 Dec 1996 (age 30 at auction), New Zealand all-rounder, RHB, off-break.
+- IPL: RR 2021, SRH, GT 2025–. Missed IPL 2025 through injury; retained by GT for 2026 (S11).
+- No 2026 injury is reported.
+- Data ID 4853 matches (New Zealand; GT/SRH).
+- Flag: only 5 IPL games each in 2023 and 2026, so his rating leans on T20Is.
+
+Russell's pressure record is still discussed in the report as context.

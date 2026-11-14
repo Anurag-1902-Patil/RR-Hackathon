@@ -1,9 +1,9 @@
 side,variant,top10_overlap,spearman_vs_final
-batting,blend_30lev_70rpi,9,0.7570879384911101
-bowling,blend_30lev_70rpi,6,0.8573264342403576
-batting,blend_70lev_30rpi,6,0.8735552239560939
-bowling,blend_70lev_30rpi,7,0.9072379168900718
-batting,high_top15pct,7,0.7652589582352168
-bowling,high_top15pct,8,0.8978584660182274
-batting,high_top30pct,6,0.8521026575029486
-bowling,high_top30pct,6,0.872452118279129
+batting,blend_30lev_70rpi,8,0.746485261174078
+bowling,blend_30lev_70rpi,6,0.8638326019606966
+batting,blend_70lev_30rpi,7,0.8768855617802728
+bowling,blend_70lev_30rpi,7,0.9047148272976149
+batting,high_top15pct,7,0.7571329985356396
+bowling,high_top15pct,8,0.8933270744442136
+batting,high_top30pct,5,0.8480837108843926
+bowling,high_top30pct,6,0.8675799087635762

@@ -6,18 +6,20 @@
 ## Top 10 batters
 | # | Player | Role (from data) | Score | HIGH balls | Pressure inns | SR HIGH / LOW | Value /100 HIGH | Rank range across definitions | Bootstrap 90% rank | P(top 10) |
 |---|---|---|---:|---:|---:|---|---:|---|---|---:|
-| 1 | Shreyas Iyer | Middle order | 96 | 439 | 23 | 159 / 156 | +33.7 | 1–4 | 1–21 | 0.74 |
-| 2 | Heinrich Klaasen | Middle order | 95 | 310 | 17 | 171 / 168 | +39.0 | 1–4 | 1–12 | 0.91 |
-| 3 | Rajat Patidar | Middle order | 93 | 208 | 13 | 163 / 181 | +42.3 | 3–16 | 1–36 | 0.52 |
-| 4 | Tilak Varma | Middle order | 91 | 698 | 39 | 152 / 146 | +19.5 | 1–17 | 1–42 | 0.63 |
-| 5 | Andre Russell | Finisher | 85 | 259 | 17 | 183 / 185 | +30.8 | 2–25 | 2–40 | 0.54 |
-| 6 | Ishan Kishan | Opener | 85 | 370 | 19 | 152 / 146 | +24.5 | 3–21 | 2–63 | 0.47 |
-| 7 | Naman Dhir | Finisher | 82 | 227 | 12 | 169 / 177 | +33.2 | 2–10 | 2–51 | 0.40 |
-| 8 | Tim David | Finisher | 81 | 469 | 34 | 168 / 192 | +22.5 | 8–14 | 2–39 | 0.43 |
-| 9 | David Miller | Middle order | 81 | 404 | 26 | 160 / 144 | +18.6 | 6–15 | 2–49 | 0.37 |
-| 10 | Suryakumar Yadav | Middle order | 81 | 562 | 36 | 159 / 171 | +19.0 | 6–45 | 3–50 | 0.27 |
+| 1 | Shreyas Iyer | Middle order | 97 | 439 | 23 | 159 / 156 | +33.7 | 1–4 | 1–20 | 0.76 |
+| 2 | Heinrich Klaasen | Middle order | 95 | 310 | 17 | 171 / 168 | +39.0 | 1–4 | 1–11 | 0.92 |
+| 3 | Rajat Patidar | Middle order | 93 | 208 | 13 | 163 / 181 | +42.3 | 3–16 | 1–36 | 0.54 |
+| 4 | Tilak Varma | Middle order | 91 | 698 | 39 | 152 / 146 | +19.5 | 1–15 | 1–41 | 0.63 |
+| 5 | Ishan Kishan | Opener | 85 | 370 | 19 | 152 / 146 | +24.5 | 3–20 | 2–62 | 0.50 |
+| 6 | Naman Dhir | Finisher | 83 | 227 | 12 | 169 / 177 | +33.2 | 2–10 | 2–50 | 0.44 |
+| 7 | David Miller | Middle order | 82 | 404 | 26 | 160 / 144 | +18.6 | 5–15 | 2–48 | 0.37 |
+| 8 | Tim David | Finisher | 82 | 469 | 34 | 168 / 192 | +22.5 | 7–13 | 3–38 | 0.45 |
+| 9 | Suryakumar Yadav | Middle order | 81 | 562 | 36 | 159 / 171 | +19.0 | 6–44 | 3–49 | 0.28 |
+| 10 | Glenn Phillips | Middle order | 81 | 298 | 14 | 134 / 175 | +28.5 | 7–22 | 3–41 | 0.34 |
 
-Next in line: Glenn Phillips (80), Abhishek Sharma (79), Cameron Green (78), Rinku Singh (77), Daryl Mitchell (76).
+Next in line: Abhishek Sharma (80), Cameron Green (79), Rinku Singh (78), Daryl Mitchell (77), Curtis Campher (76).
+
+**Change log (2026-11-14):** Andre Russell (data rank #5) has been removed. He formally retired from the IPL on 30 Nov 2025 (S7), and the user decided to exclude verified IPL retirements. The full pipeline (percentiles, definition variants, bootstrap) was re-run without him. As a result, Miller (82.01) and David (81.82) swap places at #7/#8 (a statistical tie), and Glenn Phillips enters at #10.
 
 ## Top 10 bowlers
 | # | Player | Role (from data) | Score | HIGH legal balls | Pressure spells | Econ HIGH / LOW | Wkts HIGH | Rank range across definitions | Bootstrap 90% rank | P(top 10) |
@@ -43,16 +45,18 @@ Next in line: Mohsin Khan (85), Krunal Pandya (85), Kagiso Rabada (83), Maheesh 
 ## Robustness summary
 | Check | Batting top-10 kept | Bowling top-10 kept |
 |---|---|---|
-| 7 weight schemes (equal, prompt hypothesis, pressure-only, no-impact, predictive tilt, delta-heavy) | 7–10 (ρ ≥ 0.97) | 9–10 (ρ ≥ 0.97) |
-| Pressure blend 30/70 · 70/30 | 9 · 6 | 6 · 7 |
-| HIGH = top 15% · top 30% | 7 · 6 | 8 · 6 |
+| 7 weight schemes (equal, prompt hypothesis, pressure-only, no-impact, predictive tilt, delta-heavy) | 8–10 (ρ ≥ 0.97) | 9–10 (ρ ≥ 0.97) |
+| Pressure blend 30/70 · 70/30 | 8 · 7 | 6 · 7 |
+| HIGH = top 15% · top 30% | 7 · 5 | 8 · 6 |
 
 The **pressure definition** moves the lists more than the **weights** do, which matches the pressure review.
 
 ## Excluded by the recency rule (no data in 2025–26)
 Dinesh Karthik, Matthew Wade, Mohammad Rizwan, Iftikhar Ahmed (batting); Naveen-ul-Haq, Riley Meredith (bowling). They are statistically eligible, but no data in 2025–26 means they may be unavailable for IPL 2027. This is a data-observable rule only, and real status must be verified.
 
+Also excluded: **Andre Russell**, a verified retirement from the IPL (S7). See the change log above.
+
 ## Open items before these lists are final
-1. External verification of each player's identity, current availability, retirement status and auction eligibility (Phase 7). Examples: Andre Russell's and Sunil Narine's current IPL status; whether any listed player is already in RR's retained squad.
+1. ✅ Identity and availability verification is done (`research/PLAYER_VERIFICATION.md`). Flags carried into the report: Pathirana's fitness (IPL 2026 hamstring), Kuldeep's trade to LSG, Raza's lack of an IPL contract, Ferguson's and Phillips' limited recent IPL usage, and Suryakumar's form. None of the 20 is an RR player. Availability depends on retentions due 17 Nov.
 2. Whether the Unstop dropdown restricts the eligible player pool.
 3. Whether to break near-ties at ranks 6–15 using the RR squad-fit layer. This is a decision for the user. The default is not to.

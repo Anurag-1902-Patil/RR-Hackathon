@@ -39,6 +39,16 @@ def test_weights_sum_to_one():
         assert abs(sum(w.values()) - 1) < 1e-9
 
 
+def test_retired_from_ipl_never_ranked():
+    """Verified IPL retirements (user decision) must not appear in any ranked output."""
+    from src.config import REPORTS_DIR
+    for side in ("batting", "bowling"):
+        p = REPORTS_DIR / "model_outputs" / f"reliability_{side}.csv"
+        if p.exists():
+            ranked = set(pd.read_csv(p)["player_id"])
+            assert not ranked & set(RL.RETIRED_FROM_IPL)
+
+
 def test_eb_rate_shrinks_small_samples_more():
     rng = np.random.default_rng(1)
     rows = []
