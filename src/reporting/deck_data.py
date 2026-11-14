@@ -37,6 +37,11 @@ def run() -> dict:
                          "availability": rr.availability, "uplift": rnd(rr.uplift_runs_per_season_MODEL_ESTIMATE, 1)})
         out[side] = rows
     out["pool"] = {side: int(pd.read_csv(MO / f"reliability_{side}.csv")["rr_acquirable"].sum()) for side in ("batting", "bowling")}
+    out["unrestricted"] = {}
+    for side in ("batting", "bowling"):
+        r = pd.read_csv(MO / f"reliability_{side}.csv").sort_values("overall_rank").head(10)
+        out["unrestricted"][side] = [{"rank": int(x.overall_rank), "player": x.player, "score": int(round(x.score)),
+                                      "why": str(x.not_acquirable_reason) if isinstance(x.not_acquirable_reason, str) else "signable"} for x in r.itertuples()]
     out["uncapped"] = {side: pd.read_csv(REPORTS_DIR / f"top_5_uncapped_{f}.csv").to_dict("records") for side, f in (("batting", "batters"), ("bowling", "bowlers"))}
     out["uncapped_transfer"] = pd.read_csv(MO / "uncapped_transfer_validation.csv").to_dict("records")
     nm = pd.read_csv(MO / "near_misses.csv")

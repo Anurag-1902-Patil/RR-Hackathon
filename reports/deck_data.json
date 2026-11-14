@@ -460,6 +460,132 @@
   "batting": 15,
   "bowling": 12
  },
+ "unrestricted": {
+  "batting": [
+   {
+    "rank": 1,
+    "player": "Shreyas Iyer",
+    "score": 97,
+    "why": "Under IPL contract: Punjab Kings (IPL 2026 squad)"
+   },
+   {
+    "rank": 2,
+    "player": "Heinrich Klaasen",
+    "score": 95,
+    "why": "Under IPL contract: Sunrisers Hyderabad (IPL 2026 squad)"
+   },
+   {
+    "rank": 3,
+    "player": "Rajat Patidar",
+    "score": 93,
+    "why": "Under IPL contract: Royal Challengers Bengaluru (IPL 2026 squad)"
+   },
+   {
+    "rank": 4,
+    "player": "Namboori Tilak Varma",
+    "score": 91,
+    "why": "Under IPL contract: Mumbai Indians (IPL 2026 squad)"
+   },
+   {
+    "rank": 5,
+    "player": "Ishan Kishan",
+    "score": 85,
+    "why": "Under IPL contract: Sunrisers Hyderabad (IPL 2026 squad)"
+   },
+   {
+    "rank": 6,
+    "player": "Naman Dhir",
+    "score": 83,
+    "why": "Under IPL contract: Mumbai Indians (IPL 2026 squad)"
+   },
+   {
+    "rank": 7,
+    "player": "David Miller",
+    "score": 82,
+    "why": "Under IPL contract: Delhi Capitals (IPL 2026 squad)"
+   },
+   {
+    "rank": 8,
+    "player": "Tim David",
+    "score": 82,
+    "why": "Under IPL contract: Royal Challengers Bengaluru (IPL 2026 squad)"
+   },
+   {
+    "rank": 9,
+    "player": "Suryakumar Yadav",
+    "score": 81,
+    "why": "Under IPL contract: Mumbai Indians (IPL 2026 squad)"
+   },
+   {
+    "rank": 10,
+    "player": "Glenn Phillips",
+    "score": 81,
+    "why": "Under IPL contract: Gujarat Titans (IPL 2026 squad)"
+   }
+  ],
+  "bowling": [
+   {
+    "rank": 1,
+    "player": "Varun Chakravarthy",
+    "score": 96,
+    "why": "Under IPL contract: Kolkata Knight Riders (IPL 2026 squad)"
+   },
+   {
+    "rank": 2,
+    "player": "Sunil Narine",
+    "score": 93,
+    "why": "Under IPL contract: Kolkata Knight Riders (IPL 2026 squad)"
+   },
+   {
+    "rank": 3,
+    "player": "Jasprit Bumrah",
+    "score": 91,
+    "why": "Under IPL contract: Mumbai Indians (IPL 2026 squad)"
+   },
+   {
+    "rank": 4,
+    "player": "Lockie Ferguson",
+    "score": 90,
+    "why": "Under IPL contract: Punjab Kings (IPL 2026 squad)"
+   },
+   {
+    "rank": 5,
+    "player": "Rashid Khan",
+    "score": 90,
+    "why": "Under IPL contract: Gujarat Titans (IPL 2026 squad)"
+   },
+   {
+    "rank": 6,
+    "player": "Axar Patel",
+    "score": 89,
+    "why": "Under IPL contract: Delhi Capitals (IPL 2026 squad)"
+   },
+   {
+    "rank": 7,
+    "player": "Matheesha Pathirana",
+    "score": 89,
+    "why": "Under IPL contract: Kolkata Knight Riders (IPL 2026 squad)"
+   },
+   {
+    "rank": 8,
+    "player": "Bhuvneshwar Kumar",
+    "score": 87,
+    "why": "Under IPL contract: Royal Challengers Bengaluru (IPL 2026 squad)"
+   },
+   {
+    "rank": 9,
+    "player": "Kuldeep Yadav",
+    "score": 87,
+    "why": "Under IPL contract: Delhi Capitals (IPL 2026 squad)"
+   },
+   {
+    "rank": 10,
+    "player": "Sikandar Raza",
+    "score": 85,
+    "why": "signable"
+   }
+  ]
+ },
  "uncapped": {
   "batting": [
    {
