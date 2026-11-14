@@ -3,6 +3,7 @@
 Output: reports/video/SupeRR_Intelligence_Pitch.mp4 (+ pitch_subtitles.srt, pitch_script.md).
 Voice backends (set PITCH_VOICE):
   voicestudio  local VoiceStudio app (installed by the user) at VOICESTUDIO_URL (default http://127.0.0.1:3900)
+  edge         Microsoft neural voice via edge-tts (default en-IN-NeerjaExpressiveNeural; text sent to Microsoft's service)
   sapi         offline Windows voice, TIMING PREVIEW ONLY (monotone; not for submission)
 Every name and number in the script is filled from reports/deck_data.json.
 """
@@ -87,20 +88,39 @@ def tts_sapi(items: list[tuple[Path, str]]) -> None:
 
 def tts_voicestudio(items: list[tuple[Path, str]]) -> None:
     """VoiceStudio local API. Endpoint and voice are set by env after discovery against the user's install:
-    VOICESTUDIO_URL (default http://127.0.0.1:3900), VOICESTUDIO_TTS_PATH (e.g. /v1/audio/speech), VOICESTUDIO_VOICE."""
+    VOICESTUDIO_URL (default http://127.0.0.1:3900), VOICESTUDIO_TTS_PATH (default /v1/audio/speech, OpenAI-compatible),
+    VOICESTUDIO_VOICE (profile; default engine voice), VOICESTUDIO_INSTRUCT (OmniVoice voice-design tags), VOICESTUDIO_SPEED."""
     base = os.environ.get("VOICESTUDIO_URL", "http://127.0.0.1:3900").rstrip("/")
     path = os.environ.get("VOICESTUDIO_TTS_PATH", "/v1/audio/speech")
     voice = os.environ.get("VOICESTUDIO_VOICE", "")
     for out, text in items:
-        body = {"input": text, "text": text, "response_format": "wav", "format": "wav"}
-        if voice:
-            body["voice"] = voice
+        body = {"model": os.environ.get("VOICESTUDIO_MODEL", "omnivoice"), "input": text, "voice": voice or "default",
+                "response_format": "wav", "speed": float(os.environ.get("VOICESTUDIO_SPEED", "1.0"))}
+        instruct = os.environ.get("VOICESTUDIO_INSTRUCT", "male, middle-aged, moderate pitch, indian accent")
+        if instruct:
+            body["instructions"] = instruct
         req = urllib.request.Request(base + path, data=json.dumps(body).encode(), headers={"Content-Type": "application/json"})
         with urllib.request.urlopen(req, timeout=600) as r:
             data = r.read()
         if data[:4] != b"RIFF":
             raise RuntimeError(f"VoiceStudio returned non-WAV data ({data[:120]!r}); check VOICESTUDIO_TTS_PATH")
         out.write_bytes(data)
+
+
+def tts_edge(items: list[tuple[Path, str]]) -> None:
+    """Microsoft neural voices via edge-tts (online). Voice/rate/pitch via EDGE_VOICE, EDGE_RATE, EDGE_PITCH."""
+    import asyncio
+
+    import edge_tts
+
+    voice = os.environ.get("EDGE_VOICE", "en-IN-NeerjaExpressiveNeural")
+    rate, pitch = os.environ.get("EDGE_RATE", "+4%"), os.environ.get("EDGE_PITCH", "+0Hz")
+
+    async def go():
+        for out, text in items:
+            await edge_tts.Communicate(text.replace("R R", "RR"), voice, rate=rate, pitch=pitch).save(str(out))
+
+    asyncio.run(go())
 
 
 def to_std_wav(src: Path) -> Path:
@@ -164,7 +184,7 @@ def build(voice: str | None = None) -> Path:
     export_slides()
     sc = scenes()
     raw = [AU / f"line_{i:02d}.wav" for i in range(len(sc))]
-    (tts_voicestudio if voice == "voicestudio" else tts_sapi)([(w, s["text"]) for w, s in zip(raw, sc)])
+    {"voicestudio": tts_voicestudio, "edge": tts_edge}.get(voice, tts_sapi)([(w, s["text"]) for w, s in zip(raw, sc)])
     wavs = [to_std_wav(w) for w in raw]
     clips, cues, t = [], [], 0.0
     for i, (s, w) in enumerate(zip(sc, wavs)):
@@ -174,7 +194,7 @@ def build(voice: str | None = None) -> Path:
         t += d
     lst = CL / "list.txt"
     lst.write_text("".join(f"file '{c.as_posix()}'\n" for c in clips), encoding="utf-8")
-    suffix = "" if voice == "voicestudio" else "_PREVIEW_sapi"
+    suffix = "" if voice in ("voicestudio", "edge") else "_PREVIEW_sapi"
     out = V / f"SupeRR_Intelligence_Pitch{suffix}.mp4"
     run(["ffmpeg", "-y", "-v", "error", "-f", "concat", "-safe", "0", "-i", str(lst), "-c", "copy", "-movflags", "+faststart", str(out)])
     srt(cues, V / "pitch_subtitles.srt")

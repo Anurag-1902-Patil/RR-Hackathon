@@ -55,13 +55,16 @@ Versions are pinned. Newer pandas, pyarrow and scikit-learn wheels were blocked 
 .venv/Scripts/python -m src.reporting.build_report     # reports/final_report.pdf (headless Edge/Chrome)
 .venv/Scripts/python -m src.reporting.deck_data        # reports/deck_data.json (same numbers as the PDF)
 cd src/reporting/deck && npm install && cd ../../..
-node src/reporting/deck/build_deck.js                  # reports/presentation.pptx (set APPLY_THEME_JS to apply theme colours)
+node src/reporting/deck/build_deck.js                  # reports/presentation.pptx: 27-slide technical deck (set APPLY_THEME_JS for theme colours)
+node src/reporting/deck/build_pitch.js                 # reports/SupeRR_Intelligence_Pitch.pptx: 10-slide SUBMISSION deck
+.venv/Scripts/python -m src.reporting.html_dashboard   # dashboard/SupeRR_Intelligence_Dashboard.html: SUBMISSION dashboard (single file)
 ```
 
 ## Video and social content
 ```bash
 .venv/Scripts/python -m src.reporting.video.build_video   # documentary, trailer, reel (PowerPoint slide export + Windows speech + ffmpeg)
 .venv/Scripts/python -m src.reporting.video.social        # reel script, LinkedIn/Instagram drafts (not posted)
+.venv/Scripts/python -m src.reporting.video.pitch edge    # SUBMISSION pitch video (10-slide deck, Microsoft neural voice via edge-tts)
 ```
 
 ## Dashboard
