@@ -1,6 +1,6 @@
 # Documentary chapters
 
-*Inside SupeRR Intelligence: Finding Cricket's Most Reliable Players Under Pressure*. Total runtime 12:40.
+*Inside SupeRR Intelligence: Finding Cricket's Most Reliable Players Under Pressure*. Total runtime 14:11.
 
 | Start | Chapter |
 |---|---|
@@ -12,7 +12,7 @@
 | 05:53 | 6. The batters |
 | 07:28 | 7. The bowlers |
 | 08:25 | 8. The selection debate |
-| 09:10 | 9. What do Rajasthan Royals actually need? |
-| 10:09 | 10. The auction strategy |
-| 11:16 | 11. Limitations and risks |
-| 11:55 | 12. Final recommendations |
+| 10:29 | 9. What do Rajasthan Royals actually need? |
+| 11:28 | 10. The auction strategy |
+| 12:35 | 11. Limitations and risks |
+| 13:19 | 12. Final recommendations |

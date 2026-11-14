@@ -427,177 +427,237 @@ and each beats the tenth-ranked bowler in about half of all resamples.
 That is a coin-flip, and we label it as one.
 
 108
-00:09:10,383 --> 00:09:11,710
-Chapter nine.
+00:09:10,383 --> 00:09:11,762
+One gap remained.
 
 109
-00:09:11,710 --> 00:09:15,693
-What do Rajasthan Royals actually need?
+00:09:11,762 --> 00:09:17,277
+Every signable player in the data pack is an overseas international,
 
 110
-00:09:16,143 --> 00:09:24,228
-We studied Rajasthan Royals' own squad before matching any candidate, using exactly the same framework.
+00:09:17,277 --> 00:09:20,846
+and the pack has no Indian domestic cricket.
 
 111
-00:09:24,228 --> 00:09:31,214
-The batting is elite up front: first of ten for powerplay run rate in both 2025 and 2026.
+00:09:20,846 --> 00:09:26,523
+So we added public ball-by-ball data from the Syed Mushtaq Ali Trophy,
 
 112
-00:09:31,214 --> 00:09:37,259
-But at the death it ranked between seventh and tenth on run rate, boundaries,
+00:09:26,523 --> 00:09:33,255
+India's domestic T20 competition, played on Indian pitches: 272 matches since 2020.
 
 113
-00:09:37,259 --> 00:09:41,027
-context value and wickets lost, in both seasons,
+00:09:33,255 --> 00:09:38,040
+We applied the same pressure definition and the same score,
 
 114
-00:09:41,027 --> 00:09:46,757
-and in 2025 the death bowling conceded runs faster than any other team's.
+00:09:38,040 --> 00:09:44,123
+and linked domestic and IPL ratings through 152 players who appear in both.
 
 115
-00:09:47,207 --> 00:09:54,377
-Turning that into priorities, finishing batting scores 81 out of 100, death bowling 61,
+00:09:44,123 --> 00:09:50,855
+A check on those players showed that domestic batting form carries over to the IPL,
 
 116
-00:09:54,377 --> 00:09:56,685
-and middle-overs batting 60.
+00:09:50,855 --> 00:09:55,803
+with a correlation of 0.5, but domestic bowling form did not.
 
 117
-00:09:56,685 --> 00:10:01,712
-Opening batting scores only 30: it is a strength, not a need.
+00:09:56,253 --> 00:10:02,805
+The uncapped fresher batters, all thirty or under and on no IPL squad: Rahul Buddhi,
 
 118
-00:10:01,712 --> 00:10:09,212
-Among current players, only Ravindra Jadeja ranks in the bowling top twenty under pressure.
+00:10:02,805 --> 00:10:07,563
+Narayan Jagadeesan, Rajat Dey, Atharva Taide and Harsh Tyagi.
 
 119
-00:10:09,662 --> 00:10:11,145
-Chapter ten.
+00:10:07,563 --> 00:10:16,144
+Rahul Buddhi and Narayan Jagadeesan are the clearest, each staying in the top five in 82 percent of resamples.
 
 120
-00:10:11,145 --> 00:10:13,741
-The auction strategy.
+00:10:16,144 --> 00:10:28,937
+For bowling, Atit Sheth leads clearly, but because domestic bowling form did not predict IPL bowling, the bowlers are a watchlist for live scouting, not firm picks.
 
 121
-00:10:14,191 --> 00:10:17,472
-Reliability and squad fit are kept separate.
+00:10:29,387 --> 00:10:30,714
+Chapter nine.
 
 122
-00:10:17,472 --> 00:10:24,035
-Squad fit asks which need a player would fill, how strong the evidence is in that phase,
+00:10:30,714 --> 00:10:34,697
+What do Rajasthan Royals actually need?
 
 123
-00:10:24,035 --> 00:10:28,212
-and whether an overseas player would cost a scarce slot.
+00:10:35,147 --> 00:10:43,232
+We studied Rajasthan Royals' own squad before matching any candidate, using exactly the same framework.
 
 124
-00:10:28,212 --> 00:10:32,836
-It guides targeting, but never reorders the competition lists.
+00:10:43,232 --> 00:10:50,218
+The batting is elite up front: first of ten for powerplay run rate in both 2025 and 2026.
 
 125
-00:10:33,286 --> 00:10:38,662
-Every signable player is overseas, so slots are the binding constraint,
+00:10:50,218 --> 00:10:56,263
+But at the death it ranked between seventh and tenth on run rate, boundaries,
 
 126
-00:10:38,662 --> 00:10:42,297
-and a player who covers two needs is worth more.
+00:10:56,263 --> 00:11:00,031
+context value and wickets lost, in both seasons,
 
 127
-00:10:42,297 --> 00:10:49,113
-Sikandar Raza is the one primary target: ninety-seventh percentile in death-overs batting,
+00:11:00,031 --> 00:11:05,761
+and in 2025 the death bowling conceded runs faster than any other team's.
 
 128
-00:10:49,113 --> 00:10:52,823
-and the top signable bowler for the middle overs.
+00:11:06,211 --> 00:11:13,381
+Turning that into priorities, finishing batting scores 81 out of 100, death bowling 61,
 
 129
-00:10:52,823 --> 00:10:57,670
-For middle-overs batting depth, Mark Chapman and Daryl Mitchell.
+00:11:13,381 --> 00:11:15,689
+and middle-overs batting 60.
 
 130
-00:10:58,120 --> 00:11:01,928
-For death bowling, Maheesh Theekshana stands out,
+00:11:15,689 --> 00:11:20,716
+Opening batting scores only 30: it is a strength, not a need.
 
 131
-00:11:01,928 --> 00:11:08,999
-at the eighty-fifth percentile at the death and with Rajasthan Royals experience from 2025,
+00:11:20,716 --> 00:11:28,216
+Among current players, only Ravindra Jadeja ranks in the bowling top twenty under pressure.
 
 132
-00:11:08,999 --> 00:11:10,787
-followed by Adam Zampa.
+00:11:28,666 --> 00:11:30,149
+Chapter ten.
 
 133
-00:11:10,787 --> 00:11:16,305
-The run estimates in this table are hypothetical models, not forecasts.
+00:11:30,149 --> 00:11:32,745
+The auction strategy.
 
 134
-00:11:16,755 --> 00:11:18,623
-Chapter eleven.
+00:11:33,195 --> 00:11:36,476
+Reliability and squad fit are kept separate.
 
 135
-00:11:18,623 --> 00:11:21,364
-Limitations and risks.
+00:11:36,476 --> 00:11:43,039
+Squad fit asks which need a player would fill, how strong the evidence is in that phase,
 
 136
-00:11:21,814 --> 00:11:26,981
-The signable pool is clearly weaker than the contracted elite.
+00:11:43,039 --> 00:11:47,216
+and whether an overseas player would cost a scarce slot.
 
 137
-00:11:26,981 --> 00:11:30,731
-Several players have little or no IPL record.
+00:11:47,216 --> 00:11:51,840
+It guides targeting, but never reorders the competition lists.
 
 138
-00:11:30,731 --> 00:11:37,982
-The data has no Indian domestic cricket, so uncapped Indian players cannot be assessed.
+00:11:52,290 --> 00:11:57,666
+Every signable player is overseas, so slots are the binding constraint,
 
 139
-00:11:37,982 --> 00:11:45,233
-Excluding Bangladeshi players, and Harry Brook, is a judgement, and we state it as one.
+00:11:57,666 --> 00:12:01,301
+and a player who covers two needs is worth more.
 
 140
-00:11:45,233 --> 00:11:52,900
-Players released on 17 November 2026 will join the pool, and the 2027 purse is not verified,
+00:12:01,301 --> 00:12:08,117
+Sikandar Raza is the one primary target: ninety-seventh percentile in death-overs batting,
 
 141
-00:11:52,900 --> 00:11:55,484
-so we make no financial claims.
+00:12:08,117 --> 00:12:11,827
+and the top signable bowler for the middle overs.
 
 142
-00:11:55,934 --> 00:11:57,703
-Chapter twelve.
+00:12:11,827 --> 00:12:16,674
+For middle-overs batting depth, Mark Chapman and Daryl Mitchell.
 
 143
-00:11:57,703 --> 00:12:00,298
-Final recommendations.
+00:12:17,124 --> 00:12:20,932
+For death bowling, Maheesh Theekshana stands out,
 
 144
-00:12:00,748 --> 00:12:04,696
-For Rajasthan Royals: first target Sikandar Raza.
+00:12:20,932 --> 00:12:28,004
+at the eighty-fifth percentile at the death and with Rajasthan Royals experience from 2025,
 
 145
-00:12:04,696 --> 00:12:09,127
-For death bowling, Maheesh Theekshana, then Adam Zampa.
+00:12:28,004 --> 00:12:29,791
+followed by Adam Zampa.
 
 146
-00:12:09,127 --> 00:12:13,719
-For middle-overs batting, Mark Chapman or Daryl Mitchell.
+00:12:29,791 --> 00:12:35,309
+The run estimates in this table are hypothetical models, not forecasts.
 
 147
-00:12:13,719 --> 00:12:20,084
-Keep the opening pair, and re-run the selection the day releases are published.
+00:12:35,759 --> 00:12:37,627
+Chapter eleven.
 
 148
-00:12:20,084 --> 00:12:23,951
-Reliable pressure performance is real but noisy.
+00:12:37,627 --> 00:12:40,368
+Limitations and risks.
 
 149
-00:12:23,951 --> 00:12:30,155
-The defensible way to find it is to define pressure from the match situation,
+00:12:40,818 --> 00:12:46,095
+The signable pool is clearly weaker than the contracted elite.
 
 150
-00:12:30,155 --> 00:12:37,487
-judge players against context and opponents, shrink small samples, and say how sure we are.
+00:12:46,095 --> 00:12:49,925
+Several players have little or no IPL record.
 
 151
-00:12:37,487 --> 00:12:39,743
+00:12:49,925 --> 00:12:57,925
+The public domestic data stops at the 2024/25 season, so the very newest freshers are missing,
+
+152
+00:12:57,925 --> 00:13:01,500
+and domestic bowling form is a weak guide.
+
+153
+00:13:01,500 --> 00:13:08,904
+Excluding Bangladeshi players, and Harry Brook, is a judgement, and we state it as one.
+
+154
+00:13:08,904 --> 00:13:16,734
+Players released on 17 November 2026 will join the pool, and the 2027 purse is not verified,
+
+155
+00:13:16,734 --> 00:13:19,373
+so we make no financial claims.
+
+156
+00:13:19,823 --> 00:13:21,592
+Chapter twelve.
+
+157
+00:13:21,592 --> 00:13:24,187
+Final recommendations.
+
+158
+00:13:24,637 --> 00:13:28,596
+For Rajasthan Royals: first target Sikandar Raza.
+
+159
+00:13:28,596 --> 00:13:33,039
+For death bowling, Maheesh Theekshana, then Adam Zampa.
+
+160
+00:13:33,039 --> 00:13:37,644
+For middle-overs batting, Mark Chapman or Daryl Mitchell.
+
+161
+00:13:37,644 --> 00:13:44,672
+For Indian slots, scout the uncapped batters Rahul Buddhi and Narayan Jagadeesan first.
+
+162
+00:13:44,672 --> 00:13:51,054
+Keep the opening pair, and re-run the selection the day releases are published.
+
+163
+00:13:51,054 --> 00:13:54,932
+Reliable pressure performance is real but noisy.
+
+164
+00:13:54,932 --> 00:14:01,153
+The defensible way to find it is to define pressure from the match situation,
+
+165
+00:14:01,153 --> 00:14:08,504
+judge players against context and opponents, shrink small samples, and say how sure we are.
+
+166
+00:14:08,504 --> 00:14:10,767
 That is SupeRR Intelligence.

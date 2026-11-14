@@ -82,38 +82,46 @@ How sure is the model? Each dot is a rank among all eligible players. The thick 
 
 Within the signable pool, the closest call is at the bottom of the bowling list. Ish Sodhi and FazalHaq Farooqi are only 2.3 points from tenth place, and each beats the tenth-ranked bowler in about half of all resamples. That is a coin-flip, and we label it as one.
 
-## Chapter 9: What do Rajasthan Royals actually need?
+*Visual: s18*
+
+One gap remained. Every signable player in the data pack is an overseas international, and the pack has no Indian domestic cricket. So we added public ball-by-ball data from the Syed Mushtaq Ali Trophy, India's domestic T20 competition, played on Indian pitches: 272 matches since 2020. We applied the same pressure definition and the same score, and linked domestic and IPL ratings through 152 players who appear in both. A check on those players showed that domestic batting form carries over to the IPL, with a correlation of 0.5, but domestic bowling form did not.
 
 *Visual: s19*
 
+The uncapped fresher batters, all thirty or under and on no IPL squad: Rahul Buddhi, Narayan Jagadeesan, Rajat Dey, Atharva Taide and Harsh Tyagi. Rahul Buddhi and Narayan Jagadeesan are the clearest, each staying in the top five in 82 percent of resamples. For bowling, Atit Sheth leads clearly, but because domestic bowling form did not predict IPL bowling, the bowlers are a watchlist for live scouting, not firm picks.
+
+## Chapter 9: What do Rajasthan Royals actually need?
+
+*Visual: s21*
+
 We studied Rajasthan Royals' own squad before matching any candidate, using exactly the same framework. The batting is elite up front: first of ten for powerplay run rate in both 2025 and 2026. But at the death it ranked between seventh and tenth on run rate, boundaries, context value and wickets lost, in both seasons, and in 2025 the death bowling conceded runs faster than any other team's.
 
-*Visual: s20*
+*Visual: s22*
 
 Turning that into priorities, finishing batting scores 81 out of 100, death bowling 61, and middle-overs batting 60. Opening batting scores only 30: it is a strength, not a need. Among current players, only Ravindra Jadeja ranks in the bowling top twenty under pressure.
 
 ## Chapter 10: The auction strategy
 
-*Visual: s21*
+*Visual: s23*
 
 Reliability and squad fit are kept separate. Squad fit asks which need a player would fill, how strong the evidence is in that phase, and whether an overseas player would cost a scarce slot. It guides targeting, but never reorders the competition lists.
 
-*Visual: s22*
+*Visual: s24*
 
 Every signable player is overseas, so slots are the binding constraint, and a player who covers two needs is worth more. Sikandar Raza is the one primary target: ninety-seventh percentile in death-overs batting, and the top signable bowler for the middle overs. For middle-overs batting depth, Mark Chapman and Daryl Mitchell.
 
-*Visual: s23*
+*Visual: s25*
 
 For death bowling, Maheesh Theekshana stands out, at the eighty-fifth percentile at the death and with Rajasthan Royals experience from 2025, followed by Adam Zampa. The run estimates in this table are hypothetical models, not forecasts.
 
 ## Chapter 11: Limitations and risks
 
-*Visual: s24*
+*Visual: s26*
 
-The signable pool is clearly weaker than the contracted elite. Several players have little or no IPL record. The data has no Indian domestic cricket, so uncapped Indian players cannot be assessed. Excluding Bangladeshi players, and Harry Brook, is a judgement, and we state it as one. Players released on 17 November 2026 will join the pool, and the 2027 purse is not verified, so we make no financial claims.
+The signable pool is clearly weaker than the contracted elite. Several players have little or no IPL record. The public domestic data stops at the 2024/25 season, so the very newest freshers are missing, and domestic bowling form is a weak guide. Excluding Bangladeshi players, and Harry Brook, is a judgement, and we state it as one. Players released on 17 November 2026 will join the pool, and the 2027 purse is not verified, so we make no financial claims.
 
 ## Chapter 12: Final recommendations
 
-*Visual: s25*
+*Visual: s27*
 
-For Rajasthan Royals: first target Sikandar Raza. For death bowling, Maheesh Theekshana, then Adam Zampa. For middle-overs batting, Mark Chapman or Daryl Mitchell. Keep the opening pair, and re-run the selection the day releases are published. Reliable pressure performance is real but noisy. The defensible way to find it is to define pressure from the match situation, judge players against context and opponents, shrink small samples, and say how sure we are. That is SupeRR Intelligence.
+For Rajasthan Royals: first target Sikandar Raza. For death bowling, Maheesh Theekshana, then Adam Zampa. For middle-overs batting, Mark Chapman or Daryl Mitchell. For Indian slots, scout the uncapped batters Rahul Buddhi and Narayan Jagadeesan first. Keep the opening pair, and re-run the selection the day releases are published. Reliable pressure performance is real but noisy. The defensible way to find it is to define pressure from the match situation, judge players against context and opponents, shrink small samples, and say how sure we are. That is SupeRR Intelligence.
