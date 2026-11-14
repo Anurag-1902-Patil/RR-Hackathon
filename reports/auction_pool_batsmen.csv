@@ -1,0 +1,17 @@
+auction_pool_rank,overall_reliability_rank,player,player_id,national_side,indian_or_overseas,role,score,p_top10,balls_high,pressure_innings,value_per100_high,rr_need_best_fit,phase_value_pctile_vs_eligible,phase_balls,pct_balls_IPL,last_match,risk_flag
+1,14,Daryl Mitchell,4106,New Zealand,Overseas,Middle order (4-5),76.818,0.35,262.0,18.0,21.069,Middle-overs batting,66,675,23.2,2026-11-01,
+2,15,Curtis Campher,7094,Ireland,Overseas,Middle order (4-5),75.779,0.17,155.0,11.0,25.77,Middle-overs batting,42,387,0.0,2026-01-31,
+3,18,Kusal Mendis,3672,Sri Lanka,Overseas,Opener,71.623,0.1,171.0,12.0,25.957,Middle-overs batting,37,528,0.8,2026-10-13,
+4,27,Mark Chapman,3374,New Zealand,Overseas,Middle order (4-5),62.857,0.13,164.0,10.0,24.627,Middle-overs batting,92,544,0.0,2026-01-28,
+5,28,Sikandar Raza,2984,Zimbabwe,Overseas,Middle order (4-5),62.273,0.09,273.0,19.0,17.94,Death-overs / finishing batting,97,185,13.6,2026-11-01,
+6,33,Jimmy Neesham,3323,New Zealand,Overseas,Finisher (6-7),58.247,0.04,165.0,14.0,15.733,Middle-overs batting,71,257,6.4,2026-03-25,
+7,35,Jaker Ali Anik,4773,Bangladesh,Overseas,Finisher (6-7),55.974,0.05,167.0,10.0,17.133,Death-overs / finishing batting,76,188,0.0,2025-11-27,Availability risk: BCCI directed KKR to release Mustafizur Rahman in Jan 2026 (Akashvani; S12); no wider rule published
+8,43,George Dockrell,1101,Ireland,Overseas,Finisher (6-7),45.065,0.03,207.0,16.0,9.534,Middle-overs batting,53,264,0.0,2026-06-28,
+9,45,Ibrahim Zadran,6448,Afghanistan,Overseas,No.3,45.0,0.05,206.0,10.0,6.796,Death-overs / finishing batting,58,149,0.0,2026-11-01,
+10,49,Harry Tector,4812,Ireland,Overseas,Middle order (4-5),41.429,0.0,208.0,12.0,4.344,Death-overs / finishing batting,26,133,0.0,2026-06-28,
+11,55,Ryan Burl,2463,Zimbabwe,Overseas,Middle order (4-5),35.0,0.0,210.0,13.0,-7.669,Death-overs / finishing batting,53,163,0.0,2026-11-01,
+12,60,Shai Hope,4369,West Indies,Overseas,No.3,27.532,0.01,155.0,11.0,-11.726,Powerplay / opening batting,80,535,11.0,2026-10-14,
+13,69,Lorcan Tucker,4814,Ireland,Overseas,No.3,17.662,0.0,169.0,11.0,-21.631,Middle-overs batting,24,413,0.0,2026-06-28,
+14,71,Charith Asalanka,4895,Sri Lanka,Overseas,Middle order (4-5),16.818,0.0,285.0,18.0,-14.235,Middle-overs batting,38,467,0.0,2026-09-19,
+15,73,Moeen Ali,1596,England,Overseas,Middle order (4-5),13.896,0.0,185.0,13.0,-16.323,Death-overs / finishing batting,39,198,50.3,2025-04-21,
+16,76,Roston Chase,2687,West Indies,Overseas,Middle order (4-5),10.0,0.0,162.0,11.0,-27.026,Middle-overs batting,8,323,0.0,2026-10-11,
