@@ -11,12 +11,12 @@
 | 5a. Win probability, WPA, Leverage Index | ✅ (logistic selected; 2026 chase Brier 0.116) |
 | 2/6. Pressure definition (composite stakes + difficulty) | ✅ `research/METHODOLOGY.md` |
 | Expectation models, opponent-adjusted ratings, reliability score | ✅ |
-| Rankings, bootstrap uncertainty, weight & definition sensitivity | ✅ `research/RANKINGS_PROVISIONAL.md` |
+| Rankings, bootstrap uncertainty, weight & definition sensitivity | ✅ `research/RANKINGS_FINAL.md` (RR-acquirable players only) |
 | Player verification (identity, availability) | ✅ `research/PLAYER_VERIFICATION.md` |
 | RR squad intelligence, needs, squad fit, comparisons | ✅ `research/RR_SQUAD_ANALYSIS.md`, `research/PLAYER_COMPARISONS.md` |
 | Streamlit dashboard (9 pages) | ✅ `dashboard/` |
-| Final report (43-page PDF) and 24-slide PPTX deck | ✅ `reports/final_report.pdf`, `reports/presentation.pptx` |
-| Documentary video, social content | 🔜 |
+| Final report (47-page PDF) and 25-slide PPTX deck | ✅ `reports/final_report.pdf`, `reports/presentation.pptx` |
+| Documentary video, trailer, social reel and posts | ✅ `reports/video/`, `reports/social_content/` |
 
 ## Setup (Windows, Python 3.11)
 ```bash
@@ -33,8 +33,10 @@ Versions are pinned. Newer pandas, pyarrow and scikit-learn wheels were blocked 
 .venv/Scripts/python -m src.models.expected          # context expectations
 .venv/Scripts/python -m src.scouting.player_tables    # per-player tables
 .venv/Scripts/python -m src.scouting.reliability      # score, sensitivity, bootstrap (~9 min)
-.venv/Scripts/python -m src.reporting.rankings        # top-10 CSVs + figure
-.venv/Scripts/python -m src.research.verified_players # verification register
+.venv/Scripts/python -m src.scouting.final_selection  # RR-acquirable pool: within-pool ranks and uncertainty
+.venv/Scripts/python -m src.reporting.rankings        # final top-10 CSVs + figure
+.venv/Scripts/python -m src.research.verified_players # verification register (needs facts for every selected player)
+.venv/Scripts/python -m src.reporting.rankings_doc    # research/RANKINGS_FINAL.md
 .venv/Scripts/python -m src.scouting.rr_squad         # RR squad intelligence (run_extended for depth/priority)
 .venv/Scripts/python -m src.scouting.squad_fit        # squad fit, alternatives, uplift
 .venv/Scripts/python -m src.reporting.comparisons_doc # PLAYER_COMPARISONS.md + recommendations
@@ -49,6 +51,12 @@ Versions are pinned. Newer pandas, pyarrow and scikit-learn wheels were blocked 
 .venv/Scripts/python -m src.reporting.deck_data        # reports/deck_data.json (same numbers as the PDF)
 cd src/reporting/deck && npm install && cd ../../..
 node src/reporting/deck/build_deck.js                  # reports/presentation.pptx (set APPLY_THEME_JS to apply theme colours)
+```
+
+## Video and social content
+```bash
+.venv/Scripts/python -m src.reporting.video.build_video   # documentary, trailer, reel (PowerPoint slide export + Windows speech + ffmpeg)
+.venv/Scripts/python -m src.reporting.video.social        # reel script, LinkedIn/Instagram drafts (not posted)
 ```
 
 ## Dashboard

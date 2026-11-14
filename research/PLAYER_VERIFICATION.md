@@ -1,4 +1,31 @@
-# Player Verification: Provisional Top 10s (2026-11-14)
+# Player Verification: Final RR-Acquirable Top 10s (2026-11-14)
+
+Register: `research/player_verification_register.csv` (code: `src/research/verified_players.py`, `FACTS_BY_NAME`). Sources: `RESEARCH_SOURCE_REGISTER.md` (W-* final-selection pages, S1, S7, S12–S16).
+
+## Final selection (user decision, 2026-11-14)
+The submitted lists contain **only players RR can sign** at the IPL 2027 auction: not on any IPL 2026 squad, not Pakistani or Bangladeshi, and not retired or banned
+(`src/scouting/final_selection.py`, enforced by `tests/test_reliability.py::test_final_top10_only_rr_acquirable`). The provisional verification of the unrestricted top 10s is kept below for the record.
+
+## Identity and availability check (final 20; 19 unique players, as Raza is on both lists)
+- For each player, the Wikipedia page was read on 2026-11-14 (W-* codes in the register). Full name, DOB, country, batting hand and bowling type match the data pack.
+- **No page lists an IPL team for 2026 or 2027, and none states a retirement from the IPL or from T20 cricket.**
+- Player IDs are resolved from the data by name. An unknown name stops the build. This replaced 14 hand-typed IDs that were found to be wrong during this check.
+- Maheesh Theekshana was released by RR before IPL 2026 (S1), so is not under contract.
+- Sikandar Raza has had no IPL contract since 2024 (PBKS 2023–24).
+- Every player must still **register** for the auction. The list is expected around 3 Dec 2026 and cannot be verified yet.
+
+## Ages at auction (calculated from verified DOB to 16 Dec 2026; not scored)
+- Batting: Daryl Mitchell 35, Curtis Campher 27, Kusal Mendis 31, Mark Chapman 32, Sikandar Raza 40, Jimmy Neesham 36, George Dockrell 34, Ibrahim Zadran 25, Harry Tector 27, Ryan Burl 32.
+- Bowling: Sikandar Raza 40, Maheesh Theekshana 26, Adam Zampa 34, Joshua Little 27, Adil Rashid 38, Roston Chase 34, Obed McCoy 29, Richard Ngarava 28, Alzarri Joseph 30, Mark Adair 30.
+
+## Risk flags (reported, never scored)
+- **Limited IPL evidence:** Curtis Campher, Mark Chapman, George Dockrell, Ibrahim Zadran, Harry Tector, Ryan Burl (batting) and Roston Chase, Richard Ngarava, Mark Adair (bowling) have no IPL balls in the data. Their ratings rest on opponent-adjusted T20Is.
+- **Recency:** Obed McCoy's last T20I in the data is September 2025.
+- **Exclusion judgements:** Bangladeshi players (S12) and Harry Brook (S14) are excluded as unreliable to acquire. No formal rule was published for either case.
+
+---
+
+# Archive: Verification of the Provisional (Unrestricted) Top 10s (2026-11-14)
 
 Register: `research/player_verification_register.csv` (code: `src/research/verified_players.py`). Sources: `RESEARCH_SOURCE_REGISTER.md` (W-*, S7–S10).
 

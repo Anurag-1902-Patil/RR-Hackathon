@@ -1,5 +1,7 @@
 # Provisional Rankings — Pressure Reliability (2026-11-14)
 
+> **SUPERSEDED by [`RANKINGS_FINAL.md`](RANKINGS_FINAL.md).** Every player below is under IPL contract or otherwise not signable by RR. The submitted lists rank only RR-acquirable players. This file is kept as the unrestricted reference.
+
 > **Status: PROVISIONAL.** These lists come entirely from the RR data pack (IPL 2022–26 plus T20I and A-team T20s). Before submission, each player's identity, availability and retirement status still has to be verified externally (Phase 7). Squad fit is a separate layer and does **not** reorder these lists.
 > Files: `reports/top_10_batsmen.csv`, `reports/top_10_bowlers.csv`, `reports/model_outputs/reliability_{batting,bowling}.csv`, `reports/figures/rank_uncertainty_top20.png`. Method: `research/METHODOLOGY.md` §4–6.
 

@@ -174,5 +174,13 @@ Production values are leave-one-year-out cross-fitted.
 - **Pressure definition:** the full pipeline is re-run under blend 30/70 and 70/30 and HIGH = top 15% / top 30%, scored on the same eligible universe. The min–max rank across definitions is reported per player.
 - **Uncertainty:** a match-level bootstrap (100 replicates of the full player pipeline: ratings, deltas, consistency, impact). For each player it reports mean rank, 90% rank interval, P(top 10) and P(top 20). These are statements about *measurement* uncertainty in 2022–26 performance, **not** probabilities of future performance.
 
+### 6.x Final selection: only RR-acquirable players (user decision, 2026-11-14) ✅ (`src/scouting/final_selection.py`)
+Every player in the unrestricted performance top 10 (batting and bowling) was under contract at an IPL franchise, so that list would not be actionable at the auction. The submitted top 10s therefore rank only players RR can sign:
+- **Excluded:** anyone on an IPL 2026 squad (data-pack mapping, all 10 teams, RR included); Pakistani players (none in the IPL since 2009, S13); Bangladeshi players (availability unreliable after the BCCI-directed release of Mustafizur Rahman, S12; a judgement); IPL retirements and bans (Russell S7, Ashwin S15, Mohit Sharma S16, Brook S14).
+- **Unchanged:** eligibility thresholds, components, weights and the **score**, which stays a percentile among all eligible players.
+- **Recomputed within the pool:** rank, P(top 10), the bootstrap 90% rank interval (from the saved 100-replicate rank matrices, re-ranked within the pool) and the range across pressure definitions. The unrestricted values are kept as `overall_*` columns.
+- Squad fit, alternatives, near misses and uplift are computed for the acquirable top 10s; alternatives are the next acquirable players.
+- Limits: the pool is all overseas; several players have little or no IPL record; the data pack has no Indian domestic cricket, so uncapped Indian entrants cannot be assessed. Players released at the 17 Nov 2026 retentions join the pool on re-run.
+
 ## 7. RR squad-fit layer 🔜
 A separate layer with its own score. It never reorders the competition top 10 (see the DATA_AUDIT decisions log).

@@ -8,9 +8,9 @@ Rendered version: `reports/video/social_reel.mp4` (1080×1920, burned-in caption
 | 2 | DEFINING PRESSURE | deck slide 05 | We scored 200,961 balls for pressure: what was at stake, and how hard the situation was. |
 | 3 | FAIR COMPARISON | deck slide 06 | Then we compared every player to an average player in the same situation, against the same opponents. |
 | 4 | IS CLUTCH REAL? | deck slide 08 | Surprise: most 'clutch' is noise. Only about a fifth of a batter's pressure gap is real. |
-| 5 | TOP BATTERS | deck slide 11 | Most reliable batter under pressure: Shreyas Iyer. Next: Heinrich Klaasen and Rajat Patidar. |
-| 6 | TOP BOWLERS | deck slide 12 | Most reliable bowler: Varun Chakravarthy. Next: Sunil Narine and Jasprit Bumrah. |
-| 7 | WHAT RR NEEDS | deck slide 18 | Rajasthan Royals' data says: elite openers, but a need at the death, with bat and ball. |
+| 5 | TOP BATTERS RR CAN SIGN | deck slide 12 | Top signable batter under pressure: Daryl Mitchell. Next: Curtis Campher and Kusal Mendis. |
+| 6 | TOP BOWLERS RR CAN SIGN | deck slide 13 | Top signable bowler: Sikandar Raza. Next: Maheesh Theekshana and Adam Zampa. |
+| 7 | WHAT RR NEEDS | deck slide 19 | Rajasthan Royals' data says: elite openers, but a need at the death, with bat and ball. |
 | 8 | SUPERR INTELLIGENCE | end card | Independent analysis for SupeRR Selector Season 2. Full method in the report. |
 
 ## Key analytical visuals to show

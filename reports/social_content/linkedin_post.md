@@ -10,7 +10,7 @@ What I learned:
 - The surprise: most "clutch" is noise. Only about 21% of a batter's raw pressure gap survives a noise check, so I built a score that shrinks it instead of ranking it raw.
 - Simple beat fancy: logistic regression out-predicted gradient boosting on the unseen 2026 season.
 
-Most reliable under pressure in the data: Shreyas Iyer (batting) and Varun Chakravarthy (bowling). For RR, the evidence points to a finisher and a death bowler.
+Every player in the unrestricted top 10 is already under IPL contract, so I ranked only players RR can actually sign. Most reliable under pressure among them: Daryl Mitchell (batting) and Sikandar Raza (bowling). For RR, the evidence points to a finisher and a death bowler, and Sikandar Raza covers both bat and ball.
 
 Independent analytical submission. Not affiliated with or endorsed by Rajasthan Royals.
 

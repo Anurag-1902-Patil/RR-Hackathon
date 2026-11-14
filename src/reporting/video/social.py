@@ -41,7 +41,7 @@ What I learned:
 - The surprise: most "clutch" is noise. Only about {round(cb['reliability_of_raw_delta'] * 100)}% of a batter's raw pressure gap survives a noise check, so I built a score that shrinks it instead of ranking it raw.
 - Simple beat fancy: logistic regression out-predicted gradient boosting on the unseen 2026 season.
 
-Most reliable under pressure in the data: {b[0]['player']} (batting) and {w[0]['player']} (bowling). For RR, the evidence points to a finisher and a death bowler.
+Every player in the unrestricted top 10 is already under IPL contract, so I ranked only players RR can actually sign. Most reliable under pressure among them: {b[0]['player']} (batting) and {w[0]['player']} (bowling). For RR, the evidence points to a finisher and a death bowler, and Sikandar Raza covers both bat and ball.
 
 Independent analytical submission. Not affiliated with or endorsed by Rajasthan Royals.
 
@@ -53,8 +53,8 @@ Independent analytical submission. Not affiliated with or endorsed by Rajasthan 
 
 We defined pressure before every ball, compared every player with an average player in the same situation, and found that most "clutch" is noise.
 
-#1 batter under pressure: {b[0]['player']}
-#1 bowler under pressure: {w[0]['player']}
+#1 batter RR can sign: {b[0]['player']}
+#1 bowler RR can sign: {w[0]['player']}
 
 Full method in the report. Independent analysis for #SupeRRSelector Season 2, not affiliated with Rajasthan Royals.
 
