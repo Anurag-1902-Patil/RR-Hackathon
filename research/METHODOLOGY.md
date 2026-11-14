@@ -92,26 +92,87 @@
 - **Known limitation:** the dot-squeeze component is partly *endogenous*. A batter's own dot balls raise the pressure label on their next ball. Its weight is therefore kept low (0.10), and RPI-without-dots is one of the sensitivity variants.
 - Sensitivity variants stored per delivery: blend 30/70 and 70/30 (`pressure_band_l30`, `pressure_band_l70`), leverage-only and RPI-only (`pressure_band_lev`, `pressure_band_rpi`). Overlap of the HIGH set with the final: RPI weight changes 0.81–0.89 Jaccard, blend 70/30 0.73, blend 30/70 0.59. Final rankings will be re-run under the blend variants and under HIGH thresholds of 15% and 30%, and rank stability across definitions is reported.
 
-## 4. Batting reliability engine 🔜
-- **Expected runs and expected dismissal per ball.** A context model (phase, balls left, wickets in hand, innings, chase state, tier, bowler type (pace/spin), batter hand, era par, opposition bowling strength), trained with the same chronological split. Outputs: **Runs Above Expected (RAE)** and **Dismissals Below Expected**, per ball and aggregated.
-- **Pressure vs own baseline (the brief's core ask):** for each batter, (RAE per ball in HIGH) vs (RAE per ball in LOW/ordinary). Reliability = performing at or above expectation in HIGH, not just a large swing.
-- **Opposition and competition adjustment:** opposition bowling strength (rolling team-season bowling rating from the data) enters the expectation model. Associate and A-team balls stay in the model but get explicit tier effects, so runs against Japan are not equated with runs against Australia.
-- **Bayesian shrinkage:** Normal–Normal (empirical Bayes) shrinkage of per-ball RAE toward a role-specific prior, and Beta-Binomial for dismissal and boundary rates. Posterior means and 90% credible intervals are reported.
-- **Consistency:** share of high-pressure innings with RAE ≥ 0, plus match-level dispersion and bootstrap (by match) rank intervals.
-- **Match impact:** batting WPA in high-pressure balls.
-- **Eligibility floor (proposed):** at least 120 high-pressure balls faced across at least 10 innings. To be tuned so no player ranks on fewer opportunities than the credible intervals can support.
-- Roles from observed data: openers (positions 1–2), top/middle order (3–5), finishers (6–8).
+## 4. Context expectations ✅ (`src/models/expected.py`)
+For every ball, four expectations are computed from **situation only** (never player identity):
+- expected batter runs and dismissal probability (balls faced),
+- expected runs conceded and bowler-wicket probability (all deliveries).
 
-## 5. Bowling reliability engine 🔜
-- Mirror of batting: expected bowler runs and expected wickets per ball by context (phase, batter hand, tier, opposition batting strength, era). Outputs: **Runs Saved vs Expected** and **Wickets Above Expected**, in HIGH vs ordinary pressure.
-- Phase-role benchmarks (powerplay, middle, death) taken from the observed share of each bowler's overs per phase, so a death specialist is never compared with a powerplay specialist on raw economy.
-- Same Bayesian shrinkage, consistency, WPA (bowler = −batting WPA) and eligibility logic. Proposed floor: at least 150 high-pressure legal balls across at least 10 matches.
+**Features:** innings, over, balls left, wickets in hand, share of innings left, current rate vs par, required rate vs par, share of target remaining, IPL flag, environment par, bowling type / pace-spin / batter hand / hand-arm-type matchup (batting models only).
 
-## 6. Reliability score and validation 🔜
-- A 0–100 composite built from components that will be tested for correlation and double-counting before weights are fixed. The prompt's 30/25/20/15/10 weights are treated as a starting hypothesis only.
-- Baselines for comparison: (a) raw high-pressure SR/economy, (b) RAE only. Weight-sensitivity grid and definition sensitivity (§3.3).
-- Predictive check: does pressure reliability measured in 2022–2024 predict high-pressure RAE in 2025–2026 better than overall form does? This is the honest test of whether "reliability under pressure" is a persistent trait.
-- Monte Carlo / bootstrap ranking stability: mean rank, 90% rank interval and P(top 10).
+**Competition fairness.** No T20I tier variable is used. A tier dummy would define "average" separately for associate matches and IPL matches, which would inflate players who mostly face weak opposition. League strength is calibrated in §5 by the opponents each player actually faced. Only the *scoring environment* is modelled directly: **environment par** is a rolling 60-match first-innings mean from strictly earlier matches, pooled for IPL vs all internationals (deliberately not split by tier).
+
+**Season re-centring.** Within each (year × IPL/international) environment, expectations are scaled so mean expected = mean observed. Factors are within ±6% for runs. Players are therefore compared with the average player *of that season*.
+
+**Validation** (LightGBM vs innings × over mean, chronological):
+- Runs models beat the baseline on RMSE in both 2025 (1.740 vs 1.754) and 2026 (1.808 vs 1.826).
+- Wicket models are on par with the baseline: dismissals are close to random at the ball level.
+- RMSE is the selection metric because residuals are *summed* per player, so an unbiased mean matters more than a median-optimal MAE.
+
+**Bug found and fixed:** with a season-label feature, the held-out 2026 season was unseen, and expected runs per ball came out at 1.351 against 1.505 observed. Environment par fixed this (1.461).
+
+Production values are leave-one-year-out cross-fitted.
+
+## 5. Value per ball and opponent-adjusted ratings ✅ (`src/models/ratings.py`)
+**Value per ball** (in runs; positive = good for the player rated):
+- batting `v = (runs − xRuns) − C·(out − xOut)`
+- bowling `v = (xConceded − conceded) + C·(wicket − xWicket)`
+
+`C` = context cost of a wicket = expected remaining runs with *w* wickets in hand minus with *w*−1, for the same overs left. It comes from a resources table built from full-length first innings, made monotone in wickets and scaled to environment par. An early wicket costs more than a last-over one (tested).
+
+**Ridge regression (Gaussian prior), RAPM-style:**
+`v = μ + a_player + d_player·HIGH + b_opponent + e_opponent·HIGH`.
+- Opponent effects adjust for the quality of the bowlers each batter actually faced, and vice versa.
+- This also calibrates competition strength through players who cross competitions: 182 batters appear in both IPL and T20I.
+- Penalties are tuned **out of time**: fit 2022–24, score MSE on 2025–26.
+
+**Key empirical findings (reported honestly):**
+1. Per-ball predictability is tiny: about 0.06–0.09% MSE reduction. This is normal, because one ball is mostly noise.
+2. **Pressure-delta terms never improve out-of-time prediction**, including on HIGH balls. The rule keeps the largest delta scale within 3% of the best out-of-time HIGH-ball skill (scale 0.25, α = 1000). That shrinks ridge deltas almost to zero.
+3. **Player-level persistence** (2022–24 → 2025–26; 26–55 qualifying players, so SE ≈ ±0.15):
+
+| | Batting | Bowling |
+|---|---|---|
+| Ordinary-situation value | r = 0.37–0.49 | r = 0.19–0.37 |
+| HIGH-pressure value | r = −0.20 to 0.04 | r = −0.22 to 0.02 |
+| Pressure delta | unstable (0.03 to 0.44) | regresses (−0.43 to −0.22) |
+
+4. **Empirical-Bayes clutch variance** (variance of raw deltas minus sampling noise; `reports/model_outputs/clutch_variance.csv`):
+   - Batting: true SD of the pressure delta ≈ **0.14 runs/ball**. **21%** of a raw delta is signal (154 players).
+   - Bowling: ≈ **0.06**, with only **4%** signal (182 players).
+
+   So some batters genuinely perform differently under pressure relative to their norm. For bowlers it is essentially undetectable.
+
+**Measures carried forward:**
+- **Usual ability:** all-ball ridge main effect.
+- **Pressure performance delivered:** a separate ridge on **HIGH balls only** (batter + bowler effects, shrunk to the league mean; α = 2000, an interior out-of-time optimum).
+- **Pressure delta vs own baseline:** raw delta × τ²/(τ² + sᵢ²), an empirical-Bayes shrinkage specific to each player's own sample size.
+
+## 6. Player tables, reliability score and validation ✅ (`src/scouting/`)
+**Eligibility:**
+- Batting: ≥ 120 HIGH balls faced and ≥ 10 pressure innings (≥ 6 HIGH balls in an innings).
+- Bowling: ≥ 150 HIGH legal balls and ≥ 10 pressure spells.
+- **Auction relevance:** the player must appear in the data in 2025 or 2026. Players removed by this rule are listed in `excluded_inactive.csv`. Real retirement and availability status needs external verification and is not assumed.
+
+**Roles** come from data: median batting position (Opener / No.3 / Middle 4–5 / Finisher 6–7 / Lower) and bowling phase share (death ≥ 40%, powerplay ≥ 45%, middle ≥ 55%, otherwise multi-phase).
+
+**Reliability score (0–100)** = weighted mean of component percentiles among eligible players. The score is reported as an integer to avoid false precision.
+
+| Component | Weight | Definition |
+|---|---:|---|
+| Pressure performance | 35% | HIGH-ball opponent-adjusted ridge value |
+| Consistency | 20% | Share of pressure innings/spells with value ≥ 0, Beta-Binomial shrunk (prior strength 10) |
+| Match impact | 20% | WPA per HIGH ball, empirical-Bayes shrunk |
+| Pressure vs own baseline | 15% | Empirical-Bayes delta |
+| Usual ability | 10% | All-ball ridge; the best out-of-time predictor |
+
+**Why not the prompt's hypothesis weights.** "Sample confidence" is set to 0 because shrinkage already uses sample size, and adding it again would double-count. "Role adaptability" belongs in the RR squad-fit layer, not in pressure reliability.
+
+**Double-counting check:** pressure performance and impact correlate at ρ ≈ 0.81 (both measure HIGH-ball outcomes, one in runs and one in WP). The *no-impact* variant is reported.
+
+**Sensitivity:**
+- **Weights:** seven schemes (equal, prompt-hypothesis mapped, pressure-only, no-impact, predictive tilt, baseline-delta heavy). The top-10 overlap is 7–10 and Spearman ≥ 0.97 against the final scheme.
+- **Pressure definition:** the full pipeline is re-run under blend 30/70 and 70/30 and HIGH = top 15% / top 30%, scored on the same eligible universe. The min–max rank across definitions is reported per player.
+- **Uncertainty:** a match-level bootstrap (100 replicates of the full player pipeline: ratings, deltas, consistency, impact). For each player it reports mean rank, 90% rank interval, P(top 10) and P(top 20). These are statements about *measurement* uncertainty in 2022–26 performance, **not** probabilities of future performance.
 
 ## 7. RR squad-fit layer 🔜
 A separate layer with its own score. It never reorders the competition top 10 (see the DATA_AUDIT decisions log).
