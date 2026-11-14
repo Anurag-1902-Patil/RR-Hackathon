@@ -36,6 +36,7 @@ def run() -> dict:
                          "need": rr.rr_need_addressed, "fit": int(rr.squad_fit_score), "tier": rr.recommendation_tier, "nat": rr.indian_or_overseas,
                          "availability": rr.availability, "uplift": rnd(rr.uplift_runs_per_season_MODEL_ESTIMATE, 1)})
         out[side] = rows
+    out["pool"] = {side: int(pd.read_csv(MO / f"reliability_{side}.csv")["rr_acquirable"].sum()) for side in ("batting", "bowling")}
     nm = pd.read_csv(MO / "near_misses.csv")
     out["near"] = nm[nm["rank"] <= 13].to_dict("records")
     prof = pd.read_csv(MO / "pressure_profile_final.csv")

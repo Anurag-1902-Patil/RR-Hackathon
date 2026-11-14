@@ -120,7 +120,7 @@
    "fit": 82,
    "tier": "Primary target",
    "nat": "Overseas",
-   "availability": "player_id\n2984    AUCTION POOL (if registered)\n2984    AUCTION POOL (if registered)\nName: availability_class, dtype: object",
+   "availability": "AUCTION POOL (if registered)",
    "uplift": 19.7
   },
   {
@@ -254,7 +254,7 @@
    "fit": 61,
    "tier": "Situational / depth",
    "nat": "Overseas",
-   "availability": "player_id\n2984    AUCTION POOL (if registered)\n2984    AUCTION POOL (if registered)\nName: availability_class, dtype: object",
+   "availability": "AUCTION POOL (if registered)",
    "uplift": 7.7
   },
   {
@@ -456,6 +456,10 @@
    "uplift": 5.2
   }
  ],
+ "pool": {
+  "batting": 15,
+  "bowling": 12
+ },
  "near": [
   {
    "side": "batting",

@@ -106,9 +106,9 @@ bullets(s, [
   "Pressure = 50% stakes (win-probability leverage) + 50% difficulty (scoreboard gap, wickets, collapse, squeeze), all known before the ball.",
   "Players are judged against what an average player would do in the same situation, adjusted for the opponents they actually faced.",
   "\"Clutch\" is mostly noise: only ~21% (batters) and ~4% (bowlers) of a raw pressure-vs-normal gap is signal, so scores shrink it accordingly.",
-  "The leaders are robust across weights and pressure definitions. Ranks 6–15 are statistically close, and we say so player by player.",
+  "Lists contain only players RR can sign: no IPL 2026 squad member, no Pakistani or Bangladeshi player, no retired or banned player.",
 ], { x: M, y: 3.55, w: 12.1, h: 3.2 });
-s.addNotes("Lead with the conclusion: the two #1s, and that RR's needs are finishing and death bowling. Then the four methodological pillars. Ranks 6-15 are close; this is reported honestly rather than hidden.");
+s.addNotes("Lead with the conclusion: the two #1s among players RR can actually sign, and that RR's needs are finishing and death bowling. Every player in the unrestricted performance top 10 is under contract elsewhere, so the submitted lists rank the acquirable pool only.");
 
 // ================= METHOD
 newSection("Methodology");
@@ -186,8 +186,8 @@ s.addTable(tableRows(["Component", "Weight", "What it measures"], [
   ["Vs own baseline", "15%", "Pressure gap vs the player's normal level, shrunk"],
   ["Usual ability", "10%", "All-situation rating, the best predictor of the future"],
 ]), { x: M, y: 1.45, w: 7.4, colW: [2.3, 0.9, 4.2], border: { type: "none" } });
-stat(s, 8.4, 1.45, 4.3, `${D.robust.batting.weights_min}–10 of 10`, "batting top 10 kept across 7 weightings", HEX.lt2, HEX.accent1, HEX.dk1, "robust-w");
-stat(s, 8.4, 3.4, 4.3, `${Math.min(D.robust.batting.defs_min, D.robust.bowling.defs_min)}–${Math.max(D.robust.batting.defs_max, D.robust.bowling.defs_max)} of 10`, "kept across 4 alternative pressure definitions", HEX.lt2, HEX.accent2, HEX.dk1, "robust-d");
+stat(s, 8.4, 1.45, 4.3, `${D.robust.batting.weights_min}–10 of 10`, "unrestricted batting top 10 kept across 7 weightings", HEX.lt2, HEX.accent1, HEX.dk1, "robust-w");
+stat(s, 8.4, 3.4, 4.3, `${Math.min(D.robust.batting.defs_min, D.robust.bowling.defs_min)}–${Math.max(D.robust.batting.defs_max, D.robust.bowling.defs_max)} of 10`, "unrestricted top 10 kept across 4 pressure definitions", HEX.lt2, HEX.accent2, HEX.dk1, "robust-d");
 bullets(s, ["Sample size is handled by shrinkage, so there is no separate \"sample confidence\" weight (it would double-count).",
   "Uncertainty: 100 match-level bootstrap resamples of the whole pipeline give each player a 90% rank interval and P(top 10)."],
   { x: M, y: 5.45, w: 12.1, h: 1.4, fontSize: 15 });
@@ -195,21 +195,38 @@ s.addNotes("The prompt's starting weights were treated as a hypothesis. The defi
 
 // ================= PLAYERS
 newSection("The players");
-slide("SECTION", "2 · The most reliable players under pressure", "Two separate top 10s · IPL + T20I 2022–2026 · verified identities");
+slide("SECTION", "2 · The most reliable players RR can sign", "Two separate top 10s · IPL + T20I 2022–2026 · verified identities and availability");
+
+s = slide("CONTENT", "Only players RR can actually acquire are ranked");
+const rules = [
+  ["Under IPL contract", "Anyone on an IPL 2026 squad (all 10 teams, including RR) is excluded. The whole unrestricted performance top 10 falls here."],
+  ["Pakistan", "No Pakistan player has appeared in the IPL since 2009."],
+  ["Bangladesh", "Not reliably acquirable after the BCCI-directed release of Mustafizur Rahman (a judgement: no formal rule was published)."],
+  ["Retired or banned", "Russell, Ashwin and Mohit Sharma have retired from the IPL. Brook's ban may cover 2027, so he is excluded."],
+];
+rules.forEach(([h, b], i) => {
+  const y = 1.45 + i * 1.0;
+  card(s, M, y, 12.1, 0.85, i % 2 ? HEX.lt2 : "ECE6FA", `rule-${i + 1}`);
+  txt(s, h, { x: M + 0.25, y: y + 0.1, w: 2.9, h: 0.65, fontSize: 16, bold: true, color: C.accent1, valign: "middle" });
+  txt(s, b, { x: M + 3.3, y: y + 0.1, w: 8.6, h: 0.65, fontSize: 15, valign: "middle" });
+});
+txt(s, `Ranks, P(top 10) and uncertainty are recomputed within the acquirable pool (${D.pool.batting} batters, ${D.pool.bowling} bowlers). Scores stay percentiles among all eligible players, so they compare directly with the contracted elite.`,
+  { x: M, y: 5.6, w: 12.1, h: 1.1, fontSize: 15, color: C.accent5 });
+s.addNotes("This is the most important framing decision. The best performers under pressure are almost all contracted, so a list of them would not help RR at the auction. Players released on 17 Nov 2026 join the pool and the pipeline re-runs in one command.");
 for (const side of ["batting", "bowling"]) {
   const rows = D[side];
-  s = slide("CONTENT", side === "batting" ? "Top 10 batters under pressure" : "Top 10 bowlers under pressure");
+  s = slide("CONTENT", side === "batting" ? "Top 10 batters RR can sign" : "Top 10 bowlers RR can sign");
   s.addChart(pres.charts.BAR, [{ name: "Reliability score", labels: rows.map((r) => `${r.rank}. ${r.player}`).reverse(), values: rows.map((r) => r.score).reverse() }],
-    Object.assign(chartBase("Reliability score (0–100)"), { x: M, y: 1.35, w: 6.4, h: 5.45, barDir: "bar", chartColors: [HEX.accent1], showLegend: false,
+    Object.assign(chartBase("Reliability score (0–100, percentile among all eligible)"), { x: M, y: 1.35, w: 6.4, h: 5.45, barDir: "bar", chartColors: [HEX.accent1], showLegend: false,
       valAxisMinVal: 0, valAxisMaxVal: 100, dataLabelPosition: "outEnd", catAxisLabelFontSize: 12 }));
   s.addTable(tableRows(["#", "Role", "P(top10)", "90% rank"], rows.map((r) => [r.rank, r.role.replace(" (4-5)", "").replace(" (6-7)", ""), pct(r.p_top10), `${r.boot_lo}–${r.boot_hi}`])),
     { x: 7.25, y: 1.45, w: 5.45, colW: [0.5, 2.55, 1.1, 1.3], border: { type: "none" }, rowH: 0.42 });
-  s.addNotes(`Scores are percentile composites among eligible players. P(top10) is the share of 100 bootstrap resamples in which the player stays top 10: measurement uncertainty, not a forecast.${side === "batting" ? " Andre Russell (data rank 5) is excluded because he retired from the IPL on 30 Nov 2025." : ""}`);
+  s.addNotes(`Scores are percentile composites among eligible players. P(top10) is the share of 100 bootstrap resamples in which the player stays top 10: measurement uncertainty, not a forecast. # is the rank within the acquirable pool; the pool is small, so P(top10) partly reflects limited competition.`);
 }
 
-s = slide("CONTENT", "How sure are we? The top is firm; the middle is close");
+s = slide("CONTENT", "How sure are we? Model uncertainty across all eligible players");
 image(s, "rank_uncertainty_top20.png", M, 1.3, 12.1, 5.55, "Rank uncertainty for top 20 batters and bowlers");
-s.addNotes("Dot = final rank; thick bar = bootstrap 90% interval; thin bar = range across pressure definitions. Klaasen and Varun are near-locks; ranks 6-15 overlap.");
+s.addNotes("Dot = final rank; thick bar = bootstrap 90% interval; thin bar = range across pressure definitions. This chart covers the full eligible pool, which shows the model's stability. Within the acquirable lists, bowlers #9-#10 (Joseph, Adair) are statistically level with Sodhi and Farooqi.");
 
 for (const side of ["batting", "bowling"]) {
   s = slide("CONTENT", side === "batting" ? "Why these batters, and not the alternatives?" : "Why these bowlers, and not the alternatives?");
@@ -225,7 +242,7 @@ s = slide("CONTENT", "Narrowly missed: credible alternatives, not rejects");
 s.addTable(tableRows(["Side", "Rank", "Player", "Role", "Score", "Gap to #10", "P(beats #10)", "Main shortfall"],
   D.near.map((r) => [r.side, r.rank, r.player, r.role, r.score, r.gap_to_rank10, pct(r.p_beats_rank10_bootstrap), r.main_shortfall_vs_rank10.replace("_", " ")])),
   { x: M, y: 1.45, w: 12.1, colW: [1.0, 0.7, 2.2, 2.3, 0.9, 1.2, 1.4, 2.4], border: { type: "none" }, rowH: 0.45 });
-txt(s, "Abhishek Sharma and Mohsin Khan are each under one point from #10 and beat it in about half of all resamples.", { x: M, y: 5.2, w: 12.1, h: 0.8, fontSize: 16 });
+txt(s, "Ish Sodhi and Fazalhaq Farooqi are 2.3 points behind bowler #10 and beat #10 in about half of all resamples: a coin-flip. The acquirable bowling pool has only 12 players.", { x: M, y: 5.2, w: 12.1, h: 0.8, fontSize: 16 });
 s.addNotes("Demonstrates the shortlist was deliberate: each near-miss is named with the component that separated them.");
 
 // ================= RR
@@ -254,7 +271,7 @@ bullets(s, [
 s.addNotes("Needs were derived before matching any candidate; the method is in the PDF section 10.");
 
 s = slide("CONTENT", "Reliability and fit are separate layers");
-image(s, "report/fit_vs_reliability.png", M, 1.3, 12.1, 4.9, "Reliability rank vs RR squad fit for the 20 players");
+image(s, "report/fit_vs_reliability.png", M, 1.3, 12.1, 4.9, "Reliability rank vs RR squad fit for the 20 acquirable players");
 txt(s, "Squad fit = 50% RR need priority + 35% phase evidence + 15% roster slot (an overseas player costs a scarce slot). It informs RR's targeting but never reorders the competition lists.",
   { x: M, y: 6.3, w: 12.1, h: 0.6, fontSize: 13, color: C.accent5 });
 s.addNotes("A very reliable player can still be a lower RR priority if he fills a role RR already covers, e.g. an opener.");
@@ -264,19 +281,19 @@ for (const side of ["batting", "bowling"]) {
   s.addTable(tableRows(["#", "Player", "Ind/Ovs", "RR need addressed", "Fit", "Tier", "Uplift*"],
     D[side].map((r) => [r.rank, r.player, r.nat, r.need, r.fit, r.tier, `${r.uplift > 0 ? "+" : ""}${r.uplift}`])),
     { x: M, y: 1.4, w: 12.1, colW: [0.5, 2.8, 1.2, 3.4, 0.8, 2.2, 1.2], border: { type: "none" }, rowH: 0.44 });
-  txt(s, "*Hypothetical model estimate, not a forecast: runs per season if the player took the 2026 phase balls of RR's weakest regular in that phase. Availability depends on retentions due 17 Nov 2026.",
+  txt(s, "*Hypothetical model estimate, not a forecast: runs per season if the player took the 2026 phase balls of RR's weakest regular in that phase. All players are currently uncontracted; they must register for the auction.",
     { x: M, y: 6.35, w: 12.1, h: 0.55, fontSize: 12, color: C.accent5 });
-  s.addNotes(side === "batting" ? "Seven of ten batters best fit RR's top need (death-overs finishing). Indian finishers avoid the overseas-slot squeeze." :
-    "Bumrah, Kuldeep (now LSG), Narine, Rashid and Pathirana fit death bowling; Varun fits middle-overs control alongside Jadeja.");
+  s.addNotes(side === "batting" ? "Raza is the only primary target (97th percentile in death-overs batting). Chapman and Mitchell fit middle-overs batting. All are overseas, so slots are the binding constraint." :
+    "Raza also leads the bowling list for the middle overs. Theekshana (85th percentile at the death, IPL experience incl. RR 2025) and Zampa (74th) fit death bowling.");
 }
 
 s = slide("CONTENT", "Risks we checked against official sources");
 const risks = [
-  ["Andre Russell", "Retired from the IPL on 30 Nov 2025, so he is excluded from the lists (data rank 5)."],
-  ["Matheesha Pathirana", "Ruled out of IPL 2026 with a hamstring injury (IPL, 24 May 2026). 2027 fitness unverified."],
-  ["Kuldeep Yadav", "Traded DC → LSG (IPL, 23 Jun 2026), so under contract unless released."],
-  ["Sikandar Raza", "No IPL contract since 2024: a potential auction entrant. Age 40 at auction."],
-  ["Ferguson · Phillips", "Few recent IPL games, so their ratings lean on T20Is."],
+  ["Limited IPL record", "Six of ten batters (Campher, Chapman, Dockrell, Ibrahim Zadran, Tector, Burl) and Chase, Ngarava, Adair have no IPL balls in the data."],
+  ["Age at auction", "Raza 40, Adil Rashid 38, Neesham 36 (not scored; reported for squad planning)."],
+  ["Recency", "Obed McCoy's last T20I was in September 2025."],
+  ["Close calls", "Bowlers #9-#10 (Joseph, Adair) are statistically level with Sodhi and Farooqi."],
+  ["Registration", "Each player must register for the auction; the final list is expected around 3 Dec 2026."],
 ];
 risks.forEach(([h, b], i) => {
   const y = 1.45 + i * 1.05;
@@ -284,18 +301,18 @@ risks.forEach(([h, b], i) => {
   txt(s, h, { x: M + 0.25, y: y + 0.12, w: 2.9, h: 0.66, fontSize: 16, bold: true, color: C.accent2, valign: "middle" });
   txt(s, b, { x: M + 3.3, y: y + 0.12, w: 8.6, h: 0.66, fontSize: 15, valign: "middle" });
 });
-s.addNotes("Every flag is sourced in the research source register. The IPL 2027 purse is unverified, so no financial claims are made.");
+s.addNotes("Every flag is sourced in the research source register. Exclusion of Bangladeshi players and of Brook is a judgement, stated as such. The IPL 2027 purse is unverified, so no financial claims are made.");
 
 // ================= CLOSE
 newSection("Close");
 s = slide("DARK_TITLE", "Recommendation for Rajasthan Royals", "");
 bullets(s, [
-  "Target a finisher who holds up under pressure: Suryakumar, Tilak, Shreyas (Indian), or Tim David, Phillips (overseas).",
-  "Target a death bowler: Bumrah first; then Narine, Rashid, Pathirana subject to overseas slots and fitness.",
-  "Add middle-overs spin control (Varun). Keep the opening pair, which is RR's clearest strength.",
-  "Re-run the needs analysis the day the official 2027 retentions are published (one command).",
+  "First target Sikandar Raza: death-overs finishing and middle-overs bowling in one overseas slot.",
+  "Death bowling: Maheesh Theekshana, then Adam Zampa.",
+  "Middle-overs batting depth: Mark Chapman or Daryl Mitchell. Keep the opening pair, RR's clearest strength.",
+  "Re-run the selection when the 17 Nov releases are published: better-rated players may enter the pool (one command).",
 ], { x: M, y: 4.0, w: 12.1, h: 2.8, fontSize: 18, color: C.background1 });
-s.addNotes("Close on the decision: two priority roles, ranked shortlists for each, conditional on retentions. Dashboard and full report accompany this deck.");
+s.addNotes("Close on the decision: Raza first, then a death bowler, within RR's overseas slots. Every name is signable today. Dashboard and full report accompany this deck.");
 
 (async () => {
   await pres.writeFile({ fileName: OUT });
