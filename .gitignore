@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.pytest_cache/
+# Private RR data pack and everything derived from it - never commit
+/data/
+/data_set.zip
+/models/*.pkl
+/models/*.joblib
+.env
