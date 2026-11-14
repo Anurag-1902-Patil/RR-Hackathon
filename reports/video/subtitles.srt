@@ -31,541 +31,573 @@ and how could they strengthen Rajasthan Royals for the IPL 2027 auction?
 This film explains how we answered it, step by step, and how sure we are.
 
 9
-00:00:31,949 --> 00:00:34,048
-Here is the answer up front.
+00:00:31,949 --> 00:00:38,331
+Here is the answer up front, counting only players Rajasthan Royals can actually sign.
 
 10
-00:00:34,048 --> 00:00:41,469
-Our most reliable batter under pressure is Shreyas Iyer, with a reliability score of 97 out of 100.
+00:00:38,331 --> 00:00:45,827
+The most reliable batter under pressure is Daryl Mitchell, with a reliability score of 77 out of 100.
 
 11
-00:00:41,469 --> 00:00:45,892
-Our most reliable bowler is Varun Chakravarthy, scoring 96.
+00:00:45,827 --> 00:00:49,834
+The most reliable bowler is Sikandar Raza, scoring 85.
 
 12
-00:00:45,892 --> 00:00:56,612
+00:00:49,834 --> 00:01:00,447
 And the evidence says Rajasthan Royals' two biggest needs are a finisher who holds up under pressure, and a bowler who can defend at the death.
 
 13
-00:00:56,612 --> 00:01:03,583
+00:01:00,447 --> 00:01:07,349
 The rest of this documentary shows why, and where the evidence is strong and where it is not.
 
 14
-00:01:04,034 --> 00:01:05,919
+00:01:07,799 --> 00:01:09,684
 Chapter two.
 
 15
-00:01:05,919 --> 00:01:07,333
+00:01:09,684 --> 00:01:11,098
 The data.
 
 16
-00:01:07,783 --> 00:01:13,347
+00:01:11,548 --> 00:01:17,112
 Our primary source is the official Rajasthan Royals data pack:
 
 17
-00:01:13,347 --> 00:01:19,001
+00:01:17,112 --> 00:01:22,766
 ball-by-ball records for 200,961 deliveries across 867 matches,
 
 18
-00:01:19,001 --> 00:01:24,206
+00:01:22,766 --> 00:01:27,971
 covering the IPL from 2022 to 2026 and T20 internationals.
 
 19
-00:01:24,206 --> 00:01:28,065
+00:01:27,971 --> 00:01:31,830
 Before any modelling we audited every file.
 
 20
-00:01:28,065 --> 00:01:34,885
+00:01:31,830 --> 00:01:38,650
 Computed scores matched the official result in 806 of 816 checkable matches,
 
 21
-00:01:34,885 --> 00:01:39,193
+00:01:38,650 --> 00:01:42,958
 and the few exceptions were rain-affected games.
 
 22
-00:01:39,193 --> 00:01:44,936
+00:01:42,958 --> 00:01:48,701
 We found a hidden no-ball code that, if treated as a legal ball,
 
 23
-00:01:44,936 --> 00:01:49,244
+00:01:48,701 --> 00:01:53,009
 would have created hundreds of seven-ball overs.
 
 24
-00:01:49,244 --> 00:01:56,423
+00:01:53,009 --> 00:02:00,188
 And we joined players only by ID, because some names belong to different people.
 
 25
-00:01:56,423 --> 00:02:03,872
+00:02:00,188 --> 00:02:07,637
 Every model was validated chronologically: trained on 2022 to 2024, chosen on 2025,
 
 26
-00:02:03,872 --> 00:02:07,192
+00:02:07,637 --> 00:02:10,958
 and tested on the unseen 2026 season.
 
 27
-00:02:07,643 --> 00:02:09,353
+00:02:11,407 --> 00:02:13,118
 Chapter three.
 
 28
-00:02:09,353 --> 00:02:11,552
+00:02:13,118 --> 00:02:15,317
 Defining pressure.
 
 29
-00:02:12,002 --> 00:02:16,961
+00:02:15,767 --> 00:02:20,726
 Pressure cannot be observed directly, so we had to define it,
 
 30
-00:02:16,961 --> 00:02:21,025
+00:02:20,726 --> 00:02:24,790
 using only information available before each ball.
 
 31
-00:02:21,025 --> 00:02:22,813
+00:02:24,790 --> 00:02:26,578
 We built two measures.
 
 32
-00:02:22,813 --> 00:02:29,642
+00:02:26,578 --> 00:02:33,407
 Stakes: a win-probability model tells us how much the next ball can swing the match.
 
 33
-00:02:29,642 --> 00:02:36,714
+00:02:33,407 --> 00:02:40,479
 Difficulty: the scoreboard gap to an era-adjusted par, wickets lost, a recent collapse,
 
 34
-00:02:36,714 --> 00:02:41,429
+00:02:40,479 --> 00:02:45,194
 a squeeze of dot balls, and how late it is in the innings.
 
 35
-00:02:41,429 --> 00:02:49,964
+00:02:45,194 --> 00:02:53,729
 Stakes alone turned out to be blind to batting first: it put 92 percent of high-pressure balls in chases.
 
 36
-00:02:49,964 --> 00:02:57,768
+00:02:53,729 --> 00:03:01,533
 So the final definition is half stakes and half difficulty, and the top 20 percent of all balls,
 
 37
-00:02:57,768 --> 00:03:00,531
+00:03:01,533 --> 00:03:04,296
 40,193 of them, are high pressure.
 
 38
-00:03:00,982 --> 00:03:05,973
+00:03:04,746 --> 00:03:09,738
 After a review, pressure now builds smoothly through both innings.
 
 39
-00:03:05,973 --> 00:03:13,007
+00:03:09,738 --> 00:03:16,772
 And it changes behaviour: under high pressure batters were dismissed on 6.2 percent of balls,
 
 40
-00:03:13,007 --> 00:03:16,259
+00:03:16,772 --> 00:03:20,024
 against 5.3 percent in ordinary situations.
 
 41
-00:03:16,259 --> 00:03:23,368
+00:03:20,024 --> 00:03:27,133
 Raw strike rate is not the yardstick, because high-pressure balls cluster late in the innings,
 
 42
-00:03:23,368 --> 00:03:25,561
+00:03:27,133 --> 00:03:29,326
 where everyone scores faster.
 
 43
-00:03:26,011 --> 00:03:27,342
+00:03:29,776 --> 00:03:31,107
 Chapter four.
 
 44
-00:03:27,342 --> 00:03:30,516
+00:03:31,107 --> 00:03:34,280
 Building the analytical engine.
 
 45
-00:03:30,966 --> 00:03:34,237
+00:03:34,731 --> 00:03:38,002
 Fair comparison is the heart of the method.
 
 46
-00:03:34,237 --> 00:03:45,573
+00:03:38,002 --> 00:03:49,338
 First, for every ball, a model estimates what an average player would produce in exactly that situation, using context only, never the player's name.
 
 47
-00:03:45,573 --> 00:03:53,638
+00:03:49,338 --> 00:03:57,403
 Second, we score each ball as actual minus expected, charging a wicket at its real cost in that situation.
 
 48
-00:03:53,638 --> 00:03:58,583
+00:03:57,403 --> 00:04:02,348
 Third, a ridge regression rates every batter and bowler together,
 
 49
-00:03:58,583 --> 00:04:03,224
+00:04:02,348 --> 00:04:06,989
 so each player is judged net of the opponents actually faced.
 
 50
-00:04:03,224 --> 00:04:08,017
+00:04:06,989 --> 00:04:11,782
 That is how IPL and international cricket are put on one scale.
 
 51
-00:04:08,017 --> 00:04:15,625
+00:04:11,782 --> 00:04:19,390
 Fourth, small samples are pulled toward average, so nobody tops a list on a handful of good innings.
 
 52
-00:04:16,075 --> 00:04:17,724
+00:04:19,840 --> 00:04:21,489
 Chapter five.
 
 53
-00:04:17,724 --> 00:04:20,135
+00:04:21,489 --> 00:04:23,899
 Testing the models.
 
 54
-00:04:20,585 --> 00:04:24,722
+00:04:24,350 --> 00:04:28,487
 A model is not included because it is advanced.
 
 55
-00:04:24,722 --> 00:04:45,759
+00:04:28,487 --> 00:04:49,524
 For win probability, simple logistic regression beat LightGBM on both the 2025 validation season and the unseen 2026 test, with a chase Brier score of 0.116 against 0.139, because tree models could not extrapolate to 2026's record scoring.
 
 56
-00:04:45,759 --> 00:04:50,777
+00:04:49,524 --> 00:04:54,542
 Validation also caught a bug: without an environment par,
 
 57
-00:04:50,777 --> 00:04:55,794
+00:04:54,542 --> 00:04:59,559
 2026 batters would all have looked better than they were.
 
 58
-00:04:56,244 --> 00:05:00,033
+00:05:00,009 --> 00:05:03,798
 Then the key scientific question: is clutch real?
 
 59
-00:05:00,033 --> 00:05:11,553
+00:05:03,798 --> 00:05:15,318
 After removing sampling noise, only about 21 percent of a batter's raw pressure-versus-normal gap is genuine signal, and about 4 percent for bowlers.
 
 60
-00:05:11,553 --> 00:05:19,440
+00:05:15,318 --> 00:05:23,205
 Performance in ordinary situations repeats from season to season; pressure-only form largely does not.
 
 61
-00:05:19,440 --> 00:05:22,224
+00:05:23,205 --> 00:05:25,988
 So we never rank a raw clutch table.
 
 62
-00:05:22,674 --> 00:05:28,066
+00:05:26,439 --> 00:05:31,831
 Instead, the reliability score blends five things: pressure performance,
 
 63
-00:05:28,066 --> 00:05:35,406
+00:05:31,831 --> 00:05:39,171
 consistency across pressure innings, impact on winning, the shrunk gap to a player's own baseline,
 
 64
-00:05:35,406 --> 00:05:37,129
+00:05:39,171 --> 00:05:40,894
 and underlying ability.
 
 65
-00:05:37,129 --> 00:05:43,421
+00:05:40,894 --> 00:05:47,186
 We stress-tested it with seven weightings and four alternative pressure definitions.
 
 66
-00:05:43,421 --> 00:05:49,038
+00:05:47,186 --> 00:05:52,803
 The leaders hold; the middle of each list moves, and we report that openly.
 
 67
-00:05:49,488 --> 00:05:51,333
+00:05:53,253 --> 00:05:55,098
 Chapter six.
 
 68
-00:05:51,333 --> 00:05:53,178
+00:05:55,098 --> 00:05:56,942
 The batters.
 
 69
-00:05:53,628 --> 00:06:01,149
-The ten most reliable batters under pressure: Shreyas Iyer, Heinrich Klaasen, Rajat Patidar,
+00:05:57,393 --> 00:05:59,195
+First, a reality check.
 
 70
-00:06:01,149 --> 00:06:10,060
-Namboori Tilak Varma, Ishan Kishan, Naman Dhir, David Miller, Tim David, Suryakumar Yadav and Glenn Phillips.
+00:05:59,195 --> 00:06:06,563
+Every player in the unrestricted performance top ten is already under contract at an IPL team,
 
 71
-00:06:10,060 --> 00:06:17,663
-Heinrich Klaasen is the most certain pick, staying in the top ten in 92 percent of resamples.
+00:06:06,563 --> 00:06:11,658
+so a list of them would not help Rajasthan Royals at the auction.
 
 72
-00:06:17,663 --> 00:06:25,021
-Andre Russell would have ranked fifth, but formally retired from the IPL in November 2025,
+00:06:11,658 --> 00:06:18,869
+We therefore rank only players the franchise can actually sign: nobody on an IPL 2026 squad,
 
 73
-00:06:25,021 --> 00:06:28,782
-so is excluded from a list built for IPL 2027.
+00:06:18,869 --> 00:06:24,043
+no Pakistani or Bangladeshi players, and nobody retired or banned.
 
 74
-00:06:29,232 --> 00:06:34,318
-For each pick we name the two strongest players left out in the same role,
+00:06:24,043 --> 00:06:28,432
+That leaves 15 eligible batters and 12 eligible bowlers.
 
 75
-00:06:34,318 --> 00:06:37,067
-and test whether the difference is real.
+00:06:28,432 --> 00:06:36,192
+Scores stay percentiles among all players, so they can still be compared with the contracted elite.
 
 76
-00:06:37,067 --> 00:06:42,565
-Against those alternatives the top four batters are clearly or moderately ahead.
+00:06:36,642 --> 00:06:43,642
+The ten most reliable batters Rajasthan Royals can sign: Daryl Mitchell, Curtis Campher,
 
 77
-00:06:42,565 --> 00:06:45,658
-Lower down the gaps shrink: for Ishan Kishan,
+00:06:43,642 --> 00:06:50,801
+Kusal Mendis, Mark Chapman, Sikandar Raza, Jimmy Neesham, George Dockrell, Ibrahim Zadran,
 
 78
-00:06:45,658 --> 00:06:50,812
-the advantage over the best alternative is statistically indistinguishable,
+00:06:50,801 --> 00:06:52,949
+Harry Tector and Ryan Burl.
 
 79
-00:06:50,812 --> 00:06:53,837
-and we say so rather than pretend otherwise.
+00:06:52,949 --> 00:07:00,267
+Daryl Mitchell leads with a score of 77, staying in the top ten in 100 percent of resamples.
 
 80
-00:06:54,287 --> 00:06:56,262
-Chapter seven.
+00:07:00,267 --> 00:07:03,926
+Six of the ten have no IPL record in the data,
 
 81
-00:06:56,262 --> 00:06:57,956
-The bowlers.
+00:07:03,926 --> 00:07:09,097
+so their ratings rest on opponent-adjusted international cricket.
 
 82
-00:06:58,406 --> 00:07:05,899
-The ten most reliable bowlers under pressure: Varun Chakravarthy, Sunil Narine, Jasprit Bumrah,
+00:07:09,547 --> 00:07:14,630
+For each pick we name the strongest players left out in the same role,
 
 83
-00:07:05,899 --> 00:07:12,287
-Lockie Ferguson, Rashid Khan, Axar Patel, Matheesha Pathirana, Bhuvneshwar Kumar,
+00:07:14,630 --> 00:07:17,534
+and test whether the difference is real.
 
 84
-00:07:12,287 --> 00:07:14,811
-Kuldeep Yadav and Sikandar Raza.
+00:07:17,534 --> 00:07:24,723
+Most of the batters are clearly ahead of the next signable options, Shai Hope and Charith Asalanka.
 
 85
-00:07:14,811 --> 00:07:20,805
-Varun Chakravarthy leads, staying in the top ten in 84 percent of resamples,
+00:07:24,723 --> 00:07:27,846
+Where the edge is only moderate, we say so.
 
 86
-00:07:20,805 --> 00:07:27,431
-with a moderate edge over the strongest alternative in the same role, Krunal Pandya.
+00:07:28,296 --> 00:07:30,272
+Chapter seven.
 
 87
-00:07:27,881 --> 00:07:34,057
-Every identity and availability flag was checked against official sources.
+00:07:30,272 --> 00:07:31,966
+The bowlers.
 
 88
-00:07:34,057 --> 00:07:39,900
-Matheesha Pathirana was ruled out of IPL 2026 with a hamstring injury.
+00:07:32,416 --> 00:07:40,470
+The ten most reliable bowlers Rajasthan Royals can sign: Sikandar Raza, Maheesh Theekshana,
 
 89
-00:07:39,900 --> 00:07:43,990
-Kuldeep Yadav was traded to Lucknow Super Giants.
+00:07:40,470 --> 00:07:47,728
+Adam Zampa, Joshua Little, Adil Rashid, Roston Chase, Obed McCoy, Richard Ngarava,
 
 90
-00:07:43,990 --> 00:07:51,919
-Sikandar Raza has had no IPL contract since 2024, which makes Raza a potential auction entrant.
+00:07:47,728 --> 00:07:50,383
+Alzarri Joseph and Mark Adair.
 
 91
-00:07:51,919 --> 00:07:57,595
-These flags are reported beside the ranking, never used to score it.
+00:07:50,383 --> 00:07:58,438
+Sikandar Raza leads with a score of 85, staying in the top ten in 100 percent of resamples,
 
 92
-00:07:58,045 --> 00:07:59,613
-Chapter eight.
+00:07:58,438 --> 00:08:01,890
+and also ranks fifth among the batters.
 
 93
-00:07:59,613 --> 00:08:01,965
-The selection debate.
+00:08:02,340 --> 00:08:08,432
+Every identity and availability flag was checked against official sources.
 
 94
-00:08:02,415 --> 00:08:03,676
-How sure are we?
+00:08:08,432 --> 00:08:13,701
+None of these twenty players is retired or on an IPL 2026 squad.
 
 95
-00:08:03,676 --> 00:08:05,646
-Each dot is a final rank.
+00:08:13,701 --> 00:08:17,077
+Each must still register for the auction.
 
 96
-00:08:05,646 --> 00:08:12,425
-The thick bar is the range from one hundred bootstrap resamples of the whole pipeline;
+00:08:17,077 --> 00:08:25,310
+Ages are reported, not scored: Sikandar Raza will be forty at the auction, Adil Rashid thirty-eight.
 
 97
-00:08:12,425 --> 00:08:17,627
-the thin bar is the range across alternative pressure definitions.
+00:08:25,760 --> 00:08:27,327
+Chapter eight.
 
 98
-00:08:17,627 --> 00:08:19,913
-The top of each list is firm.
+00:08:27,327 --> 00:08:29,679
+The selection debate.
 
 99
-00:08:19,913 --> 00:08:24,879
-From about sixth to fifteenth, players are statistically close.
+00:08:30,129 --> 00:08:31,811
+How sure is the model?
 
 100
-00:08:25,329 --> 00:08:27,890
-That is why the near misses matter.
+00:08:31,811 --> 00:08:35,328
+Each dot is a rank among all eligible players.
 
 101
-00:08:27,890 --> 00:08:33,306
-Abhishek Sharma and Mohsin Khan are each under one point from tenth place,
+00:08:35,328 --> 00:08:41,903
+The thick bar is the range from one hundred bootstrap resamples of the whole pipeline;
 
 102
-00:08:33,306 --> 00:08:38,429
-and each beats the tenth-ranked player in about half of all resamples.
+00:08:41,903 --> 00:08:46,950
+the thin bar is the range across alternative pressure definitions.
 
 103
-00:08:38,429 --> 00:08:41,649
-They are credible alternatives, not rejects.
+00:08:46,950 --> 00:08:49,779
+The top is firm; the middle is close.
 
 104
-00:08:42,099 --> 00:08:43,426
-Chapter nine.
+00:08:50,229 --> 00:08:56,245
+Within the signable pool, the closest call is at the bottom of the bowling list.
 
 105
-00:08:43,426 --> 00:08:47,408
-What do Rajasthan Royals actually need?
+00:08:56,245 --> 00:09:01,359
+Ish Sodhi and FazalHaq Farooqi are only 2.3 points from tenth place,
 
 106
-00:08:47,858 --> 00:08:55,943
-We studied Rajasthan Royals' own squad before matching any candidate, using exactly the same framework.
+00:09:01,359 --> 00:09:06,624
+and each beats the tenth-ranked bowler in about half of all resamples.
 
 107
-00:08:55,943 --> 00:09:02,930
-The batting is elite up front: first of ten for powerplay run rate in both 2025 and 2026.
+00:09:06,624 --> 00:09:09,933
+That is a coin-flip, and we label it as one.
 
 108
-00:09:02,930 --> 00:09:08,974
-But at the death it ranked between seventh and tenth on run rate, boundaries,
+00:09:10,383 --> 00:09:11,710
+Chapter nine.
 
 109
-00:09:08,974 --> 00:09:12,742
-context value and wickets lost, in both seasons,
+00:09:11,710 --> 00:09:15,693
+What do Rajasthan Royals actually need?
 
 110
-00:09:12,742 --> 00:09:18,472
-and in 2025 the death bowling conceded runs faster than any other team's.
+00:09:16,143 --> 00:09:24,228
+We studied Rajasthan Royals' own squad before matching any candidate, using exactly the same framework.
 
 111
-00:09:18,923 --> 00:09:26,093
-Turning that into priorities, finishing batting scores 81 out of 100, death bowling 61,
+00:09:24,228 --> 00:09:31,214
+The batting is elite up front: first of ten for powerplay run rate in both 2025 and 2026.
 
 112
-00:09:26,093 --> 00:09:28,400
-and middle-overs batting 60.
+00:09:31,214 --> 00:09:37,259
+But at the death it ranked between seventh and tenth on run rate, boundaries,
 
 113
-00:09:28,400 --> 00:09:33,427
-Opening batting scores only 30: it is a strength, not a need.
+00:09:37,259 --> 00:09:41,027
+context value and wickets lost, in both seasons,
 
 114
-00:09:33,427 --> 00:09:40,927
-Among current players, only Ravindra Jadeja ranks in the bowling top twenty under pressure.
+00:09:41,027 --> 00:09:46,757
+and in 2025 the death bowling conceded runs faster than any other team's.
 
 115
-00:09:41,377 --> 00:09:42,860
-Chapter ten.
+00:09:47,207 --> 00:09:54,377
+Turning that into priorities, finishing batting scores 81 out of 100, death bowling 61,
 
 116
-00:09:42,860 --> 00:09:45,457
-The auction strategy.
+00:09:54,377 --> 00:09:56,685
+and middle-overs batting 60.
 
 117
-00:09:45,907 --> 00:09:49,188
-Reliability and squad fit are kept separate.
+00:09:56,685 --> 00:10:01,712
+Opening batting scores only 30: it is a strength, not a need.
 
 118
-00:09:49,188 --> 00:09:55,751
-Squad fit asks which need a player would fill, how strong the evidence is in that phase,
+00:10:01,712 --> 00:10:09,212
+Among current players, only Ravindra Jadeja ranks in the bowling top twenty under pressure.
 
 119
-00:09:55,751 --> 00:09:59,927
-and whether an overseas player would cost a scarce slot.
+00:10:09,662 --> 00:10:11,145
+Chapter ten.
 
 120
-00:09:59,927 --> 00:10:04,551
-It guides targeting, but never reorders the competition lists.
+00:10:11,145 --> 00:10:13,741
+The auction strategy.
 
 121
-00:10:05,001 --> 00:10:09,272
-For batting, seven of the ten best fit the finishing role.
+00:10:14,191 --> 00:10:17,472
+Reliability and squad fit are kept separate.
 
 122
-00:10:09,272 --> 00:10:21,276
-Suryakumar Yadav, Tilak Varma and Shreyas Iyer are Indian finishing options that avoid the overseas squeeze; Tim David and Glenn Phillips are the overseas options.
+00:10:17,472 --> 00:10:24,035
+Squad fit asks which need a player would fill, how strong the evidence is in that phase,
 
 123
-00:10:21,726 --> 00:10:28,083
-For bowling, Jasprit Bumrah fits the death-bowling need best, with Sunil Narine,
+00:10:24,035 --> 00:10:28,212
+and whether an overseas player would cost a scarce slot.
 
 124
-00:10:28,083 --> 00:10:33,089
-Rashid Khan and Pathirana behind, subject to slots and fitness.
+00:10:28,212 --> 00:10:32,836
+It guides targeting, but never reorders the competition lists.
 
 125
-00:10:33,089 --> 00:10:38,413
-Varun Chakravarthy would add middle-overs control alongside Jadeja.
+00:10:33,286 --> 00:10:38,662
+Every signable player is overseas, so slots are the binding constraint,
 
 126
-00:10:38,413 --> 00:10:44,055
-The run estimates in this table are hypothetical models, not forecasts.
+00:10:38,662 --> 00:10:42,297
+and a player who covers two needs is worth more.
 
 127
-00:10:44,505 --> 00:10:46,374
-Chapter eleven.
+00:10:42,297 --> 00:10:49,113
+Sikandar Raza is the one primary target: ninety-seventh percentile in death-overs batting,
 
 128
-00:10:46,374 --> 00:10:49,115
-Limitations and risks.
+00:10:49,113 --> 00:10:52,823
+and the top signable bowler for the middle overs.
 
 129
-00:10:49,565 --> 00:10:54,810
-Pressure is a modelling choice, so we tested alternatives.
+00:10:52,823 --> 00:10:57,670
+For middle-overs batting depth, Mark Chapman and Daryl Mitchell.
 
 130
-00:10:54,810 --> 00:11:01,955
-The data covers 2022 to 2026, without domestic leagues or fielding attribution.
+00:10:58,120 --> 00:11:01,928
+For death bowling, Maheesh Theekshana stands out,
 
 131
-00:11:01,955 --> 00:11:09,462
-Openers face few high-pressure balls, so some elite openers fall below eligibility.
+00:11:01,928 --> 00:11:08,999
+at the eighty-fifth percentile at the death and with Rajasthan Royals experience from 2025,
 
 132
-00:11:09,462 --> 00:11:16,969
-The IPL 2027 squads are not known until the retention deadline of 17 November 2026,
+00:11:08,999 --> 00:11:10,787
+followed by Adam Zampa.
 
 133
-00:11:16,969 --> 00:11:23,029
-and the 2027 purse is not verified, so we make no financial claims.
+00:11:10,787 --> 00:11:16,305
+The run estimates in this table are hypothetical models, not forecasts.
 
 134
-00:11:23,479 --> 00:11:25,248
-Chapter twelve.
+00:11:16,755 --> 00:11:18,623
+Chapter eleven.
 
 135
-00:11:25,248 --> 00:11:27,844
-Final recommendations.
+00:11:18,623 --> 00:11:21,364
+Limitations and risks.
 
 136
-00:11:28,293 --> 00:11:34,964
-For Rajasthan Royals: target a finisher who holds up under pressure, and a death bowler,
+00:11:21,814 --> 00:11:26,981
+The signable pool is clearly weaker than the contracted elite.
 
 137
-00:11:34,964 --> 00:11:37,769
-using the ranked shortlists for each.
+00:11:26,981 --> 00:11:30,731
+Several players have little or no IPL record.
 
 138
-00:11:37,769 --> 00:11:42,090
-Add middle-overs spin control, and keep the opening pair.
+00:11:30,731 --> 00:11:37,982
+The data has no Indian domestic cricket, so uncapped Indian players cannot be assessed.
 
 139
-00:11:42,090 --> 00:11:46,562
-Re-run the needs analysis the day retentions are published.
+00:11:37,982 --> 00:11:45,233
+Excluding Bangladeshi players, and Harry Brook, is a judgement, and we state it as one.
 
 140
-00:11:46,562 --> 00:11:50,201
-Reliable pressure performance is real but noisy.
+00:11:45,233 --> 00:11:52,900
+Players released on 17 November 2026 will join the pool, and the 2027 purse is not verified,
 
 141
-00:11:50,201 --> 00:11:56,037
-The defensible way to find it is to define pressure from the match situation,
+00:11:52,900 --> 00:11:55,484
+so we make no financial claims.
 
 142
-00:11:56,037 --> 00:12:02,936
-judge players against context and opponents, shrink small samples, and say how sure we are.
+00:11:55,934 --> 00:11:57,703
+Chapter twelve.
 
 143
-00:12:02,936 --> 00:12:05,058
+00:11:57,703 --> 00:12:00,298
+Final recommendations.
+
+144
+00:12:00,748 --> 00:12:04,696
+For Rajasthan Royals: first target Sikandar Raza.
+
+145
+00:12:04,696 --> 00:12:09,127
+For death bowling, Maheesh Theekshana, then Adam Zampa.
+
+146
+00:12:09,127 --> 00:12:13,719
+For middle-overs batting, Mark Chapman or Daryl Mitchell.
+
+147
+00:12:13,719 --> 00:12:20,084
+Keep the opening pair, and re-run the selection the day releases are published.
+
+148
+00:12:20,084 --> 00:12:23,951
+Reliable pressure performance is real but noisy.
+
+149
+00:12:23,951 --> 00:12:30,155
+The defensible way to find it is to define pressure from the match situation,
+
+150
+00:12:30,155 --> 00:12:37,487
+judge players against context and opponents, shrink small samples, and say how sure we are.
+
+151
+00:12:37,487 --> 00:12:39,743
 That is SupeRR Intelligence.
