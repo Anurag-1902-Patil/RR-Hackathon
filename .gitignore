@@ -12,3 +12,8 @@ __pycache__/
 
 # deck tooling
 node_modules/
+
+# video intermediates (regenerable)
+/reports/video/assets/audio/
+/reports/video/assets/clips/
+/reports/video_build.log
