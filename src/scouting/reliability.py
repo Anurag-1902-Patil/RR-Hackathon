@@ -147,6 +147,8 @@ def bootstrap(d: pd.DataFrame, base_tabs: dict[str, pd.DataFrame], n_boot: int =
     out = {}
     for side, cols in store.items():
         m = pd.concat(cols, axis=1)
+        m.columns = m.columns.astype(str)
+        m.to_parquet(FEATURES_DIR / f"bootstrap_ranks_{side}.parquet")  # player x replicate rank matrix
         out[side] = pd.DataFrame({"boot_mean_rank": m.mean(axis=1), "boot_rank_p05": m.quantile(0.05, axis=1),
                                   "boot_rank_p95": m.quantile(0.95, axis=1), "p_top10": (m <= 10).mean(axis=1),
                                   "p_top20": (m <= 20).mean(axis=1)})

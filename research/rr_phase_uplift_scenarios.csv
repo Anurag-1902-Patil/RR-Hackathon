@@ -1,0 +1,21 @@
+side,rank,player,phase,replaces_weakest_rr_regular,rr_regular_phase_value_eb_per100,candidate_phase_value_eb_per100,rr_regular_2026_phase_balls,est_runs_gained_per_season_MODEL_ESTIMATE
+batting,1,Shreyas Iyer,death,Ravindra Jadeja,-5.0,15.7,74,15.3
+batting,2,Heinrich Klaasen,middle,Dhruv Jurel,-2.6,12.5,203,30.5
+batting,3,Rajat Patidar,middle,Dhruv Jurel,-2.6,8.3,203,22.1
+batting,4,Namboori Tilak Varma,death,Ravindra Jadeja,-5.0,21.5,74,19.7
+batting,5,Ishan Kishan,middle,Dhruv Jurel,-2.6,3.4,203,12.1
+batting,6,Naman Dhir,death,Ravindra Jadeja,-5.0,8.3,74,9.9
+batting,7,David Miller,death,Ravindra Jadeja,-5.0,7.9,74,9.6
+batting,8,Tim David,death,Ravindra Jadeja,-5.0,19.6,74,18.3
+batting,9,Suryakumar Yadav,death,Ravindra Jadeja,-5.0,22.6,74,20.4
+batting,10,Glenn Phillips,death,Ravindra Jadeja,-5.0,16.9,74,16.2
+bowling,1,Varun Chakravarthy,middle,Yash Punja,-0.8,15.9,156,26.0
+bowling,2,Sunil Narine,death,Tushar Deshpande,-0.9,20.5,48,10.3
+bowling,3,Jasprit Bumrah,death,Tushar Deshpande,-0.9,27.5,48,13.6
+bowling,4,Lockie Ferguson,powerplay,Brijesh Sharma,-2.8,5.7,72,6.1
+bowling,5,Rashid Khan,death,Tushar Deshpande,-0.9,13.0,48,6.7
+bowling,6,Axar Patel,powerplay,Brijesh Sharma,-2.8,6.6,72,6.7
+bowling,7,Matheesha Pathirana,death,Tushar Deshpande,-0.9,14.0,48,7.1
+bowling,8,Bhuvneshwar Kumar,powerplay,Brijesh Sharma,-2.8,14.2,72,12.2
+bowling,9,Kuldeep Yadav,death,Tushar Deshpande,-0.9,10.9,48,5.7
+bowling,10,Sikandar Raza,middle,Yash Punja,-0.8,4.1,156,7.7
