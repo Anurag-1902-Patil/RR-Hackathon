@@ -16,6 +16,7 @@
 | RR squad intelligence, needs, squad fit, comparisons | ✅ `research/RR_SQUAD_ANALYSIS.md`, `research/PLAYER_COMPARISONS.md` |
 | Streamlit dashboard (9 pages) | ✅ `dashboard/` |
 | Final report (47-page PDF) and 25-slide PPTX deck | ✅ `reports/final_report.pdf`, `reports/presentation.pptx` |
+| Uncapped Indian freshers (public SMAT data) | ✅ `reports/top_5_uncapped_*.csv`, `reports/FINAL_SUBMISSION.md` |
 | Documentary video, trailer, social reel and posts | ✅ `reports/video/`, `reports/social_content/` |
 
 ## Setup (Windows, Python 3.11)
@@ -41,6 +42,10 @@ Versions are pinned. Newer pandas, pyarrow and scikit-learn wheels were blocked 
 .venv/Scripts/python -m src.scouting.squad_fit        # squad fit, alternatives, uplift
 .venv/Scripts/python -m src.reporting.comparisons_doc # PLAYER_COMPARISONS.md + recommendations
 .venv/Scripts/python -m src.reporting.dashboard_data  # dashboard aggregates
+# uncapped Indian freshers (public Cricsheet SMAT data; unzip sma_male_json.zip into data/external/cricsheet_sma/)
+.venv/Scripts/python -m src.domestic.smat             # SMAT delivery table: state, WP, pressure, expectations
+.venv/Scripts/python -m src.domestic.uncapped         # combined ridge, score, fresher pool, bootstrap (~10 min)
+.venv/Scripts/python -m src.domestic.report           # top-5 uncapped CSVs, figure, FINAL_SUBMISSION list
 .venv/Scripts/python -m pytest -q tests
 ```
 
@@ -63,7 +68,7 @@ node src/reporting/deck/build_deck.js                  # reports/presentation.pp
 ```bash
 .venv/Scripts/streamlit run dashboard/app.py
 ```
-Nine pages: Executive Overview, Batting and Bowling Leaderboards, Pressure Analytics, Player Comparison, Model Intelligence, Scouting Reports, RR Squad Intelligence, and Research & Sources. The dashboard reads only aggregate outputs in `reports/` and `research/`, never the raw data pack.
+Ten pages (including Uncapped Indian Freshers): Executive Overview, Batting and Bowling Leaderboards, Pressure Analytics, Player Comparison, Model Intelligence, Scouting Reports, RR Squad Intelligence, and Research & Sources. The dashboard reads only aggregate outputs in `reports/` and `research/`, never the raw data pack.
 
 ## Layout
 ```

@@ -43,6 +43,8 @@ What I learned:
 
 Every player in the unrestricted top 10 is already under IPL contract, so I ranked only players RR can actually sign. Most reliable under pressure among them: {b[0]['player']} (batting) and {w[0]['player']} (bowling). For RR, the evidence points to a finisher and a death bowler, and Sikandar Raza covers both bat and ball.
 
+And because the data pack has no Indian domestic cricket, I added public Syed Mushtaq Ali Trophy ball-by-ball data to rate uncapped Indian freshers the same way: {D['uncapped']['batting'][0]['player']} and {D['uncapped']['batting'][1]['player']} lead the batters.
+
 Independent analytical submission. Not affiliated with or endorsed by Rajasthan Royals.
 
 #SupeRRSelector #CricketAnalytics #SportsAnalytics #DataScience #IPL
@@ -55,6 +57,7 @@ We defined pressure before every ball, compared every player with an average pla
 
 #1 batter RR can sign: {b[0]['player']}
 #1 bowler RR can sign: {w[0]['player']}
+Top uncapped Indian fresher (domestic T20): {D['uncapped']['batting'][0]['player']}
 
 Full method in the report. Independent analysis for #SupeRRSelector Season 2, not affiliated with Rajasthan Royals.
 

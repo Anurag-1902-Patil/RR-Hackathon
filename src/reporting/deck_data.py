@@ -37,6 +37,8 @@ def run() -> dict:
                          "availability": rr.availability, "uplift": rnd(rr.uplift_runs_per_season_MODEL_ESTIMATE, 1)})
         out[side] = rows
     out["pool"] = {side: int(pd.read_csv(MO / f"reliability_{side}.csv")["rr_acquirable"].sum()) for side in ("batting", "bowling")}
+    out["uncapped"] = {side: pd.read_csv(REPORTS_DIR / f"top_5_uncapped_{f}.csv").to_dict("records") for side, f in (("batting", "batters"), ("bowling", "bowlers"))}
+    out["uncapped_transfer"] = pd.read_csv(MO / "uncapped_transfer_validation.csv").to_dict("records")
     nm = pd.read_csv(MO / "near_misses.csv")
     out["near"] = nm[nm["rank"] <= 13].to_dict("records")
     prof = pd.read_csv(MO / "pressure_profile_final.csv")

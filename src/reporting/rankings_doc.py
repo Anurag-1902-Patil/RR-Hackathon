@@ -53,7 +53,7 @@ def build() -> str:
     L += ["## Caveats", "",
           "- The acquirable pool is clearly weaker than the contracted elite, and every player in it is overseas (RR can hold at most 8 overseas players).",
           "- Several players have little or no IPL record in the data. Their ratings rest on opponent-adjusted T20Is (see the IPL-share column).",
-          "- The data pack has no Indian domestic cricket, so uncapped Indian auction entrants cannot be assessed.",
+          "- The data pack has no Indian domestic cricket. Uncapped Indian freshers are rated separately from public Syed Mushtaq Ali Trophy data: see `reports/top_5_uncapped_batters.csv` and `reports/top_5_uncapped_bowlers.csv`.",
           "- Bowlers #9 and #10 are statistically indistinguishable from the next two (see `near_misses.csv`).",
           "- Players released at the 17 Nov 2026 retention deadline join the pool. Re-run `python -m src.scouting.final_selection` and the reporting steps after it.", ""]
     return "\n".join(L)

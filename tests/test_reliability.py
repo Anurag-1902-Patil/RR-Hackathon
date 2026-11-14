@@ -81,3 +81,18 @@ def test_final_top10_only_rr_acquirable():
             s = pd.read_csv(p)
             top = s[s["rank"] <= 10]
             assert top["rr_acquirable"].all() and top["not_acquirable_reason"].isna().all()
+
+
+def test_uncapped_picks_verified_freshers():
+    """Uncapped picks: verified, never capped, not retired, not on an IPL 2026 squad, aged <= 30 at auction."""
+    from src.config import REPORTS_DIR
+    from src.domestic import verified_uncapped as V
+    for f in ("top_5_uncapped_batters.csv", "top_5_uncapped_bowlers.csv"):
+        p = REPORTS_DIR / f
+        if p.exists():
+            t = pd.read_csv(p)
+            assert len(t) == 5 and t["rank"].tolist() == list(range(1, 6))
+            assert (t["age_at_auction"] <= V.MAX_AGE).all()
+            for n in t["scorecard_name"]:
+                ok, reason, _, _ = V.status(n)
+                assert ok, (n, reason)

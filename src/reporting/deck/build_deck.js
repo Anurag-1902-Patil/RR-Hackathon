@@ -245,6 +245,35 @@ s.addTable(tableRows(["Side", "Rank", "Player", "Role", "Score", "Gap to #10", "
 txt(s, "Ish Sodhi and Fazalhaq Farooqi are 2.3 points behind bowler #10 and beat #10 in about half of all resamples: a coin-flip. The acquirable bowling pool has only 12 players.", { x: M, y: 5.2, w: 12.1, h: 0.8, fontSize: 16 });
 s.addNotes("Demonstrates the shortlist was deliberate: each near-miss is named with the component that separated them.");
 
+// ---------------- uncapped Indian freshers (public SMAT data)
+const tvb = Object.fromEntries(D.uncapped_transfer.map((r) => [r.side, r]));
+s = slide("CONTENT", "Uncapped Indian freshers: adding India's domestic T20");
+bullets(s, [
+  "Every signable player in the data pack is an overseas international, and the pack has no Indian domestic cricket.",
+  "So we added public ball-by-ball data for the Syed Mushtaq Ali Trophy (Cricsheet): 272 matches, 62,850 balls, 2020/21–2024/25, all on Indian pitches.",
+  "Same pressure definition, same five components and weights. One opponent-adjusted model spans data pack + SMAT, linked by 152 players who appear in both.",
+  "Pool: Indian, never capped, not retired, not on an IPL 2026 squad, aged 30 or under at the auction. All 52 candidates were checked on Wikipedia.",
+], { x: M, y: 1.45, w: 7.6, h: 5.3, fontSize: 15 });
+stat(s, 8.5, 1.45, 4.2, tvb.batting.spearman_smat_vs_pack_usual.toFixed(2), `batting: domestic rating vs IPL/T20I rating (Spearman, ${tvb.batting.players} players). Informative.`, HEX.lt2, HEX.accent1, HEX.dk1, "transfer-bat");
+stat(s, 8.5, 3.55, 4.2, tvb.bowling.spearman_smat_vs_pack_usual.toFixed(2), `bowling (${tvb.bowling.players} players): no carry-over, so bowlers are a watchlist.`, HEX.lt2, HEX.accent2, HEX.dk1, "transfer-bowl");
+txt(s, "Cricsheet's latest SMAT season (2024/25) has only 8 matches, so most fresher evidence is 2020/21–2023/24.", { x: 8.5, y: 5.65, w: 4.2, h: 1.0, fontSize: 12, color: C.accent5 });
+s.addNotes("Season 1's winning entry backed an uncapped Indian, Vignesh Puthur, whom RR signed. This slide answers the obvious question: what about Indian players who have not played internationals? The validation is the key honesty point: domestic batting form predicts IPL batting; domestic bowling form did not, on this sample.");
+
+s = slide("CONTENT", "Uncapped Indian freshers: the picks");
+const ut = (rows) => tableRows(["#", "Player", "Team", "Age", "Score", "P(top 5)"],
+  rows.map((r) => [r.rank, r.player, r.domestic_team.replace(" (India)", ""), r.age_at_auction, Math.round(r.reliability_score), pct(r.p_top5_bootstrap)]));
+txt(s, "Batters", { x: M, y: 1.35, w: 5.9, h: 0.45, fontSize: 18, bold: true, color: C.accent1, fontFace: "Cambria" });
+s.addTable(ut(D.uncapped.batting), { x: M, y: 1.85, w: 5.9, colW: [0.4, 2.0, 1.35, 0.6, 0.75, 0.8], border: { type: "none" }, rowH: 0.42 });
+txt(s, "Bowlers: watchlist (low confidence)", { x: 6.8, y: 1.35, w: 5.9, h: 0.45, fontSize: 18, bold: true, color: C.accent2, fontFace: "Cambria" });
+s.addTable(ut(D.uncapped.bowling), { x: 6.8, y: 1.85, w: 5.9, colW: [0.4, 2.0, 1.35, 0.6, 0.75, 0.8], border: { type: "none" }, rowH: 0.42 });
+bullets(s, [
+  `${D.uncapped.batting[0].player} and ${D.uncapped.batting[1].player} are the clearest uncapped batters (each top 5 in ${pct(D.uncapped.batting[0].p_top5_bootstrap)} of resamples). Picks #4–#5 are close to Shubham Pundir and Subhranshu Senapati.`,
+  `${D.uncapped.bowling[0].player} leads the bowlers clearly; beyond that, treat the list as a live-scouting watchlist.`,
+], { x: M, y: 4.75, w: 12.1, h: 1.6, fontSize: 14 });
+txt(s, "Score = percentile among all eligible SMAT players (capped included); not directly comparable with the main lists. Rated higher but excluded: Sai Kishore (capped, GT), Cariappa and Gowtham (retired), and several players over 30.",
+  { x: M, y: 6.3, w: 12.1, h: 0.55, fontSize: 11, color: C.accent5 });
+s.addNotes("These are the Indian-slot ideas the data supports. Batting picks rest on informative evidence; bowling picks do not, which is said plainly. Uncapped players released on 17 Nov join this pool on re-run.");
+
 // ================= RR
 newSection("Rajasthan Royals");
 slide("SECTION", "3 · How these players could strengthen Rajasthan Royals", "Squad first, needs second, candidates third");
@@ -310,8 +339,9 @@ bullets(s, [
   "First target Sikandar Raza: death-overs finishing and middle-overs bowling in one overseas slot.",
   "Death bowling: Maheesh Theekshana, then Adam Zampa.",
   "Middle-overs batting depth: Mark Chapman or Daryl Mitchell. Keep the opening pair, RR's clearest strength.",
+  `Indian slots: scout uncapped batters ${D.uncapped.batting[0].player} and ${D.uncapped.batting[1].player} first; uncapped bowlers are a watchlist.`,
   "Re-run the selection when the 17 Nov releases are published: better-rated players may enter the pool (one command).",
-], { x: M, y: 4.0, w: 12.1, h: 2.8, fontSize: 18, color: C.background1 });
+], { x: M, y: 3.7, w: 12.1, h: 3.2, fontSize: 17, color: C.background1 });
 s.addNotes("Close on the decision: Raza first, then a death bowler, within RR's overseas slots. Every name is signable today. Dashboard and full report accompany this deck.");
 
 (async () => {

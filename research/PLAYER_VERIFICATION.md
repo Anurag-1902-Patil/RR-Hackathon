@@ -23,6 +23,14 @@ The submitted lists contain **only players RR can sign** at the IPL 2027 auction
 - **Recency:** Obed McCoy's last T20I in the data is September 2025.
 - **Exclusion judgements:** Bangladeshi players (S12) and Harry Brook (S14) are excluded as unreliable to acquire. No formal rule was published for either case.
 
+## Uncapped Indian freshers (SMAT track, verified 2026-11-14)
+All 52 players in the SMAT data pool were checked on Wikipedia (DOB, India caps, retirement, IPL teams) and against the IPL 2026 personnel page (W-IPL26). Facts: `src/domestic/verified_uncapped.py`.
+- **Picked (batting):** Rahul Buddhi (29), Narayan Jagadeesan (30), Rajat Dey (29), Atharva Taide (26), Harsh Tyagi (26).
+- **Watchlist (bowling):** Atit Sheth (30), Harishankar Reddy (28), Darshan Nalkande (28), Abid Mushtaq (29), Arzan Nagwaswalla (29).
+- **Excluded despite high SMAT scores:** KC Cariappa (retired Jan 2026), Krishnappa Gowtham (retired Dec 2025), Piyush Chawla (retired), Siddarth Kaul (retired from Indian cricket 2024), Sai Kishore (India T20I cap 2023; Gujarat Titans 2026), Sandeep Warrier (T20I cap 2021), Vijay Shankar and Prasidh Krishna (capped), Vijaykumar Vyshak (Punjab Kings 2026), and players over 30 at the auction (e.g. Manan Vohra 33, Lukman Meriwala 35).
+- **Unverifiable, excluded:** Akshay Wankhade, Bhanu Pania (no page), Sheldon Jackson (cricketer page not found at the title tried), K D Patel (ambiguous).
+- Narayan Jagadeesan received a Test call-up in 2025 but no appearance is stated, so he is treated as uncapped.
+
 ---
 
 # Archive: Verification of the Provisional (Unrestricted) Top 10s (2026-11-14)

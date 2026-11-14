@@ -15,6 +15,7 @@ nav = st.navigation({
                  st.Page(P / "4_Player_Comparison.py", title="Player Comparison"),
                  st.Page(P / "5_Model_Intelligence.py", title="Model Intelligence")],
     "Scouting": [st.Page(P / "6_Scouting_Reports.py", title="Scouting Reports"),
+                 st.Page(P / "9_Uncapped_Freshers.py", title="Uncapped Indian Freshers"),
                  st.Page(P / "7_RR_Squad_Intelligence.py", title="RR Squad Intelligence")],
     "Evidence": [st.Page(P / "8_Research_and_Sources.py", title="Research & Sources")],
 })

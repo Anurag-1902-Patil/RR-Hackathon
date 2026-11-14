@@ -180,7 +180,19 @@ Every player in the unrestricted performance top 10 (batting and bowling) was un
 - **Unchanged:** eligibility thresholds, components, weights and the **score**, which stays a percentile among all eligible players.
 - **Recomputed within the pool:** rank, P(top 10), the bootstrap 90% rank interval (from the saved 100-replicate rank matrices, re-ranked within the pool) and the range across pressure definitions. The unrestricted values are kept as `overall_*` columns.
 - Squad fit, alternatives, near misses and uplift are computed for the acquirable top 10s; alternatives are the next acquirable players.
-- Limits: the pool is all overseas; several players have little or no IPL record; the data pack has no Indian domestic cricket, so uncapped Indian entrants cannot be assessed. Players released at the 17 Nov 2026 retentions join the pool on re-run.
+- Limits: the pool is all overseas; several players have little or no IPL record; the data pack has no Indian domestic cricket, so uncapped Indians are rated separately from public SMAT data (section 6.y). Players released at the 17 Nov 2026 retentions join the pool on re-run.
+
+### 6.y Uncapped Indian freshers from public domestic data ✅ (`src/domestic/`)
+The data pack has no Indian domestic cricket, so every signable player in it is an overseas international. At the user's request, uncapped Indian freshers are rated from **public** ball-by-ball data for the Syed Mushtaq Ali Trophy (Cricsheet `sma_male_json.zip`, Open Data Commons Attribution; source S17), stored in `data/external/` and never committed.
+- **Coverage:** SMAT 2020/21–2024/25, 272 matches, 62,850 balls. Cricsheet's 2024/25 season has only 8 matches; there is no 2025/26 data.
+- **Same definitions:** delivery flags and pre-ball state as §1; win probability from the data-pack logistic models (all pack years), tier dummies 0, SMAT's own rolling par; pressure exactly as §3 (percentiles within SMAT; HIGH share 19.6% inn 1, 20.5% inn 2).
+- **Expectations:** context-only LightGBM fitted on SMAT, leave-one-season-out, recentred by season (Cricsheet lacks bowling type and batting hand). Mean expected = mean observed (1.191 runs per batter ball).
+- **Strength adjustment:** one ridge (same α and delta scale as §5) on data-pack + SMAT balls. 152 SMAT players are linked to data-pack IDs by (first initial, surname), accepting only keys unique on both sides; links were spot-checked.
+- **Transfer validation:** SMAT-only usual-ability rating vs data-pack rating, players with ≥150 balls in both: batting Spearman 0.50 (26 players), bowling -0.03 (22). Domestic batting evidence is informative; domestic bowling evidence is not, so the bowling picks are a **watchlist**.
+- **Score:** same components and weights; percentiles among all eligible SMAT players (capped included). Eligibility: batting ≥40 HIGH balls and ≥4 pressure innings; bowling ≥48 HIGH legal balls and ≥4 spells (a SMAT season is ~7 league games; shrinkage handles noise).
+- **Pool rule:** Indian; never capped by India; not retired; not on any IPL 2026 squad; played SMAT 2023/24 or later; **aged ≤30 at the 16 Dec 2026 auction** ("fresher"). All 52 candidates verified (Wikipedia + IPL 2026 personnel page, `src/domestic/verified_uncapped.py`); 3 without a verifiable page are excluded, never guessed.
+- **Uncertainty:** 60 match-level bootstrap resamples of SMAT (pack balls fixed), re-fitting ratings and scores; P(top 5) within the fresher pool.
+- **Result:** batters Rahul Buddhi, Narayan Jagadeesan, Rajat Dey, Atharva Taide, Harsh Tyagi; bowling watchlist Atit Sheth, Harishankar Reddy, Darshan Nalkande, Abid Mushtaq, Arzan Nagwaswalla.
 
 ## 7. RR squad-fit layer 🔜
 A separate layer with its own score. It never reorders the competition top 10 (see the DATA_AUDIT decisions log).

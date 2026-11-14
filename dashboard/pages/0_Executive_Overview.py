@@ -38,6 +38,7 @@ st.markdown("""
 - **"Clutch" is mostly not repeatable.** Ordinary-situation performance persists across 2022–24 → 2025–26. Pressure-only performance and pressure deltas do not. Scores therefore borrow strength from all-situation ability.
 - **Only players RR can sign are ranked.** The whole unrestricted performance top 10 is under contract at IPL teams. Also excluded: Pakistani and Bangladeshi players, and retired or banned players (Russell, Ashwin, Mohit Sharma, Brook). Switch the leaderboards to *All eligible* for context.
 - **Sikandar Raza is the standout target:** #1 acquirable bowler, #5 batter, and 97th percentile in death-overs batting. Death bowling: Theekshana, then Zampa.
+- **Uncapped Indian freshers (public SMAT data):** batters Rahul Buddhi, Narayan Jagadeesan, Rajat Dey, Atharva Taide, Harsh Tyagi; bowling watchlist led by Atit Sheth. See *Uncapped Indian Freshers*.
 - **Honest limits:** every acquirable player is overseas, several have little or no IPL record, and bowlers #9–#10 are statistically level with Sodhi and Farooqi.
 - **RR's clearest gaps:** death-overs / finishing batting and death bowling. Opening batting is RR's strength (#1 in the IPL in 2025 and 2026).
 """)

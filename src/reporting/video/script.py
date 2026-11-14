@@ -1,6 +1,6 @@
 """Documentary narration, chapters, trailer and reel scripts, with every number filled from pipeline outputs.
 
-Each scene = (chapter, visual(s), narration). Visuals are deck slides (s01..s25, exported at 1920x1080),
+Each scene = (chapter, visual(s), narration). Visuals are deck slides (s01..s27, exported at 1920x1080),
 chapter title cards ("card:<n>") or report figures ("fig:<path>"). Player pronouns are avoided on purpose.
 """
 from __future__ import annotations
@@ -113,30 +113,42 @@ def documentary() -> list[dict]:
     add(8, ["s17"], f"""Within the signable pool, the closest call is at the bottom of the bowling list. {D['near'][-2]['player']} and
         {D['near'][-1]['player']} are only {D['near'][-1]['gap_to_rank10']} points from tenth place, and each beats the tenth-ranked bowler in
         about half of all resamples. That is a coin-flip, and we label it as one.""")
+    ub, uw = D["uncapped"]["batting"], D["uncapped"]["bowling"]
+    tv = {r["side"]: r for r in D["uncapped_transfer"]}
+    add(8, ["s18"], f"""One gap remained. Every signable player in the data pack is an overseas international, and the pack has no Indian domestic
+        cricket. So we added public ball-by-ball data from the Syed Mushtaq Ali Trophy, India's domestic T20 competition, played on Indian
+        pitches: 272 matches since 2020. We applied the same pressure definition and the same score, and linked domestic and IPL ratings
+        through 152 players who appear in both. A check on those players showed that domestic batting form carries over to the IPL, with
+        a correlation of {tv['batting']['spearman_smat_vs_pack_usual']:.1f}, but domestic bowling form did not.""")
+    add(8, ["s19"], f"""The uncapped fresher batters, all thirty or under and on no IPL squad: {names(ub)}. {ub[0]['player']} and
+        {ub[1]['player']} are the clearest, each staying in the top five in {pct(ub[0]['p_top5_bootstrap'])} of resamples. For bowling,
+        {uw[0]['player']} leads clearly, but because domestic bowling form did not predict IPL bowling, the bowlers are a watchlist for live
+        scouting, not firm picks.""")
     add(9, ["card:9"], "Chapter nine. What do Rajasthan Royals actually need?")
-    add(9, ["s19"], """We studied Rajasthan Royals' own squad before matching any candidate, using exactly the same framework. The batting is elite
+    add(9, ["s21"], """We studied Rajasthan Royals' own squad before matching any candidate, using exactly the same framework. The batting is elite
         up front: first of ten for powerplay run rate in both 2025 and 2026. But at the death it ranked between seventh and tenth on run rate, boundaries, context value and wickets lost, in both seasons,
         and in 2025 the death bowling conceded runs faster than any other team's.""")
-    add(9, ["s20"], f"""Turning that into priorities, finishing batting scores {D['pm']['Death-overs / finishing batting']:.0f} out of 100, death bowling
+    add(9, ["s22"], f"""Turning that into priorities, finishing batting scores {D['pm']['Death-overs / finishing batting']:.0f} out of 100, death bowling
         {D['pm']['Death-overs bowling']:.0f}, and middle-overs batting {D['pm']['Middle-overs batting']:.0f}. Opening batting scores only
         {D['pm']['Powerplay / opening batting']:.0f}: it is a strength, not a need. Among current players, only Ravindra Jadeja ranks in the
         bowling top twenty under pressure.""")
     add(10, ["card:10"], "Chapter ten. The auction strategy.")
-    add(10, ["s21"], """Reliability and squad fit are kept separate. Squad fit asks which need a player would fill, how strong the evidence is in
+    add(10, ["s23"], """Reliability and squad fit are kept separate. Squad fit asks which need a player would fill, how strong the evidence is in
         that phase, and whether an overseas player would cost a scarce slot. It guides targeting, but never reorders the competition lists.""")
-    add(10, ["s22"], """Every signable player is overseas, so slots are the binding constraint, and a player who covers two needs is worth more.
+    add(10, ["s24"], """Every signable player is overseas, so slots are the binding constraint, and a player who covers two needs is worth more.
         Sikandar Raza is the one primary target: ninety-seventh percentile in death-overs batting, and the top signable bowler for the middle
         overs. For middle-overs batting depth, Mark Chapman and Daryl Mitchell.""")
-    add(10, ["s23"], """For death bowling, Maheesh Theekshana stands out, at the eighty-fifth percentile at the death and with Rajasthan Royals
+    add(10, ["s25"], """For death bowling, Maheesh Theekshana stands out, at the eighty-fifth percentile at the death and with Rajasthan Royals
         experience from 2025, followed by Adam Zampa. The run estimates in this table are hypothetical models, not forecasts.""")
     add(11, ["card:11"], "Chapter eleven. Limitations and risks.")
-    add(11, ["s24"], """The signable pool is clearly weaker than the contracted elite. Several players have little or no IPL record. The data
-        has no Indian domestic cricket, so uncapped Indian players cannot be assessed. Excluding Bangladeshi players, and Harry Brook, is a
+    add(11, ["s26"], """The signable pool is clearly weaker than the contracted elite. Several players have little or no IPL record. The public
+        domestic data stops at the 2024/25 season, so the very newest freshers are missing, and domestic bowling form is a weak guide. Excluding Bangladeshi players, and Harry Brook, is a
         judgement, and we state it as one. Players released on 17 November 2026 will join the pool, and the 2027 purse is not verified, so we
         make no financial claims.""")
     add(12, ["card:12"], "Chapter twelve. Final recommendations.")
-    add(12, ["s25"], """For Rajasthan Royals: first target Sikandar Raza. For death bowling, Maheesh Theekshana, then Adam Zampa. For middle-overs
-        batting, Mark Chapman or Daryl Mitchell. Keep the opening pair, and re-run the selection the day releases are published.
+    add(12, ["s27"], f"""For Rajasthan Royals: first target Sikandar Raza. For death bowling, Maheesh Theekshana, then Adam Zampa. For middle-overs
+        batting, Mark Chapman or Daryl Mitchell. For Indian slots, scout the uncapped batters {D['uncapped']['batting'][0]['player']} and
+        {D['uncapped']['batting'][1]['player']} first. Keep the opening pair, and re-run the selection the day releases are published.
         Reliable pressure performance is real but noisy. The defensible way to find it is to define pressure from the match situation,
         judge players against context and opponents, shrink small samples, and say how sure we are. That is SupeRR Intelligence.""")
     return S
@@ -152,7 +164,8 @@ def trailer() -> list[dict]:
         ("s11", "We kept only players Rajasthan Royals can actually sign."),
         ("s12", f"The most reliable batter they can sign: {b[0]['player']}."),
         ("s13", f"The most reliable bowler: {w[0]['player']}."),
-        ("s19", "And what Rajasthan Royals actually need: a finisher, and a death bowler."),
+        ("s19", f"And from India's domestic T20, uncapped freshers led by {D['uncapped']['batting'][0]['player']}."),
+        ("s21", "And what Rajasthan Royals actually need: a finisher, and a death bowler."),
         ("card:end", "SupeRR Intelligence. Full report, dashboard and documentary available."),
     ]
     return [{"chapter": 0, "visuals": [v], "text": t} for v, t in lines]
@@ -168,7 +181,8 @@ def reel() -> list[dict]:
         ("s08", "Surprise: most 'clutch' is noise. Only about a fifth of a batter's pressure gap is real.", "IS CLUTCH REAL?"),
         ("s12", f"Top signable batter under pressure: {b[0]['player']}. Next: {b[1]['player']} and {b[2]['player']}.", "TOP BATTERS RR CAN SIGN"),
         ("s13", f"Top signable bowler: {w[0]['player']}. Next: {w[1]['player']} and {w[2]['player']}.", "TOP BOWLERS RR CAN SIGN"),
-        ("s19", "Rajasthan Royals' data says: elite openers, but a need at the death, with bat and ball.", "WHAT RR NEEDS"),
+        ("s19", f"Uncapped Indian freshers from domestic T20: {D['uncapped']['batting'][0]['player']} and {D['uncapped']['batting'][1]['player']} lead the batters.", "UNCAPPED FRESHERS"),
+        ("s21", "Rajasthan Royals' data says: elite openers, but a need at the death, with bat and ball.", "WHAT RR NEEDS"),
         ("card:end", "Independent analysis for SupeRR Selector Season 2. Full method in the report.", "SUPERR INTELLIGENCE"),
     ]
     return [{"chapter": 0, "visuals": [v], "text": t, "hook": h} for v, t, h in lines]

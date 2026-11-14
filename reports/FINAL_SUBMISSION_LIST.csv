@@ -1,0 +1,31 @@
+category,rank,player,country,role,reliability_score,p_top,evidence
+Top 10 batters RR can sign,1,Daryl Mitchell,New Zealand,Middle order (4-5),77.0,1.0,IPL + T20I 2022-26 (RR data pack)
+Top 10 batters RR can sign,2,Curtis Campher,Ireland,Middle order (4-5),76.0,0.98,IPL + T20I 2022-26 (RR data pack)
+Top 10 batters RR can sign,3,Kusal Mendis,Sri Lanka,Opener,72.0,0.96,IPL + T20I 2022-26 (RR data pack)
+Top 10 batters RR can sign,4,Mark Chapman,New Zealand,Middle order (4-5),63.0,0.93,IPL + T20I 2022-26 (RR data pack)
+Top 10 batters RR can sign,5,Sikandar Raza,Zimbabwe,Middle order (4-5),62.0,0.95,IPL + T20I 2022-26 (RR data pack)
+Top 10 batters RR can sign,6,Jimmy Neesham,New Zealand,Finisher (6-7),58.0,0.92,IPL + T20I 2022-26 (RR data pack)
+Top 10 batters RR can sign,7,George Dockrell,Ireland,Finisher (6-7),45.0,0.82,IPL + T20I 2022-26 (RR data pack)
+Top 10 batters RR can sign,8,Ibrahim Zadran,Afghanistan,No.3,45.0,0.79,IPL + T20I 2022-26 (RR data pack)
+Top 10 batters RR can sign,9,Harry Tector,Ireland,Middle order (4-5),41.0,0.78,IPL + T20I 2022-26 (RR data pack)
+Top 10 batters RR can sign,10,Ryan Burl,Zimbabwe,Middle order (4-5),35.0,0.66,IPL + T20I 2022-26 (RR data pack)
+Top 10 bowlers RR can sign,1,Sikandar Raza,Zimbabwe,Middle-overs,85.0,1.0,IPL + T20I 2022-26 (RR data pack)
+Top 10 bowlers RR can sign,2,Maheesh Theekshana,Sri Lanka,Multi-phase,78.0,0.99,IPL + T20I 2022-26 (RR data pack)
+Top 10 bowlers RR can sign,3,Adam Zampa,Australia,Middle-overs,77.0,1.0,IPL + T20I 2022-26 (RR data pack)
+Top 10 bowlers RR can sign,4,Joshua Little,Ireland,Multi-phase,64.0,0.98,IPL + T20I 2022-26 (RR data pack)
+Top 10 bowlers RR can sign,5,Adil Rashid,England,Middle-overs,59.0,0.94,IPL + T20I 2022-26 (RR data pack)
+Top 10 bowlers RR can sign,6,Roston Chase,West Indies,Middle-overs,48.0,0.88,IPL + T20I 2022-26 (RR data pack)
+Top 10 bowlers RR can sign,7,Obed McCoy,West Indies,Multi-phase,40.0,0.93,IPL + T20I 2022-26 (RR data pack)
+Top 10 bowlers RR can sign,8,Richard Ngarava,Zimbabwe,Powerplay specialist,37.0,0.86,IPL + T20I 2022-26 (RR data pack)
+Top 10 bowlers RR can sign,9,Alzarri Joseph,West Indies,Multi-phase,26.0,0.61,IPL + T20I 2022-26 (RR data pack)
+Top 10 bowlers RR can sign,10,Mark Adair,Ireland,Powerplay specialist,26.0,0.52,IPL + T20I 2022-26 (RR data pack)
+Uncapped Indian fresher batters,1,Rahul Buddhi,India (uncapped),Finisher (6-7),81.9,0.82,"Syed Mushtaq Ali Trophy 2020/21, 2021/22, 2022/23, 2023/24 (Cricsheet)"
+Uncapped Indian fresher batters,2,Narayan Jagadeesan,India (uncapped),Opener,66.7,0.82,"Syed Mushtaq Ali Trophy 2020/21, 2021/22, 2023/24 (Cricsheet)"
+Uncapped Indian fresher batters,3,Rajat Dey,India (uncapped),Middle order (4-5),58.2,0.53,"Syed Mushtaq Ali Trophy 2020/21, 2021/22, 2022/23, 2023/24 (Cricsheet)"
+Uncapped Indian fresher batters,4,Atharva Taide,India (uncapped),Opener,53.2,0.45,"Syed Mushtaq Ali Trophy 2020/21, 2021/22, 2022/23, 2024/25 (Cricsheet)"
+Uncapped Indian fresher batters,5,Harsh Tyagi,India (uncapped),Finisher (6-7),46.0,0.45,"Syed Mushtaq Ali Trophy 2020/21, 2021/22, 2022/23, 2023/24, 2024/25 (Cricsheet)"
+Uncapped Indian fresher bowlers (watchlist),1,Atit Sheth,India (uncapped),Powerplay specialist,50.8,0.98,"Syed Mushtaq Ali Trophy 2020/21, 2021/22, 2022/23, 2023/24, 2024/25 (Cricsheet)"
+Uncapped Indian fresher bowlers (watchlist),2,Harishankar Reddy,India (uncapped),Powerplay specialist,38.7,0.7,"Syed Mushtaq Ali Trophy 2020/21, 2021/22, 2022/23, 2023/24 (Cricsheet)"
+Uncapped Indian fresher bowlers (watchlist),3,Darshan Nalkande,India (uncapped),Powerplay specialist,37.0,0.8,"Syed Mushtaq Ali Trophy 2020/21, 2021/22, 2022/23, 2024/25 (Cricsheet)"
+Uncapped Indian fresher bowlers (watchlist),4,Abid Mushtaq,India (uncapped),Middle-overs,33.5,0.35,"Syed Mushtaq Ali Trophy 2020/21, 2021/22, 2023/24 (Cricsheet)"
+Uncapped Indian fresher bowlers (watchlist),5,Arzan Nagwaswalla,India (uncapped),Powerplay specialist,28.2,0.72,"Syed Mushtaq Ali Trophy 2020/21, 2021/22, 2022/23, 2023/24 (Cricsheet)"
