@@ -17,3 +17,7 @@ node_modules/
 /reports/video/assets/audio/
 /reports/video/assets/clips/
 /reports/video_build.log
+
+# timing previews (not deliverables)
+reports/video/*_PREVIEW_*.mp4
+reports/video/assets/pitch/
