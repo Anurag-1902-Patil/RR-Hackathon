@@ -1,0 +1,56 @@
+{
+  "models": {
+    "bat_runs": {
+      "rows": "is_batter_ball",
+      "target": "runs",
+      "objective": "regression",
+      "dropped": []
+    },
+    "bat_out": {
+      "rows": "is_batter_ball",
+      "target": "striker_out",
+      "objective": "binary",
+      "dropped": []
+    },
+    "bowl_runs": {
+      "rows": "all deliveries",
+      "target": "bowler_runs",
+      "objective": "regression",
+      "dropped": [
+        "bowling_type",
+        "pace_or_spin",
+        "matchup"
+      ]
+    },
+    "bowl_wkt": {
+      "rows": "all deliveries",
+      "target": "bowler_wicket",
+      "objective": "binary",
+      "dropped": [
+        "bowling_type",
+        "pace_or_spin",
+        "matchup"
+      ]
+    }
+  },
+  "features": [
+    "innings",
+    "overid",
+    "balls_left",
+    "wkts_left",
+    "frac_left",
+    "crr_vs_par",
+    "rrr_vs_par",
+    "need_frac",
+    "is_ipl",
+    "env_par",
+    "bowling_type",
+    "pace_or_spin",
+    "batting_type",
+    "matchup"
+  ],
+  "algorithm": "LightGBM",
+  "crossfit": "leave-one-year-out",
+  "no_tier_feature": true,
+  "seed": 2027
+}
