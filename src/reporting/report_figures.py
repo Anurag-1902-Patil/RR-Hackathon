@@ -78,7 +78,7 @@ def clutch():
         ax.text(r.tau_true_sd * 100 + 0.4, i - 0.18, f"{r.reliability_of_raw_delta:.0%} of raw delta is signal", va="center", fontsize=9, color=NAVY)
     ax.set_yticks(y, cv.side.str.capitalize()); ax.set_xlabel("SD of pressure delta (runs per 100 balls)")
     ax.set_title("How much 'clutch' is real? Empirical-Bayes variance decomposition", loc="left")
-    ax.legend(frameon=False, fontsize=8.5, loc="lower right"); ax.grid(axis="x", color=GRID)
+    ax.legend(frameon=False, fontsize=8.5, loc="upper center", bbox_to_anchor=(0.5, -0.28), ncol=2); ax.grid(axis="x", color=GRID)
     save(fig, "clutch_variance", "Players with ≥60 HIGH and ≥150 other balls. Source: reports/model_outputs/clutch_variance.csv")
 
 

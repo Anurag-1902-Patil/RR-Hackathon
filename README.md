@@ -15,7 +15,8 @@
 | Player verification (identity, availability) | ✅ `research/PLAYER_VERIFICATION.md` |
 | RR squad intelligence, needs, squad fit, comparisons | ✅ `research/RR_SQUAD_ANALYSIS.md`, `research/PLAYER_COMPARISONS.md` |
 | Streamlit dashboard (9 pages) | ✅ `dashboard/` |
-| PDF/PPTX report, video, social content | 🔜 |
+| Final report (43-page PDF) and 24-slide PPTX deck | ✅ `reports/final_report.pdf`, `reports/presentation.pptx` |
+| Documentary video, social content | 🔜 |
 
 ## Setup (Windows, Python 3.11)
 ```bash
@@ -39,6 +40,15 @@ Versions are pinned. Newer pandas, pyarrow and scikit-learn wheels were blocked 
 .venv/Scripts/python -m src.reporting.comparisons_doc # PLAYER_COMPARISONS.md + recommendations
 .venv/Scripts/python -m src.reporting.dashboard_data  # dashboard aggregates
 .venv/Scripts/python -m pytest -q tests
+```
+
+## Report and deck
+```bash
+.venv/Scripts/python -m src.reporting.report_figures   # report figures
+.venv/Scripts/python -m src.reporting.build_report     # reports/final_report.pdf (headless Edge/Chrome)
+.venv/Scripts/python -m src.reporting.deck_data        # reports/deck_data.json (same numbers as the PDF)
+cd src/reporting/deck && npm install && cd ../../..
+node src/reporting/deck/build_deck.js                  # reports/presentation.pptx (set APPLY_THEME_JS to apply theme colours)
 ```
 
 ## Dashboard
