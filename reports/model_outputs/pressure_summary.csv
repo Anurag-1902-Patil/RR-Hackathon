@@ -1,0 +1,4 @@
+,definition,share_high_in_innings2,share_high_in_death,jaccard_vs_final,spearman_rpi_vs_leverage
+0,final,0.457,0.439,1.0,0.062
+1,leverage,0.924,0.172,0.291,0.062
+2,rpi,0.506,0.523,0.341,0.062
