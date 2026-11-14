@@ -3,6 +3,7 @@
 Output: reports/video/SupeRR_Intelligence_Pitch.mp4 (+ pitch_subtitles.srt, pitch_script.md).
 Voice backends (set PITCH_VOICE):
   voicestudio  local VoiceStudio app (installed by the user) at VOICESTUDIO_URL (default http://127.0.0.1:3900)
+  own          the presenter's own recordings in reports/video/your_voice/slide01..slide10 (script: RECORDING_SCRIPT.md)
   edge         Microsoft neural voice via edge-tts (default en-IN-NeerjaExpressiveNeural; text sent to Microsoft's service)
   sapi         offline Windows voice, TIMING PREVIEW ONLY (monotone; not for submission)
 Every name and number in the script is filled from reports/deck_data.json.
@@ -123,6 +124,22 @@ def tts_edge(items: list[tuple[Path, str]]) -> None:
     asyncio.run(go())
 
 
+OWN = V / "your_voice"
+CLEAN = ("silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.15,areverse,"
+         "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.25,areverse,"
+         "highpass=f=80,lowpass=f=12000,afftdn=nf=-25,acompressor=threshold=-20dB:ratio=2.5:attack=10:release=200")
+
+
+def tts_own(items: list[tuple[Path, str]]) -> None:
+    """The presenter's own recordings: reports/video/your_voice/slideNN.(wav|mp3|m4a|...), one per slide.
+    Trims leading/trailing silence, removes rumble and hiss, gently evens the level (loudness is normalised later)."""
+    for k, (out, _) in enumerate(items, start=1):
+        src = next((f for f in sorted(OWN.glob(f"slide{k:02d}.*")) if f.suffix.lower() in {".wav", ".mp3", ".m4a", ".aac", ".ogg", ".flac", ".webm", ".opus"}), None)
+        if src is None:
+            raise FileNotFoundError(f"Missing recording for slide {k}: put slide{k:02d}.wav (or .mp3/.m4a) in {OWN}")
+        run(["ffmpeg", "-y", "-v", "error", "-i", str(src), "-af", CLEAN, "-ar", "48000", "-ac", "1", str(out)])
+
+
 def to_std_wav(src: Path) -> Path:
     dst = src.with_name(src.stem + "_std.wav")
     run(["ffmpeg", "-y", "-v", "error", "-i", str(src), "-af", f"apad=pad_dur={TAIL},loudnorm=I=-16:TP=-1.5:LRA=11", "-ar", "48000", "-ac", "2", str(dst)])
@@ -184,7 +201,7 @@ def build(voice: str | None = None) -> Path:
     export_slides()
     sc = scenes()
     raw = [AU / f"line_{i:02d}.wav" for i in range(len(sc))]
-    {"voicestudio": tts_voicestudio, "edge": tts_edge}.get(voice, tts_sapi)([(w, s["text"]) for w, s in zip(raw, sc)])
+    {"voicestudio": tts_voicestudio, "edge": tts_edge, "own": tts_own}.get(voice, tts_sapi)([(w, s["text"]) for w, s in zip(raw, sc)])
     wavs = [to_std_wav(w) for w in raw]
     clips, cues, t = [], [], 0.0
     for i, (s, w) in enumerate(zip(sc, wavs)):
@@ -194,7 +211,7 @@ def build(voice: str | None = None) -> Path:
         t += d
     lst = CL / "list.txt"
     lst.write_text("".join(f"file '{c.as_posix()}'\n" for c in clips), encoding="utf-8")
-    suffix = "" if voice in ("voicestudio", "edge") else "_PREVIEW_sapi"
+    suffix = "" if voice in ("voicestudio", "edge", "own") else "_PREVIEW_sapi"
     out = V / f"SupeRR_Intelligence_Pitch{suffix}.mp4"
     run(["ffmpeg", "-y", "-v", "error", "-f", "concat", "-safe", "0", "-i", str(lst), "-c", "copy", "-movflags", "+faststart", str(out)])
     srt(cues, V / "pitch_subtitles.srt")

@@ -21,3 +21,7 @@ node_modules/
 # timing previews (not deliverables)
 reports/video/*_PREVIEW_*.mp4
 reports/video/assets/pitch/
+
+# presenter raw recordings (the final video carries the cleaned voice)
+reports/video/your_voice/*
+!reports/video/your_voice/README.txt
