@@ -1,11 +1,8 @@
 side,rank,player,role,score,gap_to_rank10,p_top10,p_beats_rank10_bootstrap,main_shortfall_vs_rank10,rank_range_across_defs
-batting,11,Abhishek Sharma,Opener,79.7,0.9,0.43,0.5,delta percentile -0.29,10-25
-batting,12,Cameron Green,Middle order (4-5),79.0,1.6,0.27,0.37,usual percentile -0.21,2-22
-batting,13,Rinku Singh,Finisher (6-7),78.2,2.4,0.21,0.43,delta percentile -0.31,7-23
-batting,14,Daryl Mitchell,Middle order (4-5),76.8,3.8,0.35,0.51,usual percentile -0.17,5-60
-batting,15,Curtis Campher,Middle order (4-5),75.8,4.8,0.17,0.3,usual percentile -0.65,13-58
-bowling,11,Mohsin Khan,Powerplay specialist,84.7,0.6,0.43,0.47,delta percentile -0.32,5-11
-bowling,12,Krunal Pandya,Middle-overs,84.3,0.9,0.42,0.44,delta percentile -0.19,6-30
-bowling,13,Kagiso Rabada,Powerplay specialist,82.9,2.3,0.31,0.31,impact percentile -0.24,5-23
-bowling,14,Maheesh Theekshana,Multi-phase,77.7,7.6,0.26,0.34,consistency percentile -0.30,6-16
-bowling,15,Taskin Ahmed,Powerplay specialist,77.5,7.8,0.18,0.28,delta percentile -0.20,9-22
+batting,11,Shai Hope,No.3,27.5,7.5,0.43,0.34,impact percentile -0.27,2-11
+batting,12,Lorcan Tucker,No.3,17.7,17.3,0.25,0.19,impact percentile -0.42,11-15
+batting,13,Charith Asalanka,Middle order (4-5),16.8,18.2,0.27,0.26,impact percentile -0.44,12-14
+batting,14,Moeen Ali,Middle order (4-5),13.9,21.1,0.19,0.17,consistency percentile -0.42,12-15
+batting,15,Roston Chase,Middle order (4-5),10.0,25.0,0.07,0.08,impact percentile -0.43,12-15
+bowling,11,Ish Sodhi,Middle-overs,23.4,2.3,0.67,0.51,impact percentile -0.36,9-11
+bowling,12,FazalHaq Farooqi,Powerplay specialist,23.3,2.3,0.62,0.53,consistency percentile -0.35,8-12

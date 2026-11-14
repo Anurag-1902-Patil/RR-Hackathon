@@ -1,21 +1,21 @@
 side,rank,player_id,player,role,indian_or_overseas,best_fit_requirement,best_fit_phase,requirement_priority,phase_balls,phase_value_eb_per100,phase_value_pctile,squad_fit_score,squad_fit_no_slot,replaces_weakest_rr_regular,est_runs_gained_per_season_MODEL_ESTIMATE
-batting,1,3647,Shreyas Iyer,Middle order (4-5),Indian,Death-overs / finishing batting,death,81.0,304,15.7,84.0,85.0,82.0,Ravindra Jadeja,15.3
-batting,2,4260,Heinrich Klaasen,Middle order (4-5),Overseas,Middle-overs batting,middle,60.0,921,12.45,97.0,72.0,75.0,Dhruv Jurel,30.5
-batting,3,5039,Rajat Patidar,Middle order (4-5),Indian,Middle-overs batting,middle,60.0,603,8.29,91.0,77.0,73.0,Dhruv Jurel,22.1
-batting,4,7897,Namboori Tilak Varma,Middle order (4-5),Indian,Death-overs / finishing batting,death,81.0,554,21.52,95.0,89.0,87.0,Ravindra Jadeja,19.7
-batting,5,4117,Ishan Kishan,Opener,Indian,Middle-overs batting,middle,60.0,1011,3.35,67.0,68.0,63.0,Dhruv Jurel,12.1
-batting,6,37052,Naman Dhir,Finisher (6-7),Indian,Death-overs / finishing batting,death,81.0,180,8.31,61.0,77.0,73.0,Ravindra Jadeja,9.9
-batting,7,1077,David Miller,Middle order (4-5),Overseas,Death-overs / finishing batting,death,81.0,496,7.92,60.0,69.0,72.0,Ravindra Jadeja,9.6
-batting,8,6396,Tim David,Finisher (6-7),Overseas,Death-overs / finishing batting,death,81.0,573,19.63,90.0,80.0,85.0,Ravindra Jadeja,18.3
-batting,9,1699,Suryakumar Yadav,Middle order (4-5),Indian,Death-overs / finishing batting,death,81.0,361,22.57,98.0,90.0,88.0,Ravindra Jadeja,20.4
-batting,10,4853,Glenn Phillips,Middle order (4-5),Overseas,Death-overs / finishing batting,death,81.0,242,16.87,85.0,78.0,83.0,Ravindra Jadeja,16.2
-bowling,1,6256,Varun Chakravarthy,Middle-overs,Indian,Middle-overs bowling,middle,56.0,1497,15.89,99.0,78.0,74.0,Yash Punja,26.0
-bowling,2,781,Sunil Narine,Middle-overs,Overseas,Death-overs bowling,death,61.0,220,20.52,97.0,72.0,76.0,Tushar Deshpande,10.3
-bowling,3,2933,Jasprit Bumrah,Multi-phase,Indian,Death-overs bowling,death,61.0,566,27.53,98.0,80.0,76.0,Tushar Deshpande,13.6
-bowling,4,4692,Lockie Ferguson,Multi-phase,Overseas,Powerplay bowling,powerplay,49.0,352,5.68,79.0,60.0,61.0,Brijesh Sharma,6.1
-bowling,5,4722,Rashid Khan,Middle-overs,Overseas,Death-overs bowling,death,61.0,528,13.02,94.0,71.0,75.0,Tushar Deshpande,6.7
-bowling,6,2876,Axar Patel,Middle-overs,Indian,Powerplay bowling,powerplay,49.0,651,6.57,85.0,69.0,64.0,Brijesh Sharma,6.7
-bowling,7,8661,Matheesha Pathirana,Death specialist,Overseas,Death-overs bowling,death,61.0,605,13.96,95.0,71.0,75.0,Tushar Deshpande,7.1
-bowling,8,360,Bhuvneshwar Kumar,Powerplay specialist,Indian,Powerplay bowling,powerplay,49.0,1373,14.17,98.0,74.0,69.0,Brijesh Sharma,12.2
-bowling,9,3644,Kuldeep Yadav,Middle-overs,Indian,Death-overs bowling,death,61.0,303,10.95,92.0,78.0,74.0,Tushar Deshpande,5.7
-bowling,10,2984,Sikandar Raza,Middle-overs,Overseas,Middle-overs bowling,middle,56.0,917,4.15,72.0,61.0,63.0,Yash Punja,7.7
+batting,1,4106,Daryl Mitchell,Middle order (4-5),Overseas,Middle-overs batting,middle,60.0,675,3.25,66.0,61.0,62.0,Dhruv Jurel,11.9
+batting,2,7094,Curtis Campher,Middle order (4-5),Overseas,Middle-overs batting,middle,60.0,387,0.69,42.0,52.0,53.0,Dhruv Jurel,6.7
+batting,3,3672,Kusal Mendis,Opener,Overseas,Middle-overs batting,middle,60.0,528,0.19,37.0,50.0,50.0,Dhruv Jurel,5.7
+batting,4,3374,Mark Chapman,Middle order (4-5),Overseas,Middle-overs batting,middle,60.0,544,8.85,92.0,70.0,73.0,Dhruv Jurel,23.2
+batting,5,2984,Sikandar Raza,Middle order (4-5),Overseas,Death-overs / finishing batting,death,81.0,185,21.61,97.0,82.0,87.0,Ravindra Jadeja,19.7
+batting,6,3323,Jimmy Neesham,Finisher (6-7),Overseas,Middle-overs batting,middle,60.0,257,3.66,71.0,62.0,65.0,Dhruv Jurel,12.7
+batting,7,1101,George Dockrell,Finisher (6-7),Overseas,Middle-overs batting,middle,60.0,264,1.34,53.0,56.0,57.0,Dhruv Jurel,8.0
+batting,8,6448,Ibrahim Zadran,No.3,Overseas,Death-overs / finishing batting,death,81.0,149,6.12,58.0,68.0,72.0,Ravindra Jadeja,8.3
+batting,9,4812,Harry Tector,Middle order (4-5),Overseas,Death-overs / finishing batting,death,81.0,133,-0.08,26.0,57.0,58.0,Ravindra Jadeja,3.7
+batting,10,2463,Ryan Burl,Middle order (4-5),Overseas,Death-overs / finishing batting,death,81.0,163,5.53,53.0,67.0,70.0,Ravindra Jadeja,7.8
+bowling,1,2984,Sikandar Raza,Middle-overs,Overseas,Middle-overs bowling,middle,56.0,917,4.15,72.0,61.0,63.0,Yash Punja,7.7
+bowling,2,19316,Maheesh Theekshana,Multi-phase,Overseas,Death-overs bowling,death,61.0,432,6.5,85.0,68.0,71.0,Tushar Deshpande,3.5
+bowling,3,2636,Adam Zampa,Middle-overs,Overseas,Death-overs bowling,death,61.0,232,4.0,74.0,64.0,66.0,Tushar Deshpande,2.3
+bowling,4,4807,Joshua Little,Multi-phase,Overseas,Powerplay bowling,powerplay,49.0,350,3.75,69.0,56.0,57.0,Brijesh Sharma,4.7
+bowling,5,479,Adil Rashid,Middle-overs,Overseas,Middle-overs bowling,middle,56.0,1117,-0.05,38.0,49.0,49.0,Yash Punja,1.2
+bowling,6,2687,Roston Chase,Middle-overs,Overseas,Middle-overs bowling,middle,56.0,630,3.09,65.0,58.0,60.0,Yash Punja,6.1
+bowling,7,4837,Obed McCoy,Multi-phase,Overseas,Powerplay bowling,powerplay,49.0,204,3.21,65.0,55.0,55.0,Brijesh Sharma,4.3
+bowling,8,4874,Richard Ngarava,Powerplay specialist,Overseas,Death-overs bowling,death,61.0,310,-0.21,52.0,56.0,57.0,Tushar Deshpande,0.3
+bowling,9,3275,Alzarri Joseph,Multi-phase,Overseas,Death-overs bowling,death,61.0,417,-0.64,45.0,54.0,55.0,Tushar Deshpande,0.1
+bowling,10,5379,Mark Adair,Powerplay specialist,Overseas,Powerplay bowling,powerplay,49.0,478,4.44,76.0,59.0,60.0,Brijesh Sharma,5.2

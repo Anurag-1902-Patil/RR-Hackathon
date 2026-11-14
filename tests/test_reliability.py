@@ -62,3 +62,22 @@ def test_eb_rate_shrinks_small_samples_more():
     shrink_small = ((eb - mu).abs() / (raw - mu).abs())[:20].median()
     shrink_big = ((eb - mu).abs() / (raw - mu).abs())[20:].median()
     assert shrink_small < shrink_big
+
+
+def test_final_top10_only_rr_acquirable():
+    """User rule: submitted lists contain only players RR can acquire (no IPL contract, no Pakistan/Bangladesh,
+    no retirement/ban)."""
+    from src.config import REPORTS_DIR
+    for f in ("top_10_batsmen.csv", "top_10_bowlers.csv"):
+        p = REPORTS_DIR / f
+        if p.exists():
+            t = pd.read_csv(p)
+            assert len(t) == 10 and t["rank"].tolist() == list(range(1, 11))
+            assert not t["national_side"].isin(["Pakistan", "Bangladesh"]).any()
+            assert not t["player"].isin(["Harry Brook", "Ravichandran Ashwin", "Mohit Sharma", "Andre Russell"]).any()
+    for side in ("batting", "bowling"):
+        p = REPORTS_DIR / "model_outputs" / f"reliability_{side}.csv"
+        if p.exists():
+            s = pd.read_csv(p)
+            top = s[s["rank"] <= 10]
+            assert top["rr_acquirable"].all() and top["not_acquirable_reason"].isna().all()

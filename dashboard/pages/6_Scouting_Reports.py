@@ -7,7 +7,7 @@ C.setup("Scouting Reports", "Individual profiles for the 20 selected players: ev
 
 side = st.radio("Discipline", ["batting", "bowling"], horizontal=True)
 s = C.reliability(side).query("rank <= 10")
-reg = C.register().set_index("player_id")
+reg = C.register().drop_duplicates("player_id").set_index("player_id")
 fit = C.csv("research/player_to_rr_squad_fit.csv").set_index(["side", "rank"])
 up = C.csv("research/rr_phase_uplift_scenarios.csv").set_index(["side", "rank"])
 alt = C.csv("reports/player_comparisons.csv")
