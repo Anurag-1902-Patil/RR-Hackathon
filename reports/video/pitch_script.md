@@ -1,0 +1,41 @@
+# Pitch video script
+
+**Slide 1 · WHO DELIVERS WHEN IT MATTERS?**
+
+Every franchise knows the stars. The harder question, the one that wins auctions, is this: who still delivers when the game is on the line? And which of those players can Rajasthan Royals actually sign?
+
+**Slide 2 · FIRST TARGET: SIKANDAR RAZA**
+
+Here's our answer, up front. Daryl Mitchell leads the batters R R can sign. Sikandar Raza leads the bowlers, and ranks fifth among the batters too, which makes him our first target. And from India's domestic T20, Rahul Buddhi and Narayan Jagadeesan are the uncapped batters to watch.
+
+**Slide 3 · PRESSURE, DEFINED BEFORE EVERY BALL**
+
+So how do we measure pressure? Before every single ball, we ask two questions. How much could this ball swing the match? And how hard is the situation: the scoreboard, the wickets, the dot balls piling up? The toughest twenty percent of balls count as high pressure, and yes, batters really do get out more often there.
+
+**Slide 4 · MOST 'CLUTCH' IS NOISE**
+
+Then we make it fair. Every ball is compared with what an average player would do in the same spot, against the same opponents. And here's the surprise: most of what people call clutch is noise. Only about 21 percent of it is real. So we never reward a lucky streak, and a hundred resamples tell us how sure we are about every name.
+
+**Slide 5 · THE STARS ARE ALL TAKEN**
+
+One reality check changed everything. The very best under pressure, Shreyas Iyer, Heinrich Klaasen, Varun Chakravarthy, are all under contract. A list of stars doesn't help on auction day. So we rank only the players R R can actually sign.
+
+**Slide 6 · BATTERS RR CAN SIGN**
+
+Among the batters, Daryl Mitchell, Curtis Campher, Kusal Mendis and Mark Chapman stand out. And Sikandar Raza sits in the ninety-seventh percentile at the death, exactly where Rajasthan have struggled most.
+
+**Slide 7 · BOWLERS RR CAN SIGN**
+
+With the ball, Sikandar Raza, Maheesh Theekshana and Adam Zampa are near-certain picks, in the top ten in almost every resample. And Maheesh Theekshana already knows the Royals' dressing room.
+
+**Slide 8 · UNCAPPED, ON INDIAN PITCHES**
+
+Then we went further. The data pack has no Indian domestic cricket, so we added two hundred and seventy-two Syed Mushtaq Ali Trophy matches, played on Indian pitches. Rahul Buddhi and Narayan Jagadeesan lead the uncapped batters. Domestic batting form carries over to the I P L. Bowling form doesn't, and we say so honestly.
+
+**Slide 9 · THE GAP IS AT THE DEATH**
+
+Now, map it to Rajasthan. The top order is the best in the league. The death overs are not. Sikandar Raza fixes the finish, Maheesh Theekshana and Adam Zampa defend it, Mark Chapman or Daryl Mitchell steady the middle, and the uncapped batters fill the Indian slots.
+
+**Slide 10 · THE AUCTION PLAN**
+
+That's our auction plan. Built on every ball since twenty twenty-two, honest about what we don't know, and ready to re-run the moment the retention lists drop. Who delivers when it matters? Now R R knows.
